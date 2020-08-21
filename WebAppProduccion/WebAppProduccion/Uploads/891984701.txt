@@ -1,0 +1,783 @@
+﻿ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         1
+
+
+
+
+                                                                                  Input Parameters
+
+
+
+                                                                         Transfer Order : 891984701
+                                                                         Header ID From :
+                                                                                     To :
+                                                                     Date Required From :
+                                                                                     To :
+                                                                    Source Subinventory :
+                                                                         Source Locator :
+                                                               Destination Subinventory :
+                                                                    Destination Locator :
+                                                                           Requested By :
+                                                                           Print Option : Allocated Lines
+                                                                        Move Order Type : All
+                                                              Auto Allocate Order Lines : No
+                                                                             Plan Tasks : No
+                                                                Pick Slip Grouping Rule :
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         2
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         1             4000MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      132  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-010-01       SURTIDO RESUPPLY
+                                               SABOR COOKIES &
+                                               CREAM
+     Lot Number    :    990504A08                                    Exp. Date :               10-APR-22                   Lot Quantity            : 132
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         1             4000MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      600  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        B-034-03       SURTIDO RESUPPLY
+                                               SABOR COOKIES &
+                                               CREAM
+     Lot Number    :    990505A08                                    Exp. Date :               10-APR-22                   Lot Quantity            : 600
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         2             605984               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      600  ____********
+                                                                                                                                     V
+                                               CORRUGADO 1/4 (36)        P-007-04       SURTIDO RESUPPLY
+                                               HD
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         3             1019MX               20   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      840  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               A-001-01       SURTIDO RESUPPLY
+                                               CONCENTRADO
+     Lot Number    :    990513A20                                    Exp. Date :               21-APR-22                   Lot Quantity            : 840
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         4             1926MX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      276  ____********
+                                                                                                                                     V
+                                               PERSONALIZED PROTEIN      A-004-01       SURTIDO RESUPPLY
+                                               POWDER
+     Lot Number    :    990465D00                                    Exp. Date :               28-FEB-22                   Lot Quantity            : 276
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         5             0922MX               04   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       96  ____********
+                                                                                                                                     V
+                                               THERMOJETICS              A-007-01       SURTIDO RESUPPLY
+                                               CONCENTRADO DE
+                                               HIERBAS SABOR LIMON
+                                               51 G
+     Lot Number    :    D90533F04                                    Exp. Date :               06-MAY-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         3
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         6             1188MX               07   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       60  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               A-013-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               MANGO 1,892 L
+     Lot Number    :    990536D07                                    Exp. Date :               18-MAY-22                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         7             3175MX               22   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      276  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        A-019-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR BATIDO
+                                               SABOR VAINILLA
+     Lot Number    :    D90521B22                                    Exp. Date :               28-APR-22                   Lot Quantity            : 276
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         8             0964MX               03   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      120  ____********
+                                                                                                                                     V
+                                               THERMOJETICS              A-021-01       SURTIDO RESUPPLY
+                                               CONCENTRADO DE
+                                               HIERBAS 102 G
+     Lot Number    :    D90535W03                                    Exp. Date :               11-MAY-22                   Lot Quantity            : 120
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         9             3100MX               23   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      124  ____********
+                                                                                                                                     V
+                                               FLORAFIBER                A-023-01       SURTIDO RESUPPLY
+     Lot Number    :    C29533D23                                    Exp. Date :               28-FEB-22                   Lot Quantity            : 124
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         10            3115MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       96  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 2        A-024-01       SURTIDO RESUPPLY
+     Lot Number    :    220536A08                                    Exp. Date :               17-APR-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         11            0085MX               13   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      888  ____********
+                                                                                                                                     V
+                                               N-R-G TE                  A-025-01       SURTIDO RESUPPLY
+     Lot Number    :    D90520J13                                    Exp. Date :               26-APR-22                   Lot Quantity            : 888
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         12            2864MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      300  ____********
+                                                                                                                                     V
+                                               ACTIVE FIBER COMPLEX      A-028-01       SURTIDO RESUPPLY
+                                               SABOR MANZANA
+     Lot Number    :    D90505D08                                    Exp. Date :               09-APR-22                   Lot Quantity            : 300
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         4
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         13            4002MX               07   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      288  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-031-01       SURTIDO RESUPPLY
+                                               SABOR FRESA
+     Lot Number    :    990486B07                                    Exp. Date :               25-MAR-22                   Lot Quantity            : 264
+     Lot Number    :    990549A07                                    Exp. Date :               05-APR-22                   Lot Quantity            : 24
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         14            1065MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      444  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               A-034-01       SURTIDO RESUPPLY
+                                               CONCENTRADO - SABOR
+                                               MANGO
+     Lot Number    :    990532B08                                    Exp. Date :               11-MAY-22                   Lot Quantity            : 444
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         15            4004MX               06   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       96  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-037-01       SURTIDO RESUPPLY
+                                               SABOR VAINILLA
+     Lot Number    :    990423F06                                    Exp. Date :               17-JAN-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         16            0079MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       66  ____********
+                                                                                                                                     V
+                                               ANTI-SNACK                B-003-01       SURTIDO RESUPPLY
+     Lot Number    :    B70472A05                                    Exp. Date :               04-FEB-22                   Lot Quantity            : 66
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         17            3150MX               14   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       36  ____********
+                                                                                                                                     V
+                                               HERBALIFE NITEWORKS       B-004-01       SURTIDO RESUPPLY
+                                               SABOR LIMON
+     Lot Number    :    D90582K14                                    Exp. Date :               26-JUN-22                   Lot Quantity            : 36
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         18            1412MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       54  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24              B-005-01       SURTIDO RESUPPLY
+                                               HERBALIFE NUMERO 1
+                                               SPORT SABOR VAINILLA
+     Lot Number    :    990456C05                                    Exp. Date :               24-FEB-22                   Lot Quantity            : 54
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         19            1841MX               04   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       62  ____********
+                                                                                                                                     V
+                                               XTRA-CALCIO ADVANCED      B-008-01       SURTIDO RESUPPLY
+     Lot Number    :    990477B04                                    Exp. Date :               13-MAR-22                   Lot Quantity            : 62
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         5
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         20            1095MX               07   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       70  ____********
+                                                                                                                                     V
+                                               PROLESSA DUO              B-010-01       SURTIDO RESUPPLY
+     Lot Number    :    990533A07                                    Exp. Date :               01-NOV-21                   Lot Quantity            : 70
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         21            3119MX               03   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      348  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        B-012-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR
+                                               BEBIDAS SABOR PONCHE
+                                               DE FRUTAS
+     Lot Number    :    600553C03                                    Exp. Date :               28-MAY-22                   Lot Quantity            : 348
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         22            0370MX               10   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      130  ____********
+                                                                                                                                     V
+                                               CELL-U-LOSS               B-022-01       SURTIDO RESUPPLY
+     Lot Number    :    360511A10                                    Exp. Date :               28-FEB-22                   Lot Quantity            : 130
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         23            0963MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      288  ____********
+                                                                                                                                     V
+                                               THERMOJETICS              B-024-01       SURTIDO RESUPPLY
+                                               CONCENTRADO DE
+                                               HIERBAS  51 G
+     Lot Number    :    D90576E05                                    Exp. Date :               16-JUN-22                   Lot Quantity            : 288
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         24            2641MX               07   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      168  ____********
+                                                                                                                                     V
+                                               XTRA SHAKE                B-026-01       SURTIDO RESUPPLY
+     Lot Number    :    990469B07                                    Exp. Date :               06-MAR-22                   Lot Quantity            : 168
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         25            4001MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      168  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        B-028-01       SURTIDO RESUPPLY
+                                               SABOR PINA COLADA
+     Lot Number    :    990459A05                                    Exp. Date :               27-FEB-22                   Lot Quantity            : 168
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         26            3525MX               04   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       48  ____********
+                                                                                                                                     V
+                                               THERMOJETICS BARRA        B-030-01       SURTIDO RESUPPLY
+                                               CON PROTEINA SABOR A
+                                               CHOCOLATE
+     Lot Number    :    LK20479A04                                   Exp. Date :               20-MAR-21                   Lot Quantity            : 48
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         6
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         27            1829MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      132  ____********
+                                                                                                                                     V
+                                               PROBIOTIC ADVANTAGE       B-032-01       SURTIDO RESUPPLY
+     Lot Number    :    B70504D01                                    Exp. Date :               02-APR-22                   Lot Quantity            : 132
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         28            049KMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      120  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        B-034-01       SURTIDO RESUPPLY
+                                               SABOR COCO
+     Lot Number    :    600416A00                                    Exp. Date :               14-JAN-22                   Lot Quantity            : 120
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         29            3176MX               20   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       20  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        B-036-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR BATIDO
+                                               SABOR A CHOCOLATE
+     Lot Number    :    D90534B20                                    Exp. Date :               05-MAY-22                   Lot Quantity            : 20
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         30            1428MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       60  ____********
+                                                                                                                                     V
+                                               TE VERDE SABOR            B-038-01       SURTIDO RESUPPLY
+                                               GRANADA 48 G
+     Lot Number    :    D90476M02                                    Exp. Date :               03-MAR-22                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         31            0065MX               11   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      158  ____********
+                                                                                                                                     V
+                                               HERBALIFELINE             C-001-01       SURTIDO RESUPPLY
+     Lot Number    :    220463B11                                    Exp. Date :               12-JAN-22                   Lot Quantity            : 158
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         32            1610MX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      372  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               C-003-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               UVA
+     Lot Number    :    990462E00                                    Exp. Date :               02-MAR-22                   Lot Quantity            : 372
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         33            0884MX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      180  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-005-01       SURTIDO RESUPPLY
+                                               SABOR A CHOCO-
+                                               AVELLANA
+     Lot Number    :    990464A00                                    Exp. Date :               04-MAR-22                   Lot Quantity            : 180
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         7
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         34            2644MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       48  ____********
+                                                                                                                                     V
+                                               XTRA SHAKE SABOR A        C-008-01       SURTIDO RESUPPLY
+                                               NUEZ
+     Lot Number    :    990499C02                                    Exp. Date :               07-APR-22                   Lot Quantity            : 48
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         35            3123MX               09   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       20  ____********
+                                                                                                                                     V
+                                               CELL ACTIVATOR            C-013-01       SURTIDO RESUPPLY
+     Lot Number    :    360529A09                                    Exp. Date :               01-MAY-22                   Lot Quantity            : 20
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         36            0366MX               06   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       60  ____********
+                                                                                                                                     V
+                                               BARRA CON PROTEINA        C-018-01       SURTIDO RESUPPLY
+                                               DELUXE SABOR LIMON
+     Lot Number    :    G20485C                                      Exp. Date :               25-MAR-21                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         37            0565MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      102  ____********
+                                                                                                                                     V
+                                               XTRA-CAL ADVANCED         C-020-01       SURTIDO RESUPPLY
+     Lot Number    :    B70495E05                                    Exp. Date :               16-JAN-22                   Lot Quantity            : 102
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         38            0364MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       60  ____********
+                                                                                                                                     V
+                                               BARRA CON PROTEINA        C-022-01       SURTIDO RESUPPLY
+                                               DELUXE SABOR
+                                               VAINILLA CON
+                                               ALMENDRAS
+     Lot Number    :    G20452A                                      Exp. Date :               21-FEB-21                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         39            2648MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      204  ____********
+                                                                                                                                     V
+                                               PERSONALIZED PROTEIN      C-024-01       SURTIDO RESUPPLY
+                                               POWDER SABOR FRUTOS
+                                               ROJOS
+     Lot Number    :    990444D01                                    Exp. Date :               13-FEB-22                   Lot Quantity            : 204
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         40            4007MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      132  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-026-01       SURTIDO RESUPPLY
+                                               SABOR FRUTAS
+                                               TROPICALES
+     Lot Number    :    990463B05                                    Exp. Date :               03-MAR-22                   Lot Quantity            : 132
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         8
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         41            2131MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      744  ____********
+                                                                                                                                     V
+                                               N-R-G TE SABOR            C-028-01       SURTIDO RESUPPLY
+                                               MANZANA VERDE
+     Lot Number    :    D90492G01                                    Exp. Date :               01-APR-22                   Lot Quantity            : 744
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         42            2555MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      120  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-034-01       SURTIDO RESUPPLY
+                                               SABOR PLATANO
+     Lot Number    :    990462A01                                    Exp. Date :               28-FEB-22                   Lot Quantity            : 120
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         43            0039MX               16   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       10  ____********
+                                                                                                                                     V
+                                               PRELOX AZUL               C-038-01       SURTIDO RESUPPLY
+     Lot Number    :    360463D16                                    Exp. Date :               03-FEB-22                   Lot Quantity            : 10
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         44            0077MX               06   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       48  ____********
+                                                                                                                                     V
+                                               TC FORMULA                C-039-01       SURTIDO RESUPPLY
+     Lot Number    :    360536A06                                    Exp. Date :               27-MAR-22                   Lot Quantity            : 48
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         45            1417MX               08   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       42  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24              D-004-01       SURTIDO RESUPPLY
+                                               STRENGTH
+     Lot Number    :    D90472D08                                    Exp. Date :               11-MAR-22                   Lot Quantity            : 42
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         46            0766MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       46  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            D-009-01       SURTIDO RESUPPLY
+                                               LIMPIADOR CITRICO
+                                               PARA LA PIEL
+     Lot Number    :    570477D02                                    Exp. Date :               16-MAR-22                   Lot Quantity            : 46
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         47            2631MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      648  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               D-011-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               MANDARINA
+     Lot Number    :    990500J02                                    Exp. Date :               09-APR-22                   Lot Quantity            : 648
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                         9
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         48            0770MX               03   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       14  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN GEL        D-019-01       SURTIDO RESUPPLY
+                                               REAFIRMANTE PARA
+                                               CONTORNO DE OJOS
+     Lot Number    :    579551B03                                    Exp. Date :               29-MAY-21                   Lot Quantity            : 14
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         49            0940MX               04   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      192  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        D-021-01       SURTIDO RESUPPLY
+                                               SABOR DULCE DE LECHE
+     Lot Number    :    990463A04                                    Exp. Date :               02-MAR-22                   Lot Quantity            : 192
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         50            0774MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       14  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN CREMA      D-025-01       SURTIDO RESUPPLY
+                                               HIDRATANTE DE NOCHE
+     Lot Number    :    570437E01                                    Exp. Date :               31-JAN-22                   Lot Quantity            : 14
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         51            1473MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       40  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24 CR7          D-026-01       SURTIDO RESUPPLY
+                                               DRIVE
+     Lot Number    :    600477A01                                    Exp. Date :               12-MAR-22                   Lot Quantity            : 40
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         52            0831MX               03   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       72  ____********
+                                                                                                                                     V
+                                               HERBALIFE COLAGENO        D-030-01       SURTIDO RESUPPLY
+     Lot Number    :    D90519E03                                    Exp. Date :               23-APR-22                   Lot Quantity            : 72
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         53            0768MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       14  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN SERUM      D-033-01       SURTIDO RESUPPLY
+                                               REDUCTOR DE LINEAS
+                                               DE EXPRESION
+     Lot Number    :    570424C01                                    Exp. Date :               17-JAN-22                   Lot Quantity            : 14
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         54            0771MX               03   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        6  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN CREMA      D-034-01       SURTIDO RESUPPLY
+                                               HIDRATANTE PARA
+                                               CONTORNO DE OJOS
+     Lot Number    :    579619C03                                    Exp. Date :               31-JUL-21                   Lot Quantity            : 6
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                        10
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         55            1061MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       98  ____********
+                                                                                                                                     V
+                                               WOMAN'S CHOICE            E-002-01       SURTIDO RESUPPLY
+     Lot Number    :    220491C01                                    Exp. Date :               20-FEB-22                   Lot Quantity            : 98
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         56            0767MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       38  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            E-003-01       SURTIDO RESUPPLY
+                                               TONICO CON ALOE,
+                                               ROMERO Y MANZANILLA
+     Lot Number    :    570441D01                                    Exp. Date :               27-JAN-22                   Lot Quantity            : 38
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         57            0899MX               06   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       42  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN CREMA      E-006-01       SURTIDO RESUPPLY
+                                               HUMECTANTE FPS 30
+     Lot Number    :    570435F06                                    Exp. Date :               04-FEB-22                   Lot Quantity            : 42
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         58            044KMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       72  ____********
+                                                                                                                                     V
+                                               INFUSION HERBAL           E-007-01       SURTIDO RESUPPLY
+     Lot Number    :    D90491P00                                    Exp. Date :               24-MAR-22                   Lot Quantity            : 72
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         59            2364MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       52  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 2        E-018-01       SURTIDO RESUPPLY
+                                               POLVO
+     Lot Number    :    990529A01                                    Exp. Date :               08-MAY-22                   Lot Quantity            : 52
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         60            0413MX               05   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      204  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE GEL           E-019-01       SURTIDO RESUPPLY
+                                               CORPORAL CON ALOE
+     Lot Number    :    570459A05                                    Exp. Date :               26-FEB-22                   Lot Quantity            : 204
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         61            3189MX               11   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       12  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        E-021-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR BEBIDA
+                                               SABOR PONCHE DE
+                                               FRUTAS
+     Lot Number    :    600458B11                                    Exp. Date :               03-FEB-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                        11
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         62            0765MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       32  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN GEL        E-031-01       SURTIDO RESUPPLY
+                                               LIMPIADOR DE SABILA
+     Lot Number    :    579626H02                                    Exp. Date :               13-AUG-21                   Lot Quantity            : 32
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         63            308A                 00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       15  ____********
+                                                                                                                                     V
+                                               HLN TABLET BOX -          D-014-01       SURTIDO RESUPPLY
+                                               LONG TABLET BOX (SET
+                                               OF 5)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         64            690095               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      220  ____********
+                                                                                                                                     V
+                                               HMP LITERATURE            D-018-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         65            602649               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        5  ____********
+                                                                                                                                     V
+                                               FILL PACK                 D-038-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         66            532NMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       12  ____********
+                                                                                                                                     V
+                                               BLENDER GRAY 40 ANIV      E-004-01       SURTIDO RESUPPLY
+                                               350+
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         67            8796MX               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        7  ____********
+                                                                                                                                     V
+                                               SMART SHAKER DELUXE       E-005-01       SURTIDO RESUPPLY
+                                               (H24)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         68            8504MX               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      210  ____********
+                                                                                                                                     V
+                                               I LOVE HERBALIFE          E-009-01       SURTIDO RESUPPLY
+                                               BUTTON - EA - MX
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         69            9947MX               35   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA     1870  ____********
+                                                                                                                                     V
+                                               PRODUCT CATALOG SET       E-010-01       SURTIDO RESUPPLY
+                                               OF 5 (16%)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                        12
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         70            4011MX               15   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      205  ____********
+                                                                                                                                     V
+                                               HMP CONTRATO              E-020-01       SURTIDO RESUPPLY
+                                               APP/CARD-SPANISH
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         71            7056MX               04   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      210  ____********
+                                                                                                                                     V
+                                               TOTE BAG                  E-038-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         72            602766               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        6  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 7         F-001-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         73            602760               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        3  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 1         F-002-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         74            602778               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        2  ____********
+                                                                                                                                     V
+                                               DIPLOMA                   F-003-01       SURTIDO RESUPPLY
+                                               ASP3/PERSONALIZADO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         75            602768               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        1  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 10        F-005-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         76            686NMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        8  ____********
+                                                                                                                                     V
+                                               ANNIVERSARY CARD 15       F-010-01       SURTIDO RESUPPLY
+                                               YEARS
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         77            690NMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        8  ____********
+                                                                                                                                     V
+                                               AWT NO TAB CARD 2020      F-018-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                        13
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         78            692NMX               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        5  ____********
+                                                                                                                                     V
+                                               WORLD TEAM CARD           F-018-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         79            602794               02   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        9  ____********
+                                                                                                                                     V
+                                               PIN EMA DORADO            F-020-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         80            602796               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        8  ____********
+                                                                                                                                     V
+                                               DIPLOMA EN OPALINA        F-022-01       SURTIDO RESUPPLY
+                                               AWT 1ST
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         81            602797               01   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       55  ____********
+                                                                                                                                     V
+                                               SOBRE CAPLE/ETIQ          F-038-01       SURTIDO RESUPPLY
+                                               PERSONAL
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         82            N487MX               06   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       20  ____********
+                                                                                                                                     V
+                                               DOOR OP -  (100 CARD      FG-005-01      SURTIDO RESUPPLY
+                                               SET) COMBO2
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         83            606643               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA        5  ____********
+                                                                                                                                     V
+                                               CINTA GORILA              FG-011-01      SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         84            605985               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA      200  ____********
+                                                                                                                                     V
+                                               CORRUGADO 2/4 (36)        I-010-01       SURTIDO RESUPPLY
+                                               HD
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891984701     Allocated         85            605986               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       50  ____********
+                                                                                                                                     V
+                                               CORRUGADO MASTER          I-011-01       SURTIDO RESUPPLY
+                                               (36) HD
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         31-JUL-2020 20:08
+                                                                              HL Move Order Pick Slip                                              Page :                        14
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891984701     Allocated         86            605987               00   M1QE10         M1QE10                                       JESSICAHERNA- 2X      EA       15  ____********
+                                                                                                                                     V
+                                               CORRUGADO EMBARQUE        I-012-01       SURTIDO RESUPPLY
+                                               (36) HD
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                                                              ***** End of Report *****

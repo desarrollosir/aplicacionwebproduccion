@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d999f7df4cc2494bad80a439ada382f5" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel3.wh_LineasMO" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel3.wh_LotesMO" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel3.wh_moveorder" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel3.wh_statusmo" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel3.wh_LineasMO_wh_moveorder_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel3.wh_LotesMO_wh_LineasMO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel3.wh_moveorder_wh_statusmo_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

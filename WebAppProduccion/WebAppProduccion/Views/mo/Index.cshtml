@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Move Orders - Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2> Move Orders <small>Index</small></h2> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="@Url.Action("CargarMO")"> <i class="glyphicon glyphicon-plus-sign"></i> Agregar Registros</a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="well" style="overflow: auto">
+            <div class="col-sm-3">
+                Codigo
+                <div class="form-group">
+                    <div class="input-group date">
+                        <input id="txtOrder" name="txtOrder" class="form-control" autocomplete="off" />
+                        <span class="input-group-addon">
+                            <span class="fa fa-print"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <table id="tblMO" class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Order</th>
+                    <th>Status</th>
+                    <th>Line</th>
+                    <th>Item</th>
+                    <th>Rev</th>
+                    <th>SL</th>
+                    <th>SU</th>
+                    <th>DL</th>
+                    <th>DU</th>
+                    <th>Requester</th>
+                    <th>Ref</th>
+                    <th>UoM</th>
+                    <th>Qty</th>
+                    <th>Lot</th>
+                    <th>EDate</th>
+                    <th>QLot</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div id="MyModal" class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg" id="mdialTamanio">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+
+    <!-- iCheck -->
+    <link href="~/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Moment.js: -->
+    <script src="~/vendors/moment/moment.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            table = $("#tblMO").DataTable({
+                "order": [[0, "desc"]],
+                "ordering": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "pagingType": "simple_numbers",
+                "dom": 'Blrtip', // Hides Default Search
+                "processing": true,
+                "serverSide": true,
+                "orderMulti": false,
+                "deferRender": true,
+                "responsive": true,
+                rowId: 'id',
+                select: true,
+                buttons: [                    
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="fa fa-files-o"></i>',
+                        titleAttr: 'COPIAR',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i>',
+                        titleAttr: 'IMPRIMIR',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        text: '<i class="fa fa-file-excel-o"></i>',
+                        titleAttr: 'EXCEL',
+                        exportOptions: {
+                            columns: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+                        }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        titleAttr: 'PDF',
+                        orientation: 'landscape',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    }
+
+                ],
+                "ajax": {
+                    "url": "/mo/ObtenerMO",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "aoColumns": [
+                    { "data": "Id", "autoWidth": true, "visible": false},
+                    { "data": "Order", "autoWidth": true, },
+                    { "data": "Status", "autoWidth": true, },
+                    { "data": "Line", "autoWidth": true, },
+                    { "data": "Item", "autoWidth": true, },
+                    { "data": "Rev", "autoWidth": true, },
+                    { "data": "SrcLocator", "autoWidth": true, },                    
+                    { "data": "SrcUbicacion", "autoWidth": true, },                    
+                    { "data": "DestLocator", "autoWidth": true, },                    
+                    { "data": "DestUbicacion", "autoWidth": true, },                    
+                    { "data": "Requester", "autoWidth": true, },
+                    { "data": "Ref", "autoWidth": true, },                    
+                    { "data": "UoM", "autoWidth": true, },
+                    { "data": "Qty", "autoWidth": true, },
+                    { "data": "Lote", "autoWidth": true, },
+                    { "data": "FechaExpiracion", "autoWidth": true, },     
+                    { "data": "QtyLote", "autoWidth": true, },                              
+                ]
+            });
+
+            $('#txtOrder').on('keyup', function () {
+                table.columns(0).search(this.value).draw();                
+            });
+        });
+    </script>
+}

@@ -192,6 +192,7 @@
     <Compile Include="Controllers\LogisticasInversas\li_statusController.cs" />
     <Compile Include="Controllers\LogisticasInversas\logisticasController.cs" />
     <Compile Include="Controllers\LogisticasInversas\skusbenavidesController.cs" />
+    <Compile Include="Controllers\Operaciones\moController.cs" />
     <Compile Include="Controllers\Sistemas\skusController.cs" />
     <Compile Include="Controllers\LogisticasInversas\skusinventariosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -333,6 +334,34 @@
     <Compile Include="Entities\ModulosEscaneos\wl_waldos.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosOperaciones\ModeloOperaciones.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOperaciones.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\ModeloOperaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\ModeloOperaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\MoViewModel.cs" />
+    <Compile Include="Entities\ModulosOperaciones\wh_LineasMO.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_LotesMO.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_moveorder.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_statusmo.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\ModulosSistemas\empleados.cs">
       <DependentUpon>ModeloSistemas.tt</DependentUpon>
     </Compile>
@@ -428,6 +457,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\ModulosOperaciones\ModeloOperaciones.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
+      <LastGenOutput>ModeloOperaciones.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\ModulosOperaciones\ModeloOperaciones.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
+      <LastGenOutput>ModeloOperaciones.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\ModulosSistemas\ModeloSistemas.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -530,6 +569,13 @@
     </EntityDeploy>
     <Content Include="Entities\ModulosAdministracion\ModeloAdministracion.edmx.diagram">
       <DependentUpon>ModeloAdministracion.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Entities\ModulosOperaciones\ModeloOperaciones.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloOperaciones.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\ModulosOperaciones\ModeloOperaciones.edmx.diagram">
+      <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -5084,6 +5130,8 @@
     <Content Include="Views\proveedores\Index.cshtml" />
     <Content Include="Views\proveedores\Create.cshtml" />
     <Content Include="Views\proveedores\Edit.cshtml" />
+    <Content Include="Views\mo\Index.cshtml" />
+    <Content Include="Views\mo\CargarMO.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

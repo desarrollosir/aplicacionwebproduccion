@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3F19C_producccionModel3StoreContainer" CdmEntityContainer="DB_A3F19C_producccionEntities3">
+    <EntitySetMapping Name="wh_LineasMO">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_LineasMO">
+        <MappingFragment StoreEntitySet="wh_LineasMO">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Rev" ColumnName="Rev" />
+          <ScalarProperty Name="SrcLocator" ColumnName="SrcLocator" />
+          <ScalarProperty Name="SrcUbicacion" ColumnName="SrcUbicacion" />
+          <ScalarProperty Name="DestLocator" ColumnName="DestLocator" />
+          <ScalarProperty Name="DestUbicacion" ColumnName="DestUbicacion" />
+          <ScalarProperty Name="Requester" ColumnName="Requester" />
+          <ScalarProperty Name="Ref" ColumnName="Ref" />
+          <ScalarProperty Name="UoM" ColumnName="UoM" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Asterisk" ColumnName="Asterisk" />
+          <ScalarProperty Name="wh_moveorder_Id" ColumnName="wh_moveorder_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wh_LotesMO">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_LotesMO">
+        <MappingFragment StoreEntitySet="wh_LotesMO">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="wh_LineasMO_Id" ColumnName="wh_LineasMO_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wh_moveorder">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_moveorder">
+        <MappingFragment StoreEntitySet="wh_moveorder">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumOrder" ColumnName="NumOrder" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="wh_statusmo_Id" ColumnName="wh_statusmo_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wh_statusmo">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_statusmo">
+        <MappingFragment StoreEntitySet="wh_statusmo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

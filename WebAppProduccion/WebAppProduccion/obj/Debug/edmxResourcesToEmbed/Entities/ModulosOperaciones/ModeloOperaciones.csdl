@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3F19C_producccionModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="wh_LineasMO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Line" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SrcLocator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SrcUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DestLocator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DestUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Requester" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UoM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Asterisk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wh_moveorder_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="wh_moveorder" Relationship="Self.wh_LineasMO_wh_moveorder_FK" FromRole="wh_LineasMO" ToRole="wh_moveorder" />
+    <NavigationProperty Name="wh_LotesMO" Relationship="Self.wh_LotesMO_wh_LineasMO_FK" FromRole="wh_LineasMO" ToRole="wh_LotesMO" />
+  </EntityType>
+  <EntityType Name="wh_LotesMO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lote" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaExpiracion" Type="DateTime" Precision="0" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="wh_LineasMO_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="wh_LineasMO" Relationship="Self.wh_LotesMO_wh_LineasMO_FK" FromRole="wh_LotesMO" ToRole="wh_LineasMO" />
+  </EntityType>
+  <EntityType Name="wh_moveorder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="wh_statusmo_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="wh_LineasMO" Relationship="Self.wh_LineasMO_wh_moveorder_FK" FromRole="wh_moveorder" ToRole="wh_LineasMO" />
+    <NavigationProperty Name="wh_statusmo" Relationship="Self.wh_moveorder_wh_statusmo_FK" FromRole="wh_moveorder" ToRole="wh_statusmo" />
+  </EntityType>
+  <EntityType Name="wh_statusmo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="wh_moveorder" Relationship="Self.wh_moveorder_wh_statusmo_FK" FromRole="wh_statusmo" ToRole="wh_moveorder" />
+  </EntityType>
+  <Association Name="wh_LineasMO_wh_moveorder_FK">
+    <End Role="wh_moveorder" Type="Self.wh_moveorder" Multiplicity="1" />
+    <End Role="wh_LineasMO" Type="Self.wh_LineasMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_moveorder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_LineasMO">
+        <PropertyRef Name="wh_moveorder_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wh_LotesMO_wh_LineasMO_FK">
+    <End Role="wh_LineasMO" Type="Self.wh_LineasMO" Multiplicity="1" />
+    <End Role="wh_LotesMO" Type="Self.wh_LotesMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_LineasMO">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_LotesMO">
+        <PropertyRef Name="wh_LineasMO_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wh_moveorder_wh_statusmo_FK">
+    <End Role="wh_statusmo" Type="Self.wh_statusmo" Multiplicity="1" />
+    <End Role="wh_moveorder" Type="Self.wh_moveorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_statusmo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_moveorder">
+        <PropertyRef Name="wh_statusmo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A3F19C_producccionEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="wh_LineasMO" EntityType="Self.wh_LineasMO" />
+    <EntitySet Name="wh_LotesMO" EntityType="Self.wh_LotesMO" />
+    <EntitySet Name="wh_moveorder" EntityType="Self.wh_moveorder" />
+    <EntitySet Name="wh_statusmo" EntityType="Self.wh_statusmo" />
+    <AssociationSet Name="wh_LineasMO_wh_moveorder_FK" Association="Self.wh_LineasMO_wh_moveorder_FK">
+      <End Role="wh_moveorder" EntitySet="wh_moveorder" />
+      <End Role="wh_LineasMO" EntitySet="wh_LineasMO" />
+    </AssociationSet>
+    <AssociationSet Name="wh_LotesMO_wh_LineasMO_FK" Association="Self.wh_LotesMO_wh_LineasMO_FK">
+      <End Role="wh_LineasMO" EntitySet="wh_LineasMO" />
+      <End Role="wh_LotesMO" EntitySet="wh_LotesMO" />
+    </AssociationSet>
+    <AssociationSet Name="wh_moveorder_wh_statusmo_FK" Association="Self.wh_moveorder_wh_statusmo_FK">
+      <End Role="wh_statusmo" EntitySet="wh_statusmo" />
+      <End Role="wh_moveorder" EntitySet="wh_moveorder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,132 @@
+﻿ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         23-MAR-2020 20:55
+                                                                              HL Move Order Pick Slip                                              Page :                         1
+
+
+
+
+                                                                                  Input Parameters
+
+
+
+                                                                         Transfer Order : 1421055110
+                                                                         Header ID From :
+                                                                                     To :
+                                                                     Date Required From :
+                                                                                     To :
+                                                                    Source Subinventory :
+                                                                         Source Locator :
+                                                               Destination Subinventory :
+                                                                    Destination Locator :
+                                                                           Requested By :
+                                                                           Print Option : Allocated Lines
+                                                                        Move Order Type : All
+                                                              Auto Allocate Order Lines : No
+                                                                             Plan Tasks : No
+                                                                Pick Slip Grouping Rule :
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         23-MAR-2020 20:55
+                                                                              HL Move Order Pick Slip                                              Page :                         2
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 1421055110    Allocated         1             0079MX               05   M1QE10         M1QE10                                       MICHAELA      3T      EA      216  ____********
+                                               ANTI-SNACK                B-003-01       SURTIDO RESUPPLY
+     Lot Number    :    B79568B05                                    Exp. Date :               05-JUN-21                   Lot Quantity            : 216
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         2             1094MX               09   M1QE10         M1QE10                                       MICHAELA      3T      EA     1221  ____********
+                                               SCHIZANDRA PLUS           B-011-01       SURTIDO RESUPPLY
+     Lot Number    :    360421C09                                    Exp. Date :               05-DEC-21                   Lot Quantity            : 729
+     Lot Number    :    369712A09                                    Exp. Date :               08-OCT-21                   Lot Quantity            : 492
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         2             1094MX               09   M1QE10         M1QE10                                       MICHAELA      3T      EA     2268  ____********
+                                               SCHIZANDRA PLUS           B-011-01       SURTIDO RESUPPLY
+     Lot Number    :    360421C09                                    Exp. Date :               05-DEC-21                   Lot Quantity            : 2268
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         3             1155MX               18   M1QE10         M1QE10                                       MICHAELA      3T      EA      197  ____********
+                                               THERMO-BOND               B-020-01       SURTIDO RESUPPLY
+     Lot Number    :    C29521B18                                    Exp. Date :               30-APR-21                   Lot Quantity            : 57
+     Lot Number    :    C29591B18                                    Exp. Date :               31-MAY-21                   Lot Quantity            : 140
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         4             0370MX               10   M1QE10         M1QE10                                       MICHAELA      3T      EA      108  ____********
+                                               CELL-U-LOSS               B-022-01       SURTIDO RESUPPLY
+     Lot Number    :    360427A10                                    Exp. Date :               15-NOV-21                   Lot Quantity            : 108
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         5             0032MX               05   M1QE10         M1QE10                                       MICHAELA      3T      EA      308  ____********
+                                               GARLIC PLUS               B-023-01       SURTIDO RESUPPLY
+     Lot Number    :    229507A05                                    Exp. Date :               25-SEP-20                   Lot Quantity            : 308
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         6             1829MX               01   M1QE10         M1QE10                                       MICHAELA      3T      EA       90  ____********
+                                               PROBIOTIC ADVANTAGE       B-032-01       SURTIDO RESUPPLY
+     Lot Number    :    B79618B01                                    Exp. Date :               05-AUG-21                   Lot Quantity            : 90
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         7             0065MX               11   M1QE10         M1QE10                                       MICHAELA      3T      EA       80  ____********
+                                               HERBALIFELINE             C-001-01       SURTIDO RESUPPLY
+     Lot Number    :    229683C11                                    Exp. Date :               21-SEP-21                   Lot Quantity            : 80
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         8             0077MX               06   M1QE10         M1QE10                                       MICHAELA      3T      EA      160  ____********
+                                               TC FORMULA                C-039-01       SURTIDO RESUPPLY
+     Lot Number    :    369747F06                                    Exp. Date :               05-NOV-21                   Lot Quantity            : 160
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         23-MAR-2020 20:55
+                                                                              HL Move Order Pick Slip                                              Page :                         3
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 1421055110    Allocated         9             2364MX               01   M1QE10         M1QE10                                       MICHAELA      3T      EA      144  ____********
+                                               HERBALIFE NUMERO 2        E-018-01       SURTIDO RESUPPLY
+                                               POLVO
+     Lot Number    :    999725A01                                    Exp. Date :               20-NOV-21                   Lot Quantity            : 144
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         10            335A                 00   M1QE10         M1QE10                                       MICHAELA      3T      EA        6  ____********
+                                               HLN HERBALIFE             C-030-01       SURTIDO RESUPPLY
+                                               SPORTS BOTTLE
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         11            N262MX               02   M1QE10         M1QE10                                       MICHAELA      3T      EA       10  ____********
+                                               HERBALIFE CREDENTIAL      F-025-01       SURTIDO RESUPPLY
+                                               MB BADGE
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         12            6124MX               03   M1QE10         M1QE10                                       MICHAELA      3T      EA       20  ____********
+                                               DOOR OPENERS SCRATCH      F-003-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         13            N487MX               06   M1QE10         M1QE10                                       MICHAELA      3T      EA      512  ____********
+                                               DOOR OP -  (100 CARD      FG-005-01      SURTIDO RESUPPLY
+                                               SET) COMBO2
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 1421055110    Allocated         14            8812MX               00   M1QE10         M1QE10                                       MICHAELA      3T      EA       10  ____********
+                                               BLACK CAP -               FG-019-01      SURTIDO RESUPPLY
+                                               HERBALIFE 24
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                                                              ***** End of Report *****

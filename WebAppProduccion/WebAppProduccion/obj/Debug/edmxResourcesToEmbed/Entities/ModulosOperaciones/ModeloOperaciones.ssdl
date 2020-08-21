@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3F19C_producccionModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="wh_LineasMO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Line" Type="varchar" MaxLength="50" />
+    <Property Name="Item" Type="varchar" MaxLength="50" />
+    <Property Name="Rev" Type="varchar" MaxLength="50" />
+    <Property Name="SrcLocator" Type="varchar" MaxLength="50" />
+    <Property Name="SrcUbicacion" Type="varchar" MaxLength="50" />
+    <Property Name="DestLocator" Type="varchar" MaxLength="50" />
+    <Property Name="DestUbicacion" Type="varchar" MaxLength="50" />
+    <Property Name="Requester" Type="varchar" MaxLength="50" />
+    <Property Name="Ref" Type="varchar" MaxLength="50" />
+    <Property Name="UoM" Type="varchar" MaxLength="50" />
+    <Property Name="Qty" Type="varchar" MaxLength="50" />
+    <Property Name="Asterisk" Type="varchar" MaxLength="50" />
+    <Property Name="wh_moveorder_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wh_LotesMO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lote" Type="varchar" MaxLength="20" />
+    <Property Name="FechaExpiracion" Type="date" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="wh_LineasMO_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wh_moveorder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumOrder" Type="varchar" MaxLength="50" />
+    <Property Name="FechaAlta" Type="datetime" />
+    <Property Name="wh_statusmo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wh_statusmo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="wh_LineasMO_wh_moveorder_FK">
+    <End Role="wh_moveorder" Type="Self.wh_moveorder" Multiplicity="1" />
+    <End Role="wh_LineasMO" Type="Self.wh_LineasMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_moveorder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_LineasMO">
+        <PropertyRef Name="wh_moveorder_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wh_LotesMO_wh_LineasMO_FK">
+    <End Role="wh_LineasMO" Type="Self.wh_LineasMO" Multiplicity="1" />
+    <End Role="wh_LotesMO" Type="Self.wh_LotesMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_LineasMO">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_LotesMO">
+        <PropertyRef Name="wh_LineasMO_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wh_moveorder_wh_statusmo_FK">
+    <End Role="wh_statusmo" Type="Self.wh_statusmo" Multiplicity="1" />
+    <End Role="wh_moveorder" Type="Self.wh_moveorder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wh_statusmo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="wh_moveorder">
+        <PropertyRef Name="wh_statusmo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A3F19C_producccionModel3StoreContainer">
+    <EntitySet Name="wh_LineasMO" EntityType="Self.wh_LineasMO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wh_LotesMO" EntityType="Self.wh_LotesMO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wh_moveorder" EntityType="Self.wh_moveorder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wh_statusmo" EntityType="Self.wh_statusmo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="wh_LineasMO_wh_moveorder_FK" Association="Self.wh_LineasMO_wh_moveorder_FK">
+      <End Role="wh_moveorder" EntitySet="wh_moveorder" />
+      <End Role="wh_LineasMO" EntitySet="wh_LineasMO" />
+    </AssociationSet>
+    <AssociationSet Name="wh_LotesMO_wh_LineasMO_FK" Association="Self.wh_LotesMO_wh_LineasMO_FK">
+      <End Role="wh_LineasMO" EntitySet="wh_LineasMO" />
+      <End Role="wh_LotesMO" EntitySet="wh_LotesMO" />
+    </AssociationSet>
+    <AssociationSet Name="wh_moveorder_wh_statusmo_FK" Association="Self.wh_moveorder_wh_statusmo_FK">
+      <End Role="wh_statusmo" EntitySet="wh_statusmo" />
+      <End Role="wh_moveorder" EntitySet="wh_moveorder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

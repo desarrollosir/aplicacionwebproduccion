@@ -1,0 +1,71 @@
+Acceso al servidor
+
+AzureAD\Administrador
+OGserver125
+\\Win-qktolltk87n\OGL Company\OPERACIONES\Letty Mendo
+
+Admin equipo Norma
+OGadmin2016.*
+
+Password Google
+Uyl7#8i1
+
+SQL Compaq
+Password12$
+
+Estandar Correo
+OGL2018.*
+
+SMART base
+
+DB_A3F19C_OpenGate_admin
+
+sql7001.site4now.net
+DB_A3F19C_OG_admin
+xQ9znAhU
+DB_A3F19C_OG
+
+
+sql7005.site4now.net
+DB_A3F19C_Pruebas_admin
+xQ9znAhU
+DB_A3F19C_Pruebas
+
+Red Huawei
+CB9247CBU9kSxVsd
+
+Windows Server Login
+OGserver125
+
+Contraseña Gustavo
+g247036J
+
+1007 terminacion de tarjeta para pagar en Office.com
+
+602 repetido
+
+dbOpenGateLogisticsEntities
+
+<add name="DefaultConnection" connectionString="Data Source=localhost;Initial Catalog=dbOpenGateLogistics;User Id=sa;Password=OGserver125;" providerName="System.Data.SqlClient" />
+    <add name="DB_A3F19C_OGEntities" connectionString="metadata=res://*/Entidades.Modelo.csdl|res://*/Entidades.Modelo.ssdl|res://*/Entidades.Modelo.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=SQL7001.site4now.net;initial catalog=DB_A3F19C_OG;user id=DB_A3F19C_OG_admin;password=xQ9znAhU;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="dbOpenGateLogisticsEntities" connectionString="metadata=res://*/Entidades.Modelo.csdl|res://*/Entidades.Modelo.ssdl|res://*/Entidades.Modelo.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=localhost;initial catalog=dbOpenGateLogistics;user id=sa;password=OGserver125;multipleactiveresultsets=True;application name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+
+
+ModeloLogisticaInversa
+dsOrigenLogistica
+
+
+
+
+
+DB_A3F19C_producccion
+sql7001.site4now.net
+DB_A3F19C_producccion_admin
+hpeQewxX32nC9FcU
+
+
+
+sql5047.site4now.net
+DB_A3F19C_gallineros_admin
+xQ9znAhU
+DB_A3F19C_gallineros
