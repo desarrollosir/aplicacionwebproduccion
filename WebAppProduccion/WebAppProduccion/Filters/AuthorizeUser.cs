@@ -48,7 +48,6 @@ namespace WebAppProduccion.Filters
             }
         }
 
-
         private string ObtenerNombreOperacion(int IdOperacion)
         {
             string nombreOperacion;

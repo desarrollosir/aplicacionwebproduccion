@@ -248,7 +248,6 @@ C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProducci
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csprojAssemblyReference.cache
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csproj.CoreCompileInputs.cache
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csproj.CopyComplete
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.dll

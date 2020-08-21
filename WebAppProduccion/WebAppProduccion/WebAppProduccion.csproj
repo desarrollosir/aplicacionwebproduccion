@@ -488,6 +488,8 @@
     <Content Include="Images\inventory.png" />
     <Content Include="Images\LOGO TRANSPARENTE.png" />
     <Content Include="Images\LOGO.jpg" />
+    <Content Include="Images\operaciones.jpg" />
+    <Content Include="Images\procesos.jpg" />
     <Content Include="Images\purchase-order.png" />
     <Content Include="Images\quienessomos-opengate.jpg" />
     <Content Include="Images\servicios-opengate.jpg" />
@@ -5132,6 +5134,7 @@
     <Content Include="Views\proveedores\Edit.cshtml" />
     <Content Include="Views\mo\Index.cshtml" />
     <Content Include="Views\mo\CargarMO.cshtml" />
+    <Content Include="Views\Shared\_LayoutOperaciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
