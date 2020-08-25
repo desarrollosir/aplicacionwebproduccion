@@ -1,55 +1,71 @@
-﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdministracion.cshtml";
+﻿
+@{
+    ViewBag.Title = "IndexMOLines";
+    Layout = "~/Views/Shared/_LayoutOperaciones.cshtml";
 }
+
 
 <div class="x_panel">
     <div class="x_title">
-        <h2> Proveedores <small>Index</small></h2> &nbsp;&nbsp;&nbsp;
-        <a class="btn btn-success" href="@Url.Action("Create")"> <i class="glyphicon glyphicon-plus-sign"></i> Agregar Registros</a>
+        <h2> Move Orders Lines<small>Index</small></h2> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="@Url.Action("CargarMOLines")"> <i class="glyphicon glyphicon-plus-sign"></i> Agregar Registros</a>
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
         <div class="well" style="overflow: auto">
-            <div class="col-md-6 col-xs-12">
-                Razon Social
+            <div class="col-sm-4">
+                Codigo MO Line
                 <div class="form-group">
                     <div class="input-group date">
-                        <input type="text" id="txtRazonSocial" class="form-control" autocomplete="off" />                        
+                        <input id="txtOrder" name="txtOrder" class="form-control" autocomplete="off" />
                         <span class="input-group-addon">
                             <span class="fa fa-list-alt"></span>
                         </span>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <table id="tblProveedores" class="table table-bordered">
+        </div> 
+        <table id="tblMOLines" class="table table-bordered" width="100%">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Razon Social</th>
-                    <th>Nombre Comercial</th>
-                    <th></th>
+                    <th>Order</th>
+                    <th>Type</th>
+                    <th>Line</th>
+                    <th>TransactionType</th>
+                    <th>Item</th>
+                    <th>Rev</th>
+                    <th>SourceSubinv</th>
+                    <th>SourceLocator</th>
+                    <th>DestinationSubinv</th>
+                    <th>DestinationLocator</th>
+                    <th>UOM</th>
+                    <th>TransactionQty</th>
+                    <th>RequestedQty</th>
+                    <th>AllocatedQty</th>
+                    <th>Reason</th>
+                    <th>Reference</th>
+                    <th>LineStatus</th>
+                    <th>CreatedBy</th>
                 </tr>
             </thead>
         </table>
     </div>
 </div>
 
-@*<input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00">*@
 
-@section Styles
-{
-    <!-- Datatables -->
+@section Styles {
+
+    <!-- iCheck -->
+    <link href="~/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
     <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
-    <link href="~/Content/toastr.min.css" rel="stylesheet" />
 }
 
-@section Scripts
-{
+@section Scripts {
+
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js"></script>
@@ -61,11 +77,14 @@
     <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
-    <script src="~/Scripts/CurrencyJs.js"></script>
+
+    <!-- Moment.js: -->
+    <script src="~/vendors/moment/moment.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
-            table = $('#tblProveedores').DataTable({
-                "order": [[0, "desc"]],
+            table = $("#tblMOLines").DataTable({
+                "order": [[0, "asc"]],
                 "ordering": true,
                 "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "pagingType": "simple_numbers",
@@ -74,14 +93,10 @@
                 "serverSide": true,
                 "orderMulti": false,
                 "deferRender": true,
-                rowId: 'id',
-                "ajax": {
-                    "url": "/proveedores/ObtenerProveedores",
-                    "type": "POST",
-                    "datatype": "json"
-                },
+                "responsive": true,
+                rowId: 'Id',
+                select: true,
                 buttons: [
-
                     {
                         extend: 'copyHtml5',
                         text: '<i class="fa fa-files-o"></i>',
@@ -103,7 +118,7 @@
                         text: '<i class="fa fa-file-excel-o"></i>',
                         titleAttr: 'EXCEL',
                         exportOptions: {
-                            columns: ':visible'
+                            columns: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
                         }
                     },
                     {
@@ -117,31 +132,37 @@
                     }
 
                 ],
+                "ajax": {
+                    "url": "/mo/ObtenerMOLines",
+                    "type": "POST",
+                    "datatype": "json"
+                },
                 "aoColumns": [
-                    //0
-                    { "data": "id", "autoWidth": true,  },
-                    //1
-                    { "data": "RazonSocial", "autoWidth": true },  
-                    //
-                    { "data": "NombreComercial", "autoWidth": true },  
-                    //
-                    {
-                        "data": null,
-                        "targets": -1,
-                        "render": function (data, type, full) {
-                            return "<button onclick='Detalle(" + full['id'] + ")' class='btn btn-success '><i class='fa fa-list'></i></button>" +
-                                "<button onclick='Editar(" + full['id'] + ")' class='btn btn-primary '><i class='fa fa-edit'></i></button>";
-                        },
-                        "bSearchable": false,
-                        "sortable": false,
-                        "autoWidth": true,
-                    }
+                    { "data": "Id", "autoWidth": true, "visible": false },     
+                    { "data": "MoNumber", "autoWidth": true, },     
+                    { "data": "Type", "autoWidth": true, },     
+                    { "data": "Line", "autoWidth": true, },     
+                    { "data": "TransactionType", "autoWidth": true, },     
+                    { "data": "Item", "autoWidth": true, },     
+                    { "data": "Rev", "autoWidth": true, },     
+                    { "data": "SourceSubinv", "autoWidth": true, },     
+                    { "data": "SourceLocator", "autoWidth": true, },     
+                    { "data": "DestinationSubinv", "autoWidth": true, },     
+                    { "data": "DestinationLocator", "autoWidth": true, },     
+                    { "data": "UOM", "autoWidth": true, },     
+                    { "data": "TransactionQty", "autoWidth": true, },     
+                    { "data": "RequestedQty", "autoWidth": true, },     
+                    { "data": "AllocatedQty", "autoWidth": true, },     
+                    { "data": "Reason", "autoWidth": true, },     
+                    { "data": "Reference", "autoWidth": true, },     
+                    { "data": "LineStatus", "autoWidth": true, },     
+                    { "data": "CreatedBy", "autoWidth": true, },     
                 ]
             });
 
-            $('#txtRazonSocial').on('keyup', function () {
+            $('#txtOrder').on('keyup', function () {
                 table.columns(0).search(this.value).draw();
-            });          
+            });
         });        
     </script>
 }

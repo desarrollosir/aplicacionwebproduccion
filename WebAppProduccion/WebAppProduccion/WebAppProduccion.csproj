@@ -349,11 +349,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosOperaciones\MOLinesViewModel.cs" />
     <Compile Include="Entities\ModulosOperaciones\MoViewModel.cs" />
     <Compile Include="Entities\ModulosOperaciones\wh_LineasMO.cs">
       <DependentUpon>ModeloOperaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ModulosOperaciones\wh_LotesMO.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_molines.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_molinesdetalles.cs">
       <DependentUpon>ModeloOperaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ModulosOperaciones\wh_moveorder.cs">
@@ -5135,6 +5142,9 @@
     <Content Include="Views\mo\Index.cshtml" />
     <Content Include="Views\mo\CargarMO.cshtml" />
     <Content Include="Views\Shared\_LayoutOperaciones.cshtml" />
+    <Content Include="Views\mo\CargarMOLines.cshtml" />
+    <Content Include="Views\mo\IndexMOLines.cshtml" />
+    <Content Include="Views\mo\VistaDetalles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

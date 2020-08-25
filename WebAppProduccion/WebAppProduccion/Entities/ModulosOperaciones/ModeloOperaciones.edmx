@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_A3F19C_producccionModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_A3F19C_producccionModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="wh_LineasMO">
           <Key>
             <PropertyRef Name="Id" />
@@ -34,6 +34,41 @@
           <Property Name="FechaExpiracion" Type="date" />
           <Property Name="Qty" Type="int" />
           <Property Name="wh_LineasMO_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wh_molines">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumOrder" Type="varchar" MaxLength="50" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="Empleados_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wh_molinesdetalles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Line" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionType" Type="varchar" MaxLength="50" />
+          <Property Name="Item" Type="varchar" MaxLength="50" />
+          <Property Name="Rev" Type="varchar" MaxLength="50" />
+          <Property Name="SourceSubinv" Type="varchar" MaxLength="50" />
+          <Property Name="SourceLocator" Type="varchar" MaxLength="50" />
+          <Property Name="DestinationSubinv" Type="varchar" MaxLength="50" />
+          <Property Name="DestinationLocator" Type="varchar" MaxLength="50" />
+          <Property Name="UOM" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionQty" Type="int" />
+          <Property Name="RequestedQty" Type="int" />
+          <Property Name="AllocatedQty" Type="int" />
+          <Property Name="DateRequired" Type="datetime" />
+          <Property Name="Reason" Type="varchar" MaxLength="50" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="LineStatus" Type="varchar" MaxLength="50" />
+          <Property Name="StatusDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="wh_molines_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="wh_moveorder">
           <Key>
@@ -75,6 +110,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="wh_molinesdetalles_wh_molines_FK">
+          <End Role="wh_molines" Type="Self.wh_molines" Multiplicity="1" />
+          <End Role="wh_molinesdetalles" Type="Self.wh_molinesdetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wh_molines">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="wh_molinesdetalles">
+              <PropertyRef Name="wh_molines_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="wh_moveorder_wh_statusmo_FK">
           <End Role="wh_statusmo" Type="Self.wh_statusmo" Multiplicity="1" />
           <End Role="wh_moveorder" Type="Self.wh_moveorder" Multiplicity="*" />
@@ -90,6 +137,8 @@
         <EntityContainer Name="DB_A3F19C_producccionModel3StoreContainer">
           <EntitySet Name="wh_LineasMO" EntityType="Self.wh_LineasMO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="wh_LotesMO" EntityType="Self.wh_LotesMO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wh_molines" EntityType="Self.wh_molines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wh_molinesdetalles" EntityType="Self.wh_molinesdetalles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="wh_moveorder" EntityType="Self.wh_moveorder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="wh_statusmo" EntityType="Self.wh_statusmo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="wh_LineasMO_wh_moveorder_FK" Association="Self.wh_LineasMO_wh_moveorder_FK">
@@ -100,13 +149,16 @@
             <End Role="wh_LineasMO" EntitySet="wh_LineasMO" />
             <End Role="wh_LotesMO" EntitySet="wh_LotesMO" />
           </AssociationSet>
+          <AssociationSet Name="wh_molinesdetalles_wh_molines_FK" Association="Self.wh_molinesdetalles_wh_molines_FK">
+            <End Role="wh_molines" EntitySet="wh_molines" />
+            <End Role="wh_molinesdetalles" EntitySet="wh_molinesdetalles" />
+          </AssociationSet>
           <AssociationSet Name="wh_moveorder_wh_statusmo_FK" Association="Self.wh_moveorder_wh_statusmo_FK">
             <End Role="wh_statusmo" EntitySet="wh_statusmo" />
             <End Role="wh_moveorder" EntitySet="wh_moveorder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_A3F19C_producccionModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -215,7 +267,62 @@
             <End Role="wh_statusmo" EntitySet="wh_statusmo" />
             <End Role="wh_moveorder" EntitySet="wh_moveorder" />
           </AssociationSet>
+          <EntitySet Name="wh_molines" EntityType="DB_A3F19C_producccionModel3.wh_molines" />
+          <EntitySet Name="wh_molinesdetalles" EntityType="DB_A3F19C_producccionModel3.wh_molinesdetalles" />
+          <AssociationSet Name="wh_molinesdetalles_wh_molines_FK" Association="DB_A3F19C_producccionModel3.wh_molinesdetalles_wh_molines_FK">
+            <End Role="wh_molines" EntitySet="wh_molines" />
+            <End Role="wh_molinesdetalles" EntitySet="wh_molinesdetalles" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="wh_molines">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="Empleados_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="wh_molinesdetalles" Relationship="DB_A3F19C_producccionModel3.wh_molinesdetalles_wh_molines_FK" FromRole="wh_molines" ToRole="wh_molinesdetalles" />
+        </EntityType>
+        <EntityType Name="wh_molinesdetalles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Line" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rev" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceSubinv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceLocator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationSubinv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationLocator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionQty" Type="Int32" />
+          <Property Name="RequestedQty" Type="Int32" />
+          <Property Name="AllocatedQty" Type="Int32" />
+          <Property Name="DateRequired" Type="DateTime" Precision="3" />
+          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wh_molines_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="wh_molines" Relationship="DB_A3F19C_producccionModel3.wh_molinesdetalles_wh_molines_FK" FromRole="wh_molinesdetalles" ToRole="wh_molines" />
+        </EntityType>
+        <Association Name="wh_molinesdetalles_wh_molines_FK">
+          <End Type="DB_A3F19C_producccionModel3.wh_molines" Role="wh_molines" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel3.wh_molinesdetalles" Role="wh_molinesdetalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wh_molines">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="wh_molinesdetalles">
+              <PropertyRef Name="wh_molines_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -269,6 +376,43 @@
               <MappingFragment StoreEntitySet="wh_statusmo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wh_molines">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_molines">
+              <MappingFragment StoreEntitySet="wh_molines">
+                <ScalarProperty Name="Empleados_Id" ColumnName="Empleados_Id" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="NumOrder" ColumnName="NumOrder" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wh_molinesdetalles">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_molinesdetalles">
+              <MappingFragment StoreEntitySet="wh_molinesdetalles">
+                <ScalarProperty Name="wh_molines_Id" ColumnName="wh_molines_Id" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+                <ScalarProperty Name="LineStatus" ColumnName="LineStatus" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="DateRequired" ColumnName="DateRequired" />
+                <ScalarProperty Name="AllocatedQty" ColumnName="AllocatedQty" />
+                <ScalarProperty Name="RequestedQty" ColumnName="RequestedQty" />
+                <ScalarProperty Name="TransactionQty" ColumnName="TransactionQty" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="DestinationLocator" ColumnName="DestinationLocator" />
+                <ScalarProperty Name="DestinationSubinv" ColumnName="DestinationSubinv" />
+                <ScalarProperty Name="SourceLocator" ColumnName="SourceLocator" />
+                <ScalarProperty Name="SourceSubinv" ColumnName="SourceSubinv" />
+                <ScalarProperty Name="Rev" ColumnName="Rev" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

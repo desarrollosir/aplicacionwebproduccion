@@ -29,5 +29,7 @@ namespace WebAppProduccion.Entities.ModulosOperaciones
         public virtual DbSet<wh_LotesMO> wh_LotesMO { get; set; }
         public virtual DbSet<wh_moveorder> wh_moveorder { get; set; }
         public virtual DbSet<wh_statusmo> wh_statusmo { get; set; }
+        public virtual DbSet<wh_molines> wh_molines { get; set; }
+        public virtual DbSet<wh_molinesdetalles> wh_molinesdetalles { get; set; }
     }
 }

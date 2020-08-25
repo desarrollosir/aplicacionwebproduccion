@@ -1,0 +1,43 @@
+﻿@model List<WebAppProduccion.Entities.ModulosOperaciones.wh_molinesdetalles>
+
+@{
+    Layout = null;
+}
+
+<div class="modal-header text-center">
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">Diferencia de SKUS</h4>
+</div>
+<div class="modal-body">    
+    <table id="tblSKUS" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>SKU</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.Item
+                </td>
+                <td>
+                    @item.AllocatedQty
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    <input type="submit" value="Guardar" class="btn btn-default" />
+</div>
+
+<script>
+    var table = $('#tblSKUS').DataTable();
+</script>

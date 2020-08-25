@@ -185,7 +185,7 @@
                                 Clabe Interbancaria <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input id="txtClabeInterbancaria" type="text" class="form-control col-md-7 col-xs-12">
+                                <input id="txtClabeInterbancaria" type="number" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
                     </div>
@@ -406,36 +406,33 @@
                     contactos: _contactos,
                 });
 
-                if (GuardarInformacion(data)) {
-                    window.location = '/proveedores/Index';
-                }
-                else {
-                    $modal.modal('hide');
-                    toastr.error("PROBLEMAS");
-                }
+
+                $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    type: 'POST',
+                    url: "/proveedores/CreateProveedor",
+                    data: data,
+                    success: function (result) {
+                        if (result.respuesta) {
+                            toastr.success("OK");
+                            $modal.modal('hide');
+                        }
+                        else {
+                            $modal.modal('hide');
+                            toastr.error("PROBLEMAS");
+                        }
+                    },
+                    error: function () {
+                        $modal.modal('hide');
+                        toastr.error("PROBLEMAS");
+                    }
+                });
             }
         }
 
         function GuardarInformacion(data) {
-            return $.ajax({
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                type: 'POST',
-                url: "/proveedores/CreateProveedor",
-                data: data,
-                success: function (result) {
-                    if (result.respuesta) {
-                        return true;
-                    }
-                    else {
-                        alert('Error');
-                        return false;
-                    }
-                },
-                error: function () {
-                    return false;
-                }
-            });
+            return 
         }
 
         function MensajeError(campo) {      

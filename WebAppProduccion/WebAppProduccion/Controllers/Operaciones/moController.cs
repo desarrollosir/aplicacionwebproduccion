@@ -10,6 +10,12 @@ using System.Configuration;
 using System.Web.Management;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Globalization;
+using System.Web.Helpers;
+using System.Data;
+using WebAppProduccion.Entities.ModulosSistemas;
+using System.Runtime.CompilerServices;
+using WebAppProduccion.Filters;
 
 namespace WebAppProduccion.Controllers.Operaciones
 {
@@ -17,6 +23,7 @@ namespace WebAppProduccion.Controllers.Operaciones
     {
         DB_A3F19C_producccionEntities3 db = new DB_A3F19C_producccionEntities3();
         // GET: mo
+        [AuthorizeUser(IdOperacion: 33)]
         public ActionResult Index()
         {            
             return View();
@@ -106,7 +113,9 @@ namespace WebAppProduccion.Controllers.Operaciones
                         }
                         else
                         {
-                            linea.FechaExpiracion = Convert.ToDateTime(fecha).ToShortDateString();
+                            DateTime date1 = DateTime.Parse(fecha);
+
+                            linea.FechaExpiracion = date1.ToString(CultureInfo.GetCultureInfo("es-MX").DateTimeFormat.ShortDatePattern);
                         }
                         lista.Add(linea);
                     }
@@ -124,6 +133,7 @@ namespace WebAppProduccion.Controllers.Operaciones
             return Json(new { draw = Draw, recordsFiltered = TotalRecords, recordsTotal = TotalRecords, data = NewItems }, JsonRequestBehavior.AllowGet);            
         }
 
+        [AuthorizeUser(IdOperacion: 34)]
         public ActionResult CargarMO(string mensaje) 
         {
             ViewBag.Msn = mensaje;
@@ -349,6 +359,282 @@ namespace WebAppProduccion.Controllers.Operaciones
             db.SaveChanges();
 
             return mo.Id;
+        }
+                
+        public JsonResult CantidadesPorMO(string mo)
+        {
+            var moid = db.wh_moveorder.Where(x => x.NumOrder.Equals(mo)).FirstOrDefault();
+
+            if (moid != null)
+            {
+                var conteolineas = db.wh_LineasMO.Where(x => x.wh_moveorder_Id.Equals(moid.Id)).Select(x => x.Item).Count();
+
+                var cantidadessku = db.wh_LineasMO.Where(x => x.wh_moveorder_Id.Equals(moid.Id)).ToList();
+
+                int sumalineas = 0;
+                foreach (var item in cantidadessku)
+                {
+                    sumalineas = sumalineas + int.Parse(item.Qty);
+                }
+
+                int? sumalote = 0;
+                int? sumalinea = 0;
+                foreach (var item in cantidadessku)
+                {
+                    var lot = db.wh_LotesMO.Where(x => x.wh_LineasMO_Id == item.Id).Sum(x => x.Qty);
+
+                    if (lot != null)
+                    {
+                        sumalote += lot.Value;
+                    }
+                    else
+                    {
+                        sumalinea += int.Parse(item.Qty);
+                    }
+                }
+
+                int? sumatotal = sumalinea + sumalote;
+
+                int? sumamoline = 0;
+                var molines = db.wh_molines.Where(x => x.NumOrder.Equals(mo)).FirstOrDefault();
+                if (molines != null)
+                {
+                    sumamoline = db.wh_molinesdetalles.Where(x => x.wh_molines_Id.Equals(molines.Id)).Sum(x => x.AllocatedQty);
+                }
+
+                return Json(new { qtysku = conteolineas, sumlineas = sumalineas, sumalotes = sumalote, sumasinlote = sumalinea, sumatotales = sumatotal, skumoline = sumamoline }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { qtysku = 0, sumqtysku = 0, sumatotales = 0, skumoline = 0 }, JsonRequestBehavior.AllowGet);
+        }
+
+        [AuthorizeUser(IdOperacion: 35)]
+        public ActionResult IndexMOLines()
+        {
+            return View();
+        }
+
+        public ActionResult ObtenerMOLines() 
+        {
+            var Draw = Request.Form.GetValues("draw").FirstOrDefault();
+            var Start = Request.Form.GetValues("start").FirstOrDefault();
+            var Length = Request.Form.GetValues("length").FirstOrDefault();
+            var SortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][data]").FirstOrDefault();
+            var SortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
+
+            var orden = Request.Form.GetValues("columns[0][search][value]").FirstOrDefault();
+
+            int PageSize = Length != null ? Convert.ToInt32(Length) : 0;
+            int Skip = Start != null ? Convert.ToInt32(Start) : 0;
+            int TotalRecords = 0;
+
+            List<wh_molinesdetalles> lista = new List<wh_molinesdetalles>();
+
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionGlobal"].ToString()))
+            {
+                con.Open();
+
+                string sql = "exec [SP_MOLinesIndex_ParametrosOpcionales] @numeroorden";
+                var query = new SqlCommand(sql, con);
+
+               
+                if (orden != "")
+                {
+                    query.Parameters.AddWithValue("@numeroorden", orden);
+                }
+                else
+                {
+                    query.Parameters.AddWithValue("@numeroorden", DBNull.Value);
+                }
+
+                using (var dr = query.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        // facturas
+                        var linea = new wh_molinesdetalles();
+
+                        linea.Id = Convert.ToInt32(dr["Id"]);
+                        linea.MoNumber = dr["NumOrder"].ToString();
+                        linea.Type = dr["Type"].ToString();
+                        linea.Line = dr["Line"].ToString();
+                        linea.TransactionType = dr["TransactionType"].ToString();
+                        linea.Item = dr["Item"].ToString();
+                        linea.Rev = dr["Rev"].ToString();
+                        linea.SourceSubinv = dr["SourceSubinv"].ToString();
+                        linea.SourceLocator = dr["SourceLocator"].ToString();
+                        linea.DestinationSubinv = dr["DestinationSubinv"].ToString();
+                        linea.DestinationLocator = dr["DestinationLocator"].ToString();
+                        linea.UOM = dr["UOM"].ToString();
+                        linea.TransactionQty = int.Parse(dr["TransactionQty"].ToString());
+                        linea.RequestedQty = int.Parse(dr["RequestedQty"].ToString());
+                        linea.AllocatedQty = int.Parse(dr["AllocatedQty"].ToString());
+                        //linea.DateRequired = dr["DateRequired"].ToString();
+                        linea.Reason = dr["Reason"].ToString();
+                        linea.Reference = dr["Reference"].ToString();
+                        linea.LineStatus = dr["LineStatus"].ToString();
+                        //linea.StatusDate = dr["StatusDate"].ToString();
+                        linea.CreatedBy = dr["CreatedBy"].ToString();                        
+
+                        lista.Add(linea);
+                    }
+                }
+            }
+
+            if (!(string.IsNullOrEmpty(SortColumn) && string.IsNullOrEmpty(SortColumnDir)))
+            {
+                lista = lista.OrderBy(SortColumn + " " + SortColumnDir).ToList();
+            }
+
+            TotalRecords = lista.ToList().Count();
+            var NewItems = lista.Skip(Skip).Take(PageSize == -1 ? TotalRecords : PageSize).ToList();
+
+            return Json(new { draw = Draw, recordsFiltered = TotalRecords, recordsTotal = TotalRecords, data = NewItems }, JsonRequestBehavior.AllowGet);
+        }
+
+        [AuthorizeUser(IdOperacion: 36)]
+        public ActionResult CargarMOLines(string mensaje)
+        {
+            ViewBag.Msn = mensaje;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ImportarMOLines(HttpPostedFileBase postedFileBase)
+        {
+            try
+            {
+                string filePath = string.Empty;
+
+                if (postedFileBase != null)
+                {
+                    string path = Server.MapPath("~/Uploads/");
+
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    filePath = path + Path.GetFileName(postedFileBase.FileName);
+                    string extension = Path.GetExtension(postedFileBase.FileName);
+                    string numeromo = Path.GetFileName(postedFileBase.FileName);
+                    numeromo = numeromo.Replace(".txt", "");
+
+                    int idmoline = AgregarMoLines(numeromo);
+
+                    postedFileBase.SaveAs(filePath);
+                    
+                    DataTable dtCharge = new DataTable();
+
+                    StreamReader streamreader = new StreamReader(@"" + filePath);
+                    char[] delimiter = new char[] { '\t' };
+                    string[] columnheaders = streamreader.ReadLine().Split(delimiter);
+
+                    foreach (string columnheader in columnheaders)
+                    {
+                        dtCharge.Columns.Add(columnheader); // I've added the column headers here.
+                    }                    
+
+                    while (streamreader.Peek() > 0)
+                    {
+                        DataRow datarow = dtCharge.NewRow();
+                        datarow.ItemArray = streamreader.ReadLine().Split(delimiter);
+                        dtCharge.Rows.Add(datarow);
+                    }
+
+                    AgregarDetalleMOLines(idmoline, dtCharge); 
+                }
+
+                return RedirectToAction("IndexMOLines");
+            }
+            catch (Exception _ex)
+            {
+                return RedirectToAction("CargarMOLines", new { mensaje = _ex.Message.ToString() });
+            }
+        }
+
+        public bool AgregarDetalleMOLines(int idmolines, DataTable dtCharge) 
+        {
+            List<wh_molinesdetalles> lista = new List<wh_molinesdetalles>();
+            foreach (DataRow row in dtCharge.Rows)
+            {
+                wh_molinesdetalles linea = new wh_molinesdetalles();                
+                linea.Type = row[2].ToString();
+                linea.Line = row[3].ToString();
+                linea.TransactionType = row[4].ToString();
+                linea.Item = row[5].ToString();
+                linea.Rev = row[6].ToString();
+                linea.SourceSubinv = row[7].ToString();
+                linea.SourceLocator = row[8].ToString();
+                linea.DestinationSubinv = row[9].ToString();
+                linea.DestinationLocator = row[10].ToString();
+                linea.UOM = row[17].ToString();
+                linea.TransactionQty = int.Parse(row[18].ToString());
+                linea.RequestedQty = int.Parse(row[19].ToString());
+                linea.AllocatedQty = int.Parse(row[22].ToString());
+                linea.DateRequired = DateTime.Parse(row[30].ToString());
+                linea.Reason = row[31].ToString();
+                linea.Reference = row[32].ToString();
+                linea.LineStatus = row[40].ToString();
+                linea.StatusDate = DateTime.Parse(row[41].ToString());
+                linea.CreatedBy = row[42].ToString();
+
+                linea.wh_molines_Id = idmolines;
+                lista.Add(linea);
+            }
+
+            db.wh_molinesdetalles.AddRange(lista);
+            db.SaveChanges();
+            return true;
+        }
+
+        public int AgregarMoLines(string numorder)
+        {
+            DB_A3F19C_producccionEntities1 dbEmpleados = new DB_A3F19C_producccionEntities1();
+            var empleado = dbEmpleados.empleados.Where(x => x.Email.Equals(User.Identity.Name));
+
+            wh_molines molines = new wh_molines();
+            molines.Empleados_Id = 1;
+            molines.FechaCreacion = DateTime.Now;
+            molines.NumOrder = numorder;
+
+            db.wh_molines.Add(molines);
+            db.SaveChanges();
+
+            return molines.Id;
+        }
+
+        public ActionResult VistaDetalles(string mo) 
+        {
+            var lineasmo = from lineas in db.wh_LineasMO
+                           where lineas.wh_moveorder.NumOrder.Equals(mo)
+                           select new { lineas.Item, lineas.Qty };
+
+            var molinedetalle = db.wh_molinesdetalles.Where(x => x.wh_molines.NumOrder.Equals(mo)).ToList();
+
+            List<wh_molinesdetalles> listaMalos = new List<wh_molinesdetalles>();
+
+            foreach (var item in lineasmo)
+            {                
+                int qtycantidad = int.Parse(item.Qty);
+                string sku = item.Item;
+
+                var skumolin = molinedetalle.Where(x => x.Item.Equals(sku)).FirstOrDefault();
+
+                if (skumolin != null)
+                {
+                    int? qtymolin = skumolin.AllocatedQty;
+                    string skulin = skumolin.Item;
+
+                    if (qtycantidad != qtymolin)
+                    {
+                        wh_molinesdetalles obj = new wh_molinesdetalles();
+                        obj.Item = item.Item;
+                        obj.AllocatedQty = int.Parse(item.Qty);
+                        listaMalos.Add(obj);
+                    }
+                }                
+            }    
+            return View(listaMalos);
         }
     }
 

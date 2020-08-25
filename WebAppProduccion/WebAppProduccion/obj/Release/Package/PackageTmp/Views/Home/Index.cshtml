@@ -107,6 +107,25 @@
     </div>
 }
 
+@if (User.IsInRole("admin") || User.IsInRole("coordinadorplaneacion") || User.IsInRole("coordinadoroperaciones"))
+{
+    //Tareas
+    <div class="col-md-3 col-sm-3 col-xs-12" style="text-align:center">
+        <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+                <h2>Operaciones</h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <a href='@Url.Action("Index", "mo")'>
+                    <img src='@Url.Content("~/images/procesos.jpg")' height="170" />
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
 @if (User.IsInRole("admin") || User.IsInRole("homedeliveryqro"))
 {
     //Home Delivery
