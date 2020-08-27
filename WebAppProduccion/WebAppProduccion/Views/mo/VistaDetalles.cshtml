@@ -11,11 +11,12 @@
     <h4 class="modal-title">Diferencia de SKUS</h4>
 </div>
 <div class="modal-body">    
-    <table id="tblSKUS" class="table table-bordered">
+    <table id="tblSKUS" class="table table-bordered" width="100%">
         <thead>
             <tr>
                 <th>Item</th>
-                <th>SKU</th>
+                <th>Qty MO Lines</th>
+                <th>Qty MO</th>                
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@
                 </td>
                 <td>
                     @item.AllocatedQty
+                </td>
+                <td>
+                    @item.TransactionQty
                 </td>
             </tr>
             }
