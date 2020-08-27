@@ -23,26 +23,26 @@ namespace WebAppProduccion.Controllers.Operaciones
     {
         DB_A3F19C_producccionEntities3 db = new DB_A3F19C_producccionEntities3();
         // GET: mo
-        //[AuthorizeUser(IdOperacion: 33)]
+        [AuthorizeUser(IdOperacion: 33)]
         public ActionResult Index()
         {            
             return View();
         }
 
-        //[AuthorizeUser(IdOperacion: 34)]
+        [AuthorizeUser(IdOperacion: 34)]
         public ActionResult CargarMO(string mensaje)
         {
             ViewBag.Msn = mensaje;
             return View();
         }
 
-        //[AuthorizeUser(IdOperacion: 35)]
+        [AuthorizeUser(IdOperacion: 35)]
         public ActionResult IndexMOLines()
         {
             return View();
         }
 
-        //[AuthorizeUser(IdOperacion: 36)]
+        [AuthorizeUser(IdOperacion: 36)]
         public ActionResult CargarMOLines(string mensaje)
         {
             ViewBag.Msn = mensaje;
