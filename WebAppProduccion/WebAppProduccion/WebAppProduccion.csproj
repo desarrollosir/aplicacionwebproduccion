@@ -192,6 +192,7 @@
     <Compile Include="Controllers\LogisticasInversas\li_statusController.cs" />
     <Compile Include="Controllers\LogisticasInversas\logisticasController.cs" />
     <Compile Include="Controllers\LogisticasInversas\skusbenavidesController.cs" />
+    <Compile Include="Controllers\Operaciones\masterskusController.cs" />
     <Compile Include="Controllers\Operaciones\moController.cs" />
     <Compile Include="Controllers\Sistemas\skusController.cs" />
     <Compile Include="Controllers\LogisticasInversas\skusinventariosController.cs" />
@@ -334,6 +335,7 @@
     <Compile Include="Entities\ModulosEscaneos\wl_waldos.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosOperaciones\MasterSKUSViewModel.cs" />
     <Compile Include="Entities\ModulosOperaciones\ModeloOperaciones.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -355,6 +357,9 @@
       <DependentUpon>ModeloOperaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ModulosOperaciones\wh_LotesMO.cs">
+      <DependentUpon>ModeloOperaciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosOperaciones\wh_masterskus.cs">
       <DependentUpon>ModeloOperaciones.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ModulosOperaciones\wh_molines.cs">
@@ -5145,6 +5150,9 @@
     <Content Include="Views\mo\CargarMOLines.cshtml" />
     <Content Include="Views\mo\IndexMOLines.cshtml" />
     <Content Include="Views\mo\VistaDetalles.cshtml" />
+    <Content Include="Views\masterskus\Index.cshtml" />
+    <Content Include="Views\masterskus\Create.cshtml" />
+    <Content Include="Views\masterskus\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

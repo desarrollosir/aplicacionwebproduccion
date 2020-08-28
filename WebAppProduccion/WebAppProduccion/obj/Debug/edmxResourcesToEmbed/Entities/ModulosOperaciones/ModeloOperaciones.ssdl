@@ -30,6 +30,16 @@
     <Property Name="Qty" Type="int" />
     <Property Name="wh_LineasMO_Id" Type="bigint" Nullable="false" />
   </EntityType>
+  <EntityType Name="wh_masterskus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PiezasPorCaja" Type="int" />
+    <Property Name="CajasPorCama" Type="int" />
+    <Property Name="PiezasPorTarima" Type="int" />
+    <Property Name="skus_id" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="wh_molines">
     <Key>
       <PropertyRef Name="Id" />
@@ -132,6 +142,7 @@
   <EntityContainer Name="DB_A3F19C_producccionModel3StoreContainer">
     <EntitySet Name="wh_LineasMO" EntityType="Self.wh_LineasMO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="wh_LotesMO" EntityType="Self.wh_LotesMO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wh_masterskus" EntityType="Self.wh_masterskus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="wh_molines" EntityType="Self.wh_molines" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="wh_molinesdetalles" EntityType="Self.wh_molinesdetalles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="wh_moveorder" EntityType="Self.wh_moveorder" Schema="dbo" store:Type="Tables" />

@@ -111,6 +111,7 @@
       <End Role="wh_molines" EntitySet="wh_molines" />
       <End Role="wh_molinesdetalles" EntitySet="wh_molinesdetalles" />
     </AssociationSet>
+    <EntitySet Name="wh_masterskus" EntityType="DB_A3F19C_producccionModel3.wh_masterskus" />
   </EntityContainer>
   <EntityType Name="wh_molines">
     <Key>
@@ -161,4 +162,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="wh_masterskus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PiezasPorCaja" Type="Int32" />
+    <Property Name="CajasPorCama" Type="Int32" />
+    <Property Name="PiezasPorTarima" Type="Int32" />
+    <Property Name="skus_id" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

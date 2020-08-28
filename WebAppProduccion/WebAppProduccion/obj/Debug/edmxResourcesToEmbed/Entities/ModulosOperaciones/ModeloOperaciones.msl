@@ -88,5 +88,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="wh_masterskus">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel3.wh_masterskus">
+        <MappingFragment StoreEntitySet="wh_masterskus">
+          <ScalarProperty Name="skus_id" ColumnName="skus_id" />
+          <ScalarProperty Name="PiezasPorTarima" ColumnName="PiezasPorTarima" />
+          <ScalarProperty Name="CajasPorCama" ColumnName="CajasPorCama" />
+          <ScalarProperty Name="PiezasPorCaja" ColumnName="PiezasPorCaja" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
