@@ -113,130 +113,141 @@ namespace WebAppProduccion.Controllers.Operaciones
 
                                 wh_LineasMO mO = new wh_LineasMO();
 
-                                if (lineamolistacorregidoconcomas.Contains(numeromo))
+                                try
                                 {
-                                    string[] lineas;
-                                    lineas = lineamolistacorregidoconcomas.Split(',');
+                                    if (lineamolistacorregidoconcomas.Contains(numeromo))
+                                    {
+                                        string[] lineas;
+                                        lineas = lineamolistacorregidoconcomas.Split(',');
 
-                                    mO.wh_moveorder_Id = idmo;
-                                    mO.Status = lineas[1].ToString();
-                                    mO.Line = lineas[2].ToString();
-                                    mO.Item = lineas[3].ToString();
-                                    mO.Rev = lineas[4].ToString();
-                                    mO.SrcLocator = lineas[5].ToString();
-                                    mO.DestLocator = lineas[6].ToString();
-                                    mO.Requester = lineas[7].ToString();
-                                    mO.Ref = lineas[8].ToString();
-                                    mO.UoM = lineas[9].ToString();
-                                    mO.Qty = lineas[10].ToString();
-                                    mO.Asterisk = lineas[11].ToString();
-                                    mO.SrcUbicacion = "";
-                                    mO.DestUbicacion = "";
+                                        mO.wh_moveorder_Id = idmo;
+                                        mO.Status = lineas[1].ToString();
+                                        mO.Line = lineas[2].ToString();
+                                        mO.Item = lineas[3].ToString();
+                                        mO.Rev = lineas[4].ToString();
+                                        mO.SrcLocator = lineas[5].ToString();
+                                        mO.DestLocator = lineas[6].ToString();
+                                        mO.Requester = lineas[7].ToString();
+                                        mO.Ref = lineas[8].ToString();
+                                        mO.UoM = lineas[9].ToString();
+                                        mO.Qty = lineas[10].ToString();
+                                        mO.Asterisk = lineas[11].ToString();
+                                        mO.SrcUbicacion = "";
+                                        mO.DestUbicacion = "";
 
-                                    id++;
+                                        id++;
 
-                                    mO.Id = id;
+                                        mO.Id = id;
 
-                                    listaBD.Add(mO);
+                                        listaBD.Add(mO);
+                                    }
+                                    else if (lineamolistacorregidoconcomas.Contains("SURTIDO") || lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                    {
+                                        string[] lineas;
+                                        lineas = lineamolistacorregidoconcomas.Split(',');
+
+                                        wh_LineasMO linea = listaBD.Where(x => x.Id == id).FirstOrDefault();
+
+                                        if (lineas.Length == 3)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[1].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[2].ToString();
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                        }
+                                        else if (lineas.Length == 4)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[2].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[3].ToString();
+                                            }
+                                            else
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += (lineas[1].ToString());
+                                                linea.DestUbicacion = linea.DestUbicacion += (lineas[2].ToString() + " " + lineas[3].ToString());
+                                            }
+                                        }
+                                        else if (lineas.Length == 5)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[3].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[4].ToString();
+                                            }
+                                            else
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += (lineas[2].ToString());
+                                                linea.DestUbicacion = linea.DestUbicacion += (lineas[3].ToString() + " " + lineas[4].ToString());
+                                            }
+                                        }
+                                        else if (lineas.Length == 6)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[4].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[5].ToString();
+                                            }
+                                            else
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += (lineas[3].ToString());
+                                                linea.DestUbicacion = linea.DestUbicacion += (lineas[4].ToString() + " " + lineas[5].ToString());
+                                            }
+                                        }
+                                        else if (lineas.Length == 7)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[5].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[6].ToString();
+                                            }
+                                            else
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += (lineas[4].ToString());
+                                                linea.DestUbicacion = linea.DestUbicacion += (lineas[5].ToString() + " " + lineas[6].ToString());
+                                            }
+                                        }
+                                        else if (lineas.Length == 8)
+                                        {
+                                            if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += lineas[6].ToString();
+                                                linea.DestUbicacion = linea.DestUbicacion += lineas[7].ToString();
+                                            }
+                                            else
+                                            {
+                                                linea.SrcUbicacion = linea.SrcUbicacion += (lineas[5].ToString());
+                                                linea.DestUbicacion = linea.DestUbicacion += (lineas[6].ToString() + " " + lineas[7].ToString());
+                                            }
+                                        }
+                                    }
+                                    else if (lineamolistacorregidoconcomas.Contains("Lot"))
+                                    {
+                                        string[] lineas;
+                                        lineas = lineamolistacorregidoconcomas.Split(',');
+
+                                        wh_LotesMO lotes = new wh_LotesMO();
+                                        lotes.Lote = lineas[3].ToString();
+                                        lotes.FechaExpiracion = DateTime.Parse(lineas[7].ToString());
+                                        lotes.Qty = int.Parse(lineas[11].ToString());
+                                        lotes.wh_LineasMO_Id = id;
+
+                                        listaLotes.Add(lotes);
+                                    }
                                 }
-                                else if (lineamolistacorregidoconcomas.Contains("SURTIDO") || lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
+                                catch (Exception _ex)
                                 {
-                                    string[] lineas;
-                                    lineas = lineamolistacorregidoconcomas.Split(',');
-
-                                    wh_LineasMO linea = listaBD.Where(x => x.Id == id).FirstOrDefault();
-
-                                    if (lineas.Length == 3)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[1].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[2].ToString();
-                                        }
-                                        else
-                                        {
-
-                                        }
-                                    }
-                                    else if (lineas.Length == 4)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[2].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[3].ToString();
-                                        }
-                                        else
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += (lineas[1].ToString());
-                                            linea.DestUbicacion = linea.DestUbicacion += (lineas[2].ToString() + " " + lineas[3].ToString());
-                                        }
-                                    }
-                                    else if (lineas.Length == 5)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[3].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[4].ToString();
-                                        }
-                                        else
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += (lineas[2].ToString());
-                                            linea.DestUbicacion = linea.DestUbicacion += (lineas[3].ToString() + " " + lineas[4].ToString());
-                                        }
-                                    }
-                                    else if (lineas.Length == 6)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[4].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[5].ToString();
-                                        }
-                                        else
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += (lineas[3].ToString());
-                                            linea.DestUbicacion = linea.DestUbicacion += (lineas[4].ToString() + " " + lineas[5].ToString());
-                                        }
-                                    }
-                                    else if (lineas.Length == 7)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[5].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[6].ToString();
-                                        }
-                                        else
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += (lineas[4].ToString());
-                                            linea.DestUbicacion = linea.DestUbicacion += (lineas[5].ToString() + " " + lineas[6].ToString());
-                                        }
-                                    }
-                                    else if (lineas.Length == 8)
-                                    {
-                                        if (lineamolistacorregidoconcomas.Contains("ETIQUETADO"))
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += lineas[6].ToString();
-                                            linea.DestUbicacion = linea.DestUbicacion += lineas[7].ToString();
-                                        }
-                                        else
-                                        {
-                                            linea.SrcUbicacion = linea.SrcUbicacion += (lineas[5].ToString());
-                                            linea.DestUbicacion = linea.DestUbicacion += (lineas[6].ToString() + " " + lineas[7].ToString());
-                                        }
-                                    }
+                                    Console.WriteLine(_ex.Message.ToString());
+                                    Console.WriteLine(lineamolistacorregidoconcomas);
+                                    throw;
                                 }
-                                else if (lineamolistacorregidoconcomas.Contains("Lot"))
-                                {
-                                    string[] lineas;
-                                    lineas = lineamolistacorregidoconcomas.Split(',');
 
-                                    wh_LotesMO lotes = new wh_LotesMO();
-                                    lotes.Lote = lineas[3].ToString();
-                                    lotes.FechaExpiracion = DateTime.Parse(lineas[7].ToString());
-                                    lotes.Qty = int.Parse(lineas[11].ToString());
-                                    lotes.wh_LineasMO_Id = id;
-
-                                    listaLotes.Add(lotes);
-                                }
+                                
                             }
                         }
 

@@ -12,20 +12,17 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
     using System;
     using System.Collections.Generic;
     
-    public partial class auditores
+    public partial class hd_statusorden
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public auditores()
+        public hd_statusorden()
         {
-            this.wl_cajas = new HashSet<wl_cajas>();
             this.hd_ordenes = new HashSet<hd_ordenes>();
         }
     
         public int id { get; set; }
-        public string nombres { get; set; }
+        public string descripcion { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<wl_cajas> wl_cajas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hd_ordenes> hd_ordenes { get; set; }
     }

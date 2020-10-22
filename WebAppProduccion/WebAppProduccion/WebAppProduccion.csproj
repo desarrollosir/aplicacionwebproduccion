@@ -181,6 +181,7 @@
     <Compile Include="Controllers\Administracion\ordenescompraController.cs" />
     <Compile Include="Controllers\Administracion\proveedoresController.cs" />
     <Compile Include="Controllers\Administracion\statusproveedorsController.cs" />
+    <Compile Include="Controllers\HomeDelivery\hd_skushomedeliveryController.cs" />
     <Compile Include="Controllers\HomeDelivery\homedeliveryController.cs" />
     <Compile Include="Controllers\HomeDelivery\kitsController.cs" />
     <Compile Include="Controllers\HomeDelivery\kitskusController.cs" />
@@ -254,6 +255,24 @@
     <Compile Include="Entities\ModulosEscaneos\CajasWaldosViewModel.cs" />
     <Compile Include="Entities\ModulosEscaneos\DetalleCajaViewModel.cs" />
     <Compile Include="Entities\ModulosEscaneos\DetalleEnvioViewModel.cs" />
+    <Compile Include="Entities\ModulosEscaneos\hd_codigosqr.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosEscaneos\hd_detordenesskus.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosEscaneos\hd_ordenes.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosEscaneos\hd_skushomedelivery.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosEscaneos\hd_statusorden.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosEscaneos\hd_statusquickship.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\ModulosEscaneos\kits.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -308,6 +327,7 @@
     <Compile Include="Entities\ModulosEscaneos\skusbenavides.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosEscaneos\SKUSHomeDeliveryViewModel.cs" />
     <Compile Include="Entities\ModulosEscaneos\skusinventarios.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -5153,6 +5173,11 @@
     <Content Include="Views\masterskus\Index.cshtml" />
     <Content Include="Views\masterskus\Create.cshtml" />
     <Content Include="Views\masterskus\Edit.cshtml" />
+    <Content Include="Views\hd_skushomedelivery\Create.cshtml" />
+    <Content Include="Views\hd_skushomedelivery\Delete.cshtml" />
+    <Content Include="Views\hd_skushomedelivery\Details.cshtml" />
+    <Content Include="Views\hd_skushomedelivery\Edit.cshtml" />
+    <Content Include="Views\hd_skushomedelivery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

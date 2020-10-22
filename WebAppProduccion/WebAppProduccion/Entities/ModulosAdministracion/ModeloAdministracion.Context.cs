@@ -33,5 +33,7 @@ namespace WebAppProduccion.Entities.ModulosAdministracion
         public virtual DbSet<informacionbancaria> informacionbancaria { get; set; }
         public virtual DbSet<proveedores> proveedores { get; set; }
         public virtual DbSet<contactosproveedores> contactosproveedores { get; set; }
+
+        public System.Data.Entity.DbSet<WebAppProduccion.Entities.ModulosEscaneos.hd_skushomedelivery> hd_skushomedelivery { get; set; }
     }
 }

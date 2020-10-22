@@ -1,0 +1,43 @@
+﻿@model WebAppProduccion.Entities.ModulosEscaneos.hd_skushomedelivery
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHomeDelivery.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>hd_skushomedelivery</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.QtyManual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QtyManual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QrCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QrCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.skus.SKU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.skus.SKU)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

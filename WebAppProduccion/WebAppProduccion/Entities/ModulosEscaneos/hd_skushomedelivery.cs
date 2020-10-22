@@ -12,21 +12,21 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
     using System;
     using System.Collections.Generic;
     
-    public partial class auditores
+    public partial class hd_skushomedelivery
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public auditores()
+        public hd_skushomedelivery()
         {
-            this.wl_cajas = new HashSet<wl_cajas>();
-            this.hd_ordenes = new HashSet<hd_ordenes>();
+            this.hd_detordenesskus = new HashSet<hd_detordenesskus>();
         }
     
-        public int id { get; set; }
-        public string nombres { get; set; }
+        public int Id { get; set; }
+        public Nullable<bool> QtyManual { get; set; }
+        public Nullable<bool> QrCode { get; set; }
+        public int skus_Id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<wl_cajas> wl_cajas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<hd_ordenes> hd_ordenes { get; set; }
+        public virtual ICollection<hd_detordenesskus> hd_detordenesskus { get; set; }
+        public virtual skus skus { get; set; }
     }
 }

@@ -50,11 +50,12 @@ namespace WebAppProduccion.Controllers.Operaciones
             }           
         }
 
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            var a = AgregarAMasterDesdeSKUS();
-            
-            
+            await AgrarSKUSFromMOLines();
+            await AgregarSKUSFromMO();
+            await AgregarAMasterDesdeSKUS();
+            await AgregarSKUSHDDesdeSKUS();
             return View();
         }
 
@@ -150,6 +151,33 @@ namespace WebAppProduccion.Controllers.Operaciones
             });
         }
 
+        public async Task AgregarSKUSHDDesdeSKUS() 
+        {
+            await Task.Run(() => 
+            {
+                DB_A3F19C_producccionEntities dbSKUS = new DB_A3F19C_producccionEntities();
+                var skus = dbSKUS.skus.ToList();
+                List<hd_skushomedelivery> lista = new List<hd_skushomedelivery>();
+
+                foreach (var item in skus)
+                {
+                    var skumaster = dbSKUS.hd_skushomedelivery.Where(x => x.skus_Id.Equals(item.id)).FirstOrDefault();
+
+                    if (skumaster == null)
+                    {
+                        hd_skushomedelivery wh = new hd_skushomedelivery();
+                        wh.QtyManual = false;
+                        wh.QrCode = false;
+                        wh.skus_Id = item.id;
+
+                        lista.Add(wh);
+                    }
+                }
+                dbSKUS.hd_skushomedelivery.AddRange(lista);
+                dbSKUS.SaveChangesAsync();
+            });
+        }
+
         [HttpPost]
         public ActionResult ObtenerMaster()
         {
@@ -213,6 +241,5 @@ namespace WebAppProduccion.Controllers.Operaciones
 
             return Json(new { draw = Draw, recordsFiltered = TotalRecords, recordsTotal = TotalRecords, data = NewItems }, JsonRequestBehavior.AllowGet);
         }      
-
     }
 }

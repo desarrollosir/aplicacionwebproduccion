@@ -18,6 +18,7 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
         public pickers()
         {
             this.wl_cajas = new HashSet<wl_cajas>();
+            this.hd_ordenes = new HashSet<hd_ordenes>();
         }
     
         public int id { get; set; }
@@ -25,5 +26,7 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<wl_cajas> wl_cajas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<hd_ordenes> hd_ordenes { get; set; }
     }
 }

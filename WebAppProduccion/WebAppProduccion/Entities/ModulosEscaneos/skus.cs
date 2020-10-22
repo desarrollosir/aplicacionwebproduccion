@@ -22,6 +22,7 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
             this.skusinventarios = new HashSet<skusinventarios>();
             this.wl_detcajassku = new HashSet<wl_detcajassku>();
             this.kitskus = new HashSet<kitskus>();
+            this.hd_skushomedelivery = new HashSet<hd_skushomedelivery>();
         }
     
         public int id { get; set; }
@@ -41,5 +42,7 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
         public virtual ICollection<wl_detcajassku> wl_detcajassku { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<kitskus> kitskus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<hd_skushomedelivery> hd_skushomedelivery { get; set; }
     }
 }

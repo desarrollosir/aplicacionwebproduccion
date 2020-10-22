@@ -1,0 +1,669 @@
+﻿ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         1
+
+
+
+
+                                                                                  Input Parameters
+
+
+
+                                                                         Transfer Order : 891985088
+                                                                         Header ID From :
+                                                                                     To :
+                                                                     Date Required From :
+                                                                                     To :
+                                                                    Source Subinventory :
+                                                                         Source Locator :
+                                                               Destination Subinventory :
+                                                                    Destination Locator :
+                                                                           Requested By :
+                                                                           Print Option : Allocated Lines
+                                                                        Move Order Type : All
+                                                              Auto Allocate Order Lines : No
+                                                                             Plan Tasks : No
+                                                                Pick Slip Grouping Rule :
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         2
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         1             1019MX               20   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      624  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               A-001-01       SURTIDO RESUPPLY
+                                               CONCENTRADO
+     Lot Number    :    990616F20                                    Exp. Date :               03-AUG-22                   Lot Quantity            : 624
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         2             1926MX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      180  ____********
+                                                                                                                                     V
+                                               PERSONALIZED PROTEIN      A-004-01       SURTIDO RESUPPLY
+                                               POWDER
+     Lot Number    :    990525E00                                    Exp. Date :               01-MAY-22                   Lot Quantity            : 180
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         3             4000MX               08   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      348  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-010-01       SURTIDO RESUPPLY
+                                               SABOR COOKIES &
+                                               CREAM
+     Lot Number    :    990567C08                                    Exp. Date :               15-JUN-22                   Lot Quantity            : 348
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         4             3175MX               22   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       24  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        A-019-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR BATIDO
+                                               SABOR VAINILLA
+     Lot Number    :    D90528R22                                    Exp. Date :               04-MAY-22                   Lot Quantity            : 24
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         5             0964MX               04   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       96  ____********
+                                                                                                                                     V
+                                               THERMOJETICS              A-021-01       SURTIDO RESUPPLY
+                                               CONCENTRADO DE
+                                               HIERBAS 102 G
+     Lot Number    :    D90624B04                                    Exp. Date :               31-JUL-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         6             3115MX               08   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 2        A-024-01       SURTIDO RESUPPLY
+     Lot Number    :    220556C08                                    Exp. Date :               07-MAY-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         7             0085MX               14   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      552  ____********
+                                                                                                                                     V
+                                               N-R-G TE                  A-025-01       SURTIDO RESUPPLY
+     Lot Number    :    D90638F14                                    Exp. Date :               18-AUG-22                   Lot Quantity            : 552
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         3
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         8             4002MX               07   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      192  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-031-01       SURTIDO RESUPPLY
+                                               SABOR FRESA
+     Lot Number    :    990597C07                                    Exp. Date :               14-JUL-22                   Lot Quantity            : 192
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         9             1065MX               08   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      168  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               A-034-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               MANGO 473 ML
+     Lot Number    :    990624J08                                    Exp. Date :               11-AUG-22                   Lot Quantity            : 168
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         10            4004MX               06   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       60  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        A-037-01       SURTIDO RESUPPLY
+                                               SABOR VAINILLA
+     Lot Number    :    990532C06                                    Exp. Date :               11-MAY-22                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         11            0079MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       26  ____********
+                                                                                                                                     V
+                                               ANTI-SNACK                B-003-01       SURTIDO RESUPPLY
+     Lot Number    :    B70494F05                                    Exp. Date :               19-MAR-22                   Lot Quantity            : 26
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         12            1412MX               06   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       36  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24              B-005-01       SURTIDO RESUPPLY
+                                               HERBALIFE NUMERO 1
+                                               SPORT SABOR VAINILLA
+     Lot Number    :    990527B06                                    Exp. Date :               05-MAY-22                   Lot Quantity            : 36
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         13            3146MX               07   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               HERBALIFE NITEWORKS       B-007-01       SURTIDO RESUPPLY
+                                               SABOR NARANJA-MANGO
+     Lot Number    :    D90622A07                                    Exp. Date :               24-JUL-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         14            1841MX               04   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       56  ____********
+                                                                                                                                     V
+                                               XTRA-CALCIO ADVANCED      B-008-01       SURTIDO RESUPPLY
+     Lot Number    :    990598F04                                    Exp. Date :               13-JUL-22                   Lot Quantity            : 56
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         4
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         15            1095MX               07   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       24  ____********
+                                                                                                                                     V
+                                               PROLESSA DUO              B-010-01       SURTIDO RESUPPLY
+     Lot Number    :    990533A07                                    Exp. Date :               01-NOV-21                   Lot Quantity            : 24
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         16            3119MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      108  ____********
+                                                                                                                                     V
+                                               THERMOJETICS POLVO        B-012-01       SURTIDO RESUPPLY
+                                               PARA PREPARAR
+                                               BEBIDAS SABOR PONCHE
+                                               DE FRUTAS
+     Lot Number    :    600632A03                                    Exp. Date :               18-AUG-22                   Lot Quantity            : 108
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         17            0370MX               10   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       30  ____********
+                                                                                                                                     V
+                                               CELL-U-LOSS               B-022-01       SURTIDO RESUPPLY
+     Lot Number    :    360639B10                                    Exp. Date :               07-AUG-22                   Lot Quantity            : 30
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         18            0032MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       10  ____********
+                                                                                                                                     V
+                                               GARLIC PLUS               B-023-01       SURTIDO RESUPPLY
+     Lot Number    :    220613C05                                    Exp. Date :               23-DEC-21                   Lot Quantity            : 10
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         19            0963MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      192  ____********
+                                                                                                                                     V
+                                               THERMOJETICS              B-024-01       SURTIDO RESUPPLY
+                                               CONCENTRADO DE
+                                               HIERBAS  51 G
+     Lot Number    :    D90595B05                                    Exp. Date :               09-JUL-22                   Lot Quantity            : 192
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         20            2641MX               07   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               XTRA SHAKE                B-026-01       SURTIDO RESUPPLY
+     Lot Number    :    990536B07                                    Exp. Date :               14-MAY-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         21            4001MX               08   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       96  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        B-028-01       SURTIDO RESUPPLY
+                                               SABOR PINA COLADA
+     Lot Number    :    990609D08                                    Exp. Date :               27-JUL-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         5
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         22            1829MX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       14  ____********
+                                                                                                                                     V
+                                               PROBIOTIC ADVANTAGE       B-032-01       SURTIDO RESUPPLY
+     Lot Number    :    B70600B01                                    Exp. Date :               14-JUL-22                   Lot Quantity            : 14
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         23            049KMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       72  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        B-034-01       SURTIDO RESUPPLY
+                                               SABOR COCO
+     Lot Number    :    600435A00                                    Exp. Date :               14-JAN-22                   Lot Quantity            : 72
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         24            1428MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       48  ____********
+                                                                                                                                     V
+                                               TE VERDE SABOR            B-038-01       SURTIDO RESUPPLY
+                                               GRANADA 48 G
+     Lot Number    :    D90624A03                                    Exp. Date :               31-JUL-22                   Lot Quantity            : 48
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         25            0065MX               11   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       80  ____********
+                                                                                                                                     V
+                                               HERBALIFELINE             C-001-01       SURTIDO RESUPPLY
+     Lot Number    :    220576E11                                    Exp. Date :               02-JUN-22                   Lot Quantity            : 80
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         26            1610MX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      144  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               C-003-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               UVA
+     Lot Number    :    990592D00                                    Exp. Date :               10-JUL-22                   Lot Quantity            : 144
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         27            0884MX               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      108  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-005-01       SURTIDO RESUPPLY
+                                               SABOR A CHOCO-
+                                               AVELLANA
+     Lot Number    :    990577C02                                    Exp. Date :               25-JUN-22                   Lot Quantity            : 108
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         28            0366MX               06   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       24  ____********
+                                                                                                                                     V
+                                               BARRA CON PROTEINA        C-018-01       SURTIDO RESUPPLY
+                                               DELUXE SABOR LIMON
+     Lot Number    :    G20490A                                      Exp. Date :               30-MAR-21                   Lot Quantity            : 12
+     Lot Number    :    G20498B                                      Exp. Date :               07-APR-21                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         6
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         29            0565MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       50  ____********
+                                                                                                                                     V
+                                               XTRA-CAL ADVANCED         C-020-01       SURTIDO RESUPPLY
+     Lot Number    :    B70522D05                                    Exp. Date :               30-MAR-22                   Lot Quantity            : 50
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         30            0364MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               BARRA CON PROTEINA        C-022-01       SURTIDO RESUPPLY
+                                               DELUXE SABOR
+                                               VAINILLA CON
+                                               ALMENDRAS
+     Lot Number    :    G20512A                                      Exp. Date :               21-APR-21                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         31            2648MX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       84  ____********
+                                                                                                                                     V
+                                               PERSONALIZED PROTEIN      C-024-01       SURTIDO RESUPPLY
+                                               POWDER SABOR FRUTOS
+                                               ROJOS
+     Lot Number    :    990577E01                                    Exp. Date :               24-JUN-22                   Lot Quantity            : 84
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         32            4007MX               08   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      108  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-026-01       SURTIDO RESUPPLY
+                                               SABOR FRUTAS
+                                               TROPICALES
+     Lot Number    :    990550D08                                    Exp. Date :               27-MAY-22                   Lot Quantity            : 108
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         33            2131MX               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       96  ____********
+                                                                                                                                     V
+                                               N-R-G TE SABOR            C-028-01       SURTIDO RESUPPLY
+                                               MANZANA VERDE
+     Lot Number    :    D90603F02                                    Exp. Date :               16-JUL-22                   Lot Quantity            : 96
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         34            011KMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               HIGH PROTEIN ICED         C-031-01       SURTIDO RESUPPLY
+                                               COFFEE SABOR MOKA
+     Lot Number    :    K89736A00                                    Exp. Date :               02-DEC-21                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         7
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         35            2555MX               04   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       60  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        C-034-01       SURTIDO RESUPPLY
+                                               SABOR PLATANO
+     Lot Number    :    990535E04                                    Exp. Date :               14-MAY-22                   Lot Quantity            : 60
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         36            0077MX               06   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               TC FORMULA                C-039-01       SURTIDO RESUPPLY
+     Lot Number    :    360547C06                                    Exp. Date :               06-APR-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         37            0039MX               16   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       14  ____********
+                                                                                                                                     V
+                                               PRELOX AZUL               C-038-01       SURTIDO RESUPPLY
+     Lot Number    :    360617A16                                    Exp. Date :               13-JUL-22                   Lot Quantity            : 14
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         38            0773MX               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            D-001-01       SURTIDO RESUPPLY
+                                               MASCARILLA
+                                               LIMPIADORA DE
+                                               ARCILLA CON MENTA
+     Lot Number    :    570479A02                                    Exp. Date :               18-MAR-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         39            1417MX               09   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24              D-004-01       SURTIDO RESUPPLY
+                                               STRENGTH
+     Lot Number    :    D90542B09                                    Exp. Date :               12-MAY-22                   Lot Quantity            : 6
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         40            0772MX               04   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            D-006-01       SURTIDO RESUPPLY
+                                               EXFOLIANTE CON
+                                               ARANDANOS PARA EL
+                                               CUTIS
+     Lot Number    :    570535A04                                    Exp. Date :               12-MAY-22                   Lot Quantity            : 6
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         41            024KMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24 BCAAS        D-007-01       SURTIDO RESUPPLY
+                                               SABOR MANZANA VERDE
+     Lot Number    :    D90603A00                                    Exp. Date :               16-JUL-22                   Lot Quantity            : 12
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         8
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         42            0766MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       10  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            D-009-01       SURTIDO RESUPPLY
+                                               LIMPIADOR CITRICO
+                                               PARA LA PIEL
+     Lot Number    :    570550J03                                    Exp. Date :               27-MAY-22                   Lot Quantity            : 10
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         43            2631MX               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      252  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE               D-011-01       SURTIDO RESUPPLY
+                                               CONCENTRADO SABOR
+                                               MANDARINA
+     Lot Number    :    990632D02                                    Exp. Date :               19-AUG-22                   Lot Quantity            : 252
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         44            0770MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN GEL        D-019-01       SURTIDO RESUPPLY
+                                               REAFIRMANTE PARA
+                                               CONTORNO DE OJOS
+     Lot Number    :    570464B03                                    Exp. Date :               28-FEB-22                   Lot Quantity            : 2
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         45            0940MX               04   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       36  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 1        D-021-01       SURTIDO RESUPPLY
+                                               SABOR DULCE DE LECHE
+     Lot Number    :    990540D04                                    Exp. Date :               18-MAY-22                   Lot Quantity            : 36
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         46            1473MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       24  ____********
+                                                                                                                                     V
+                                               HERBALIFE 24 CR7          D-026-01       SURTIDO RESUPPLY
+                                               DRIVE
+     Lot Number    :    600602F03                                    Exp. Date :               13-JUL-22                   Lot Quantity            : 24
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         47            0831MX               03   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       84  ____********
+                                                                                                                                     V
+                                               HERBALIFE COLAGENO        D-030-01       SURTIDO RESUPPLY
+     Lot Number    :    D90591F03                                    Exp. Date :               30-JUN-22                   Lot Quantity            : 84
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                         9
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         48            0768MX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN SERUM      D-033-01       SURTIDO RESUPPLY
+                                               REDUCTOR DE LINEAS
+                                               DE EXPRESION
+     Lot Number    :    570520C01                                    Exp. Date :               27-APR-22                   Lot Quantity            : 2
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         49            1155MX               18   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA      140  ____********
+                                                                                                                                     V
+                                               THERMO-BOND               D-035-01       SURTIDO RESUPPLY
+     Lot Number    :    C20555B18                                    Exp. Date :               30-APR-22                   Lot Quantity            : 140
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         50            0767MX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        8  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN            E-003-01       SURTIDO RESUPPLY
+                                               TONICO CON ALOE,
+                                               ROMERO Y MANZANILLA
+     Lot Number    :    570570H01                                    Exp. Date :               15-JUN-22                   Lot Quantity            : 8
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         51            044KMX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       48  ____********
+                                                                                                                                     V
+                                               INFUSION HERBAL           E-007-01       SURTIDO RESUPPLY
+     Lot Number    :    D90610C01                                    Exp. Date :               24-JUL-22                   Lot Quantity            : 48
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         52            2364MX               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       18  ____********
+                                                                                                                                     V
+                                               HERBALIFE NUMERO 2        E-018-01       SURTIDO RESUPPLY
+                                               POLVO
+     Lot Number    :    990633C01                                    Exp. Date :               19-AUG-22                   Lot Quantity            : 18
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         53            0413MX               05   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       36  ____********
+                                                                                                                                     V
+                                               HERBAL ALOE GEL           E-019-01       SURTIDO RESUPPLY
+                                               CORPORAL CON ALOE
+     Lot Number    :    570570J05                                    Exp. Date :               16-JUN-22                   Lot Quantity            : 36
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         54            0765MX               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               HERBALIFE SKIN GEL        E-031-01       SURTIDO RESUPPLY
+                                               LIMPIADOR DE SABILA
+     Lot Number    :    570528D02                                    Exp. Date :               05-MAY-22                   Lot Quantity            : 6
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                        10
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         55            298A                 02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       70  ____********
+                                                                                                                                     V
+                                               HLN MEASURING SPOON       D-032-01       SURTIDO RESUPPLY
+                                               - WHITE (IMPERIAL)
+                                               SET OF 10
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         56            603828               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       12  ____********
+                                                                                                                                     V
+                                               MINIPRINTER THERMAL       E-001-01       SURTIDO RESUPPLY
+                                               ROLLS
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         57            602766               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 7         F-001-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         58            602760               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 1         F-002-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         59            602762               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 3         F-003-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         60            602764               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               PIN ANIVERSARIO 5         F-005-01       SURTIDO RESUPPLY
+                                               ANO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         61            602772               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               PIN MAYORISTA             F-005-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         62            684NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        4  ____********
+                                                                                                                                     V
+                                               ANNIVERSARY CARD 1        F-018-01       SURTIDO RESUPPLY
+                                               YEAR
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                        11
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         63            687NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               ANNIVERSARY CARD 3        F-018-01       SURTIDO RESUPPLY
+                                               YEARS
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         64            602785               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               DIPLOMA EN COUCHE WT      F-002-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         65            602787               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               CUADERNILLO WT            F-004-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         66            688NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        4  ____********
+                                                                                                                                     V
+                                               ANNIVERSARY CARD 5        F-019-01       SURTIDO RESUPPLY
+                                               YEARS
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         67            602775               02   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               DIPLOMA                   F-022-01       SURTIDO RESUPPLY
+                                               SP/PERSONALIZADO
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         68            682NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       14  ____********
+                                                                                                                                     V
+                                               SILVER COVER LETTER       F-023-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         69            692NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        2  ____********
+                                                                                                                                     V
+                                               WORLD TEAM CARD           F-018-01       SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         70            602797               01   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       20  ____********
+                                                                                                                                     V
+                                               SOBRE CAPLE/ETIQ          F-038-01       SURTIDO RESUPPLY
+                                               PERSONAL
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ MX1 QUERETARO DISTRIBUTION CENTER                                                                                                          Report Date :         19-OCT-2020 18:32
+                                                                              HL Move Order Pick Slip                                              Page :                        12
+
+
+
+               Line                            Item /                    Src Sub/       Dest Sub/                       Project/                                         Pkd
+ Order         Status           Line           Description          Rev  Locator        Locator     Dest Account        Task         Requester     Ref     UOM     Qty   Qty  TaskId
+ ------------  ---------------- ----           -------------------- ---- -------------- ----------- ------------------  -----------  ------------- ------- ----- -----  ----  ------
+ 891985088     Allocated         71            N487MX               06   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       60  ____********
+                                                                                                                                     V
+                                               DOOR OP -  (100 CARD      FG-005-01      SURTIDO RESUPPLY
+                                               SET) COMBO2
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         72            305A                 00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA       10  ____********
+                                                                                                                                     V
+                                               HLN TABLET BOX-M          FG-020-01      SURTIDO RESUPPLY
+                                               SIZE-7 COMP (SET OF
+                                               5)
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         73            694NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               BLACK FOLDER              FG-033-01      SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 891985088     Allocated         74            683NMX               00   M1QE10         M1QE10                                       ANAPATRICIAH- PI      EA        6  ____********
+                                                                                                                                     V
+                                               CARD CASE                 FG-034-01      SURTIDO RESUPPLY
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                                                              ***** End of Report *****
