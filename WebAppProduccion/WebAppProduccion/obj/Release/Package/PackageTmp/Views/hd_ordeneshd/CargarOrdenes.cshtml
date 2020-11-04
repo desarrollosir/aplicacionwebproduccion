@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "CargarOrdenes";
+    Layout = "~/Views/Shared/_LayoutHomeDelivery.cshtml";
+}
+
+@using (Html.BeginForm("ImportarOrdenes", "hd_ordeneshd", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="x_panel">
+        <div class="x_title">
+            <h2> Ordenes <small>Cargar Archivo</small></h2> &nbsp;&nbsp;&nbsp;
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                        Seleccionar Archivo
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="file" name="postedFileBase" class="form-control col-md-7 col-xs-12" />
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <a class="btn btn-danger" href="@Url.Action("Index")"> <i class="fa fa-close"></i> Cancelar</a>
+                        <button onclick="Detalle(id)" type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i> Guardar Informacion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="MyModal" class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg" id="mdialTamanio">
+        <div class="modal-content">
+            <div id="MyModalContent">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title">Cargando Ordenes de Asociados</h4>
+                </div>
+                <div class="modal-body" style="align-content:center">
+                    <center>
+                        <img src="~/build/images/loading.gif" />
+                    </center>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">   
+        var Detalle = function (ID) {
+            $("#MyModal").modal({                
+                backdrop: 'static',
+                keyboard: false
+            }, 'show');
+            return false;
+        }
+    </script>
+}

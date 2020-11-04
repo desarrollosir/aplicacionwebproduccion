@@ -298,10 +298,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:05:43</publishTime>
     </File>
     <File Include="bin/WebAppProduccion.dll">
-      <publishTime>08/27/2020 11:02:25</publishTime>
+      <publishTime>10/30/2020 15:48:45</publishTime>
     </File>
     <File Include="bin/WebAppProduccion.pdb">
-      <publishTime>08/27/2020 11:02:25</publishTime>
+      <publishTime>10/30/2020 15:48:45</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/19/2020 15:05:44</publishTime>
@@ -532,13 +532,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:05:02</publishTime>
     </File>
     <File Include="Entities/ModulosAdministracion/ModeloAdministracion.edmx.diagram">
-      <publishTime>08/19/2020 15:04:54</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Entities/ModulosEscaneos/Modelo.edmx.diagram">
-      <publishTime>08/19/2020 15:04:54</publishTime>
+      <publishTime>10/29/2020 10:28:18</publishTime>
     </File>
     <File Include="Entities/ModulosOperaciones/ModeloOperaciones.edmx.diagram">
-      <publishTime>08/25/2020 13:39:11</publishTime>
+      <publishTime>08/27/2020 13:58:41</publishTime>
     </File>
     <File Include="Entities/ModulosSistemas/ModeloSistemas.edmx.diagram">
       <publishTime>08/19/2020 15:04:54</publishTime>
@@ -13879,7 +13879,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/categoriaproveedors/Create.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 12:58:31</publishTime>
     </File>
     <File Include="Views/categoriaproveedors/Delete.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -13888,13 +13888,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/categoriaproveedors/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 13:53:43</publishTime>
     </File>
     <File Include="Views/categoriaproveedors/Index.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 13:54:13</publishTime>
     </File>
     <File Include="Views/creditoes/Create.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 14:34:54</publishTime>
     </File>
     <File Include="Views/creditoes/Delete.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -13903,10 +13903,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/creditoes/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 14:30:10</publishTime>
     </File>
     <File Include="Views/creditoes/Index.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 14:21:19</publishTime>
     </File>
     <File Include="Views/empleados/Create.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -13926,6 +13926,60 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Views/errores/UnauthorizedOperation.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
+    <File Include="Views/hd_codigosqr/Index.cshtml">
+      <publishTime>10/29/2020 10:55:15</publishTime>
+    </File>
+    <File Include="Views/hd_ordeneshd/CargarOrdenes.cshtml">
+      <publishTime>10/30/2020 14:22:41</publishTime>
+    </File>
+    <File Include="Views/hd_ordeneshd/Index.cshtml">
+      <publishTime>10/30/2020 11:06:32</publishTime>
+    </File>
+    <File Include="Views/hd_skushomedelivery/Create.cshtml">
+      <publishTime>10/29/2020 17:58:15</publishTime>
+    </File>
+    <File Include="Views/hd_skushomedelivery/Delete.cshtml">
+      <publishTime>10/29/2020 16:29:28</publishTime>
+    </File>
+    <File Include="Views/hd_skushomedelivery/Details.cshtml">
+      <publishTime>10/29/2020 16:29:34</publishTime>
+    </File>
+    <File Include="Views/hd_skushomedelivery/Edit.cshtml">
+      <publishTime>10/30/2020 10:46:31</publishTime>
+    </File>
+    <File Include="Views/hd_skushomedelivery/Index.cshtml">
+      <publishTime>10/29/2020 18:03:40</publishTime>
+    </File>
+    <File Include="Views/hd_statusorden/Create.cshtml">
+      <publishTime>10/29/2020 10:48:37</publishTime>
+    </File>
+    <File Include="Views/hd_statusorden/Delete.cshtml">
+      <publishTime>10/29/2020 10:48:41</publishTime>
+    </File>
+    <File Include="Views/hd_statusorden/Details.cshtml">
+      <publishTime>10/29/2020 10:48:46</publishTime>
+    </File>
+    <File Include="Views/hd_statusorden/Edit.cshtml">
+      <publishTime>10/29/2020 10:48:50</publishTime>
+    </File>
+    <File Include="Views/hd_statusorden/Index.cshtml">
+      <publishTime>10/29/2020 10:48:54</publishTime>
+    </File>
+    <File Include="Views/hd_statusquickship/Create.cshtml">
+      <publishTime>10/29/2020 10:49:51</publishTime>
+    </File>
+    <File Include="Views/hd_statusquickship/Delete.cshtml">
+      <publishTime>10/29/2020 10:49:54</publishTime>
+    </File>
+    <File Include="Views/hd_statusquickship/Details.cshtml">
+      <publishTime>10/29/2020 10:49:57</publishTime>
+    </File>
+    <File Include="Views/hd_statusquickship/Edit.cshtml">
+      <publishTime>10/29/2020 10:50:00</publishTime>
+    </File>
+    <File Include="Views/hd_statusquickship/Index.cshtml">
+      <publishTime>10/29/2020 10:50:04</publishTime>
+    </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
@@ -13933,7 +13987,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/21/2020 15:37:30</publishTime>
+      <publishTime>10/29/2020 11:01:33</publishTime>
     </File>
     <File Include="Views/homedelivery/Index.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14040,6 +14094,15 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
+    <File Include="Views/masterskus/Create.cshtml">
+      <publishTime>08/27/2020 12:56:35</publishTime>
+    </File>
+    <File Include="Views/masterskus/Edit.cshtml">
+      <publishTime>08/28/2020 12:35:55</publishTime>
+    </File>
+    <File Include="Views/masterskus/Index.cshtml">
+      <publishTime>09/04/2020 15:56:20</publishTime>
+    </File>
     <File Include="Views/mo/CargarMO.cshtml">
       <publishTime>08/21/2020 09:59:30</publishTime>
     </File>
@@ -14071,7 +14134,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/monedafacturacions/Create.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 15:38:45</publishTime>
     </File>
     <File Include="Views/monedafacturacions/Delete.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14080,10 +14143,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/monedafacturacions/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 15:42:28</publishTime>
     </File>
     <File Include="Views/monedafacturacions/Index.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/operaciones/Create.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14121,11 +14184,20 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Views/proveedores/Create.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
+    <File Include="Views/proveedores/CreateContacto.cshtml">
+      <publishTime>10/24/2020 11:52:24</publishTime>
+    </File>
+    <File Include="Views/proveedores/Detalles.cshtml">
+      <publishTime>10/24/2020 12:23:03</publishTime>
+    </File>
     <File Include="Views/proveedores/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/24/2020 12:54:32</publishTime>
+    </File>
+    <File Include="Views/proveedores/EditarContactoProveedor.cshtml">
+      <publishTime>10/24/2020 11:52:36</publishTime>
     </File>
     <File Include="Views/proveedores/Index.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/27/2020 11:50:14</publishTime>
     </File>
     <File Include="Views/rolesoperaciones/Create.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14170,13 +14242,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutHomeDelivery.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/29/2020 11:11:14</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutInventarios.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutOperaciones.cshtml">
-      <publishTime>08/25/2020 10:32:15</publishTime>
+      <publishTime>08/27/2020 12:59:51</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutSistemas.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14185,7 +14257,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:55</publishTime>
     </File>
     <File Include="Views/sistemas/Form.cshtml">
-      <publishTime>08/19/2020 15:04:55</publishTime>
+      <publishTime>10/22/2020 14:14:59</publishTime>
     </File>
     <File Include="Views/sistemas/Index.cshtml">
       <publishTime>08/19/2020 15:04:55</publishTime>
@@ -14200,19 +14272,19 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:56</publishTime>
     </File>
     <File Include="Views/skus/Create.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>08/27/2020 11:36:33</publishTime>
     </File>
     <File Include="Views/skus/Delete.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>08/27/2020 11:36:33</publishTime>
     </File>
     <File Include="Views/skus/Details.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>08/27/2020 11:36:33</publishTime>
     </File>
     <File Include="Views/skus/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>08/27/2020 11:36:30</publishTime>
     </File>
     <File Include="Views/skus/Index.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>08/27/2020 11:41:43</publishTime>
     </File>
     <File Include="Views/skusbenavides/Create.cshtml">
       <publishTime>08/19/2020 15:04:56</publishTime>
@@ -14242,10 +14314,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:56</publishTime>
     </File>
     <File Include="Views/skusinventarios/Index.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>10/29/2020 10:37:17</publishTime>
     </File>
     <File Include="Views/statusproveedors/Create.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>10/22/2020 14:15:22</publishTime>
     </File>
     <File Include="Views/statusproveedors/Delete.cshtml">
       <publishTime>08/19/2020 15:04:56</publishTime>
@@ -14254,10 +14326,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/19/2020 15:04:56</publishTime>
     </File>
     <File Include="Views/statusproveedors/Edit.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>10/22/2020 14:11:01</publishTime>
     </File>
     <File Include="Views/statusproveedors/Index.cshtml">
-      <publishTime>08/19/2020 15:04:56</publishTime>
+      <publishTime>10/22/2020 14:04:56</publishTime>
     </File>
     <File Include="Views/waldos/CargarArchivo.cshtml">
       <publishTime>08/19/2020 15:04:56</publishTime>

@@ -57,6 +57,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="contactosproveedores">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.contactosproveedores">
+        <MappingFragment StoreEntitySet="contactosproveedores">
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Proveedores_Id" ColumnName="Proveedores_Id" />
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="proveedores">
       <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.proveedores">
         <MappingFragment StoreEntitySet="proveedores">
@@ -72,18 +84,6 @@
           <ScalarProperty Name="RFC" ColumnName="RFC" />
           <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
           <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="contactosproveedores">
-      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.contactosproveedores">
-        <MappingFragment StoreEntitySet="contactosproveedores">
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Proveedores_Id" ColumnName="Proveedores_Id" />
-          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -99,7 +99,7 @@ namespace WebAppProduccion.Controllers.Operaciones
                             }
                         }
 
-                        int id = db.wh_LineasMO.Count();
+                        int id = (Convert.ToInt32(db.wh_LineasMO.OrderByDescending(x => x.Id).FirstOrDefault().Id) + 1);
                         List<wh_LineasMO> listaBD = new List<wh_LineasMO>();
                         List<wh_LotesMO> listaLotes = new List<wh_LotesMO>();
 

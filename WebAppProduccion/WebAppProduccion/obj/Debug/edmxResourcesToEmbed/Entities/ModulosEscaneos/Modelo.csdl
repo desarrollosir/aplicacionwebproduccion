@@ -87,7 +87,7 @@
     <NavigationProperty Name="skusinventarios" Relationship="Self.skusinventarios_skus_fk" FromRole="skus" ToRole="skusinventarios" />
     <NavigationProperty Name="wl_detcajassku" Relationship="DB_A3F19C_producccionModel.wl_detcajasku_skus_fk" FromRole="skus" ToRole="wl_detcajassku" />
     <NavigationProperty Name="kitskus" Relationship="DB_A3F19C_producccionModel.kitskus_skus_fk" FromRole="skus" ToRole="kitskus" />
-    <NavigationProperty Name="hd_skushomedelivery" Relationship="DB_A3F19C_producccionModel.hd_skushomedelivery_skus_FK" FromRole="skus" ToRole="hd_skushomedelivery" />
+    <NavigationProperty Name="hd_skushomedelivery" Relationship="DB_A3F19C_producccionModel.SkusHomeDelivery_skus_FK" FromRole="skus" ToRole="hd_skushomedelivery" />
   </EntityType>
   <EntityType Name="skusbenavides">
     <Key>
@@ -343,26 +343,17 @@
       <End Role="wl_detenvios" EntitySet="wl_detenvios" />
     </AssociationSet>
     <EntitySet Name="hd_codigosqr" EntityType="DB_A3F19C_producccionModel.hd_codigosqr" />
-    <EntitySet Name="hd_detordenesskus" EntityType="DB_A3F19C_producccionModel.hd_detordenesskus" />
     <EntitySet Name="hd_ordenes" EntityType="DB_A3F19C_producccionModel.hd_ordenes" />
     <EntitySet Name="hd_skushomedelivery" EntityType="DB_A3F19C_producccionModel.hd_skushomedelivery" />
     <EntitySet Name="hd_statusorden" EntityType="DB_A3F19C_producccionModel.hd_statusorden" />
     <EntitySet Name="hd_statusquickship" EntityType="DB_A3F19C_producccionModel.hd_statusquickship" />
-    <AssociationSet Name="hd_ordenes_Auditores_FK" Association="DB_A3F19C_producccionModel.hd_ordenes_Auditores_FK">
+    <AssociationSet Name="Ordenes_Auditores_FK" Association="DB_A3F19C_producccionModel.Ordenes_Auditores_FK">
       <End Role="auditores" EntitySet="auditores" />
       <End Role="hd_ordenes" EntitySet="hd_ordenes" />
     </AssociationSet>
     <AssociationSet Name="hd_codigosqr_hd_ordenes_FK" Association="DB_A3F19C_producccionModel.hd_codigosqr_hd_ordenes_FK">
       <End Role="hd_ordenes" EntitySet="hd_ordenes" />
       <End Role="hd_codigosqr" EntitySet="hd_codigosqr" />
-    </AssociationSet>
-    <AssociationSet Name="detordenesskus_hd_ordenes_FK" Association="DB_A3F19C_producccionModel.detordenesskus_hd_ordenes_FK">
-      <End Role="hd_ordenes" EntitySet="hd_ordenes" />
-      <End Role="hd_detordenesskus" EntitySet="hd_detordenesskus" />
-    </AssociationSet>
-    <AssociationSet Name="hd_detordenesskus_hd_skushomedelivery_FK" Association="DB_A3F19C_producccionModel.hd_detordenesskus_hd_skushomedelivery_FK">
-      <End Role="hd_skushomedelivery" EntitySet="hd_skushomedelivery" />
-      <End Role="hd_detordenesskus" EntitySet="hd_detordenesskus" />
     </AssociationSet>
     <AssociationSet Name="hd_ordenes_hd_statusorden_FK" Association="DB_A3F19C_producccionModel.hd_ordenes_hd_statusorden_FK">
       <End Role="hd_statusorden" EntitySet="hd_statusorden" />
@@ -372,13 +363,22 @@
       <End Role="hd_statusquickship" EntitySet="hd_statusquickship" />
       <End Role="hd_ordenes" EntitySet="hd_ordenes" />
     </AssociationSet>
-    <AssociationSet Name="hd_ordenes_Pickers_FK" Association="DB_A3F19C_producccionModel.hd_ordenes_Pickers_FK">
+    <AssociationSet Name="Ordenes_Pickers_FK" Association="DB_A3F19C_producccionModel.Ordenes_Pickers_FK">
       <End Role="pickers" EntitySet="pickers" />
       <End Role="hd_ordenes" EntitySet="hd_ordenes" />
     </AssociationSet>
-    <AssociationSet Name="hd_skushomedelivery_skus_FK" Association="DB_A3F19C_producccionModel.hd_skushomedelivery_skus_FK">
+    <AssociationSet Name="SkusHomeDelivery_skus_FK" Association="DB_A3F19C_producccionModel.SkusHomeDelivery_skus_FK">
       <End Role="skus" EntitySet="skus" />
       <End Role="hd_skushomedelivery" EntitySet="hd_skushomedelivery" />
+    </AssociationSet>
+    <EntitySet Name="hd_detordenesskus" EntityType="DB_A3F19C_producccionModel.hd_detordenesskus" />
+    <AssociationSet Name="hd_detordenesskus_hd_ordenes_FK" Association="DB_A3F19C_producccionModel.hd_detordenesskus_hd_ordenes_FK">
+      <End Role="hd_ordenes" EntitySet="hd_ordenes" />
+      <End Role="hd_detordenesskus" EntitySet="hd_detordenesskus" />
+    </AssociationSet>
+    <AssociationSet Name="hd_detordenesskus_hd_skushomedelivery_FK" Association="DB_A3F19C_producccionModel.hd_detordenesskus_hd_skushomedelivery_FK">
+      <End Role="hd_skushomedelivery" EntitySet="hd_skushomedelivery" />
+      <End Role="hd_detordenesskus" EntitySet="hd_detordenesskus" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="wl_detcajassku">
@@ -495,7 +495,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="wl_cajas" Relationship="DB_A3F19C_producccionModel.wl_cajas_auditores_fk" FromRole="auditores" ToRole="wl_cajas" />
-    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_ordenes_Auditores_FK" FromRole="auditores" ToRole="hd_ordenes" />
+    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.Ordenes_Auditores_FK" FromRole="auditores" ToRole="hd_ordenes" />
   </EntityType>
   <EntityType Name="pickers">
     <Key>
@@ -504,7 +504,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="wl_cajas" Relationship="DB_A3F19C_producccionModel.wl_cajas_pickers_fk" FromRole="pickers" ToRole="wl_cajas" />
-    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_ordenes_Pickers_FK" FromRole="pickers" ToRole="hd_ordenes" />
+    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.Ordenes_Pickers_FK" FromRole="pickers" ToRole="hd_ordenes" />
   </EntityType>
   <EntityType Name="kits">
     <Key>
@@ -628,76 +628,65 @@
   </Association>
   <EntityType Name="hd_codigosqr">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="hd_ordenes_id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoQr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="hd_ordenes_Id" Type="Int64" Nullable="false" />
     <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_codigosqr_hd_ordenes_FK" FromRole="hd_codigosqr" ToRole="hd_ordenes" />
-  </EntityType>
-  <EntityType Name="hd_detordenesskus">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="cantidad" Type="Int32" />
-    <Property Name="hd_ordenes_id" Type="Int32" Nullable="false" />
-    <Property Name="hd_skushomedelivery_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.detordenesskus_hd_ordenes_FK" FromRole="hd_detordenesskus" ToRole="hd_ordenes" />
-    <NavigationProperty Name="hd_skushomedelivery" Relationship="DB_A3F19C_producccionModel.hd_detordenesskus_hd_skushomedelivery_FK" FromRole="hd_detordenesskus" ToRole="hd_skushomedelivery" />
   </EntityType>
   <EntityType Name="hd_ordenes">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="orden" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="oracleid" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="guia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="fechacreacion" Type="DateTime" Precision="3" />
-    <Property Name="fechacierre" Type="DateTime" Precision="3" />
-    <Property Name="paquetes" Type="Int32" />
-    <Property Name="observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="FechaCierre" Type="DateTime" Precision="3" />
+    <Property Name="NumeroOrden" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OracleID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Guia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Paquetes" Type="Int32" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="Pickers_Id" Type="Int32" Nullable="false" />
     <Property Name="Auditores_Id" Type="Int32" Nullable="false" />
-    <Property Name="hd_statusquickship_id" Type="Int32" Nullable="false" />
-    <Property Name="hd_statusorden_id" Type="Int32" Nullable="false" />
     <Property Name="Empleados_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="auditores" Relationship="DB_A3F19C_producccionModel.hd_ordenes_Auditores_FK" FromRole="hd_ordenes" ToRole="auditores" />
+    <Property Name="hd_statusorden_Id" Type="Int32" Nullable="false" />
+    <Property Name="hd_statusquickship_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="auditores" Relationship="DB_A3F19C_producccionModel.Ordenes_Auditores_FK" FromRole="hd_ordenes" ToRole="auditores" />
     <NavigationProperty Name="hd_codigosqr" Relationship="DB_A3F19C_producccionModel.hd_codigosqr_hd_ordenes_FK" FromRole="hd_ordenes" ToRole="hd_codigosqr" />
-    <NavigationProperty Name="hd_detordenesskus" Relationship="DB_A3F19C_producccionModel.detordenesskus_hd_ordenes_FK" FromRole="hd_ordenes" ToRole="hd_detordenesskus" />
     <NavigationProperty Name="hd_statusorden" Relationship="DB_A3F19C_producccionModel.hd_ordenes_hd_statusorden_FK" FromRole="hd_ordenes" ToRole="hd_statusorden" />
     <NavigationProperty Name="hd_statusquickship" Relationship="DB_A3F19C_producccionModel.hd_ordenes_hd_statusquickship_FK" FromRole="hd_ordenes" ToRole="hd_statusquickship" />
-    <NavigationProperty Name="pickers" Relationship="DB_A3F19C_producccionModel.hd_ordenes_Pickers_FK" FromRole="hd_ordenes" ToRole="pickers" />
+    <NavigationProperty Name="pickers" Relationship="DB_A3F19C_producccionModel.Ordenes_Pickers_FK" FromRole="hd_ordenes" ToRole="pickers" />
+    <NavigationProperty Name="hd_detordenesskus" Relationship="DB_A3F19C_producccionModel.hd_detordenesskus_hd_ordenes_FK" FromRole="hd_ordenes" ToRole="hd_detordenesskus" />
   </EntityType>
   <EntityType Name="hd_skushomedelivery">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="QtyManual" Type="Boolean" />
-    <Property Name="QrCode" Type="Boolean" />
+    <Property Name="QRCode" Type="Boolean" />
     <Property Name="skus_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="skus" Relationship="DB_A3F19C_producccionModel.SkusHomeDelivery_skus_FK" FromRole="hd_skushomedelivery" ToRole="skus" />
     <NavigationProperty Name="hd_detordenesskus" Relationship="DB_A3F19C_producccionModel.hd_detordenesskus_hd_skushomedelivery_FK" FromRole="hd_skushomedelivery" ToRole="hd_detordenesskus" />
-    <NavigationProperty Name="skus" Relationship="DB_A3F19C_producccionModel.hd_skushomedelivery_skus_FK" FromRole="hd_skushomedelivery" ToRole="skus" />
   </EntityType>
   <EntityType Name="hd_statusorden">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_ordenes_hd_statusorden_FK" FromRole="hd_statusorden" ToRole="hd_ordenes" />
   </EntityType>
   <EntityType Name="hd_statusquickship">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_ordenes_hd_statusquickship_FK" FromRole="hd_statusquickship" ToRole="hd_ordenes" />
   </EntityType>
-  <Association Name="hd_ordenes_Auditores_FK">
+  <Association Name="Ordenes_Auditores_FK">
     <End Type="DB_A3F19C_producccionModel.auditores" Role="auditores" Multiplicity="1" />
     <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -714,22 +703,81 @@
     <End Type="DB_A3F19C_producccionModel.hd_codigosqr" Role="hd_codigosqr" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="hd_ordenes">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="hd_codigosqr">
-        <PropertyRef Name="hd_ordenes_id" />
+        <PropertyRef Name="hd_ordenes_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="detordenesskus_hd_ordenes_FK">
+  <Association Name="hd_ordenes_hd_statusorden_FK">
+    <End Type="DB_A3F19C_producccionModel.hd_statusorden" Role="hd_statusorden" Multiplicity="1" />
+    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hd_statusorden">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="hd_ordenes">
+        <PropertyRef Name="hd_statusorden_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="hd_ordenes_hd_statusquickship_FK">
+    <End Type="DB_A3F19C_producccionModel.hd_statusquickship" Role="hd_statusquickship" Multiplicity="1" />
+    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hd_statusquickship">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="hd_ordenes">
+        <PropertyRef Name="hd_statusquickship_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ordenes_Pickers_FK">
+    <End Type="DB_A3F19C_producccionModel.pickers" Role="pickers" Multiplicity="1" />
+    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pickers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hd_ordenes">
+        <PropertyRef Name="Pickers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SkusHomeDelivery_skus_FK">
+    <End Type="DB_A3F19C_producccionModel.skus" Role="skus" Multiplicity="1" />
+    <End Type="DB_A3F19C_producccionModel.hd_skushomedelivery" Role="hd_skushomedelivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="skus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="hd_skushomedelivery">
+        <PropertyRef Name="skus_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="hd_detordenesskus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="hd_skushomedelivery_Id" Type="Int64" Nullable="false" />
+    <Property Name="hd_ordenes_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="hd_ordenes" Relationship="DB_A3F19C_producccionModel.hd_detordenesskus_hd_ordenes_FK" FromRole="hd_detordenesskus" ToRole="hd_ordenes" />
+    <NavigationProperty Name="hd_skushomedelivery" Relationship="DB_A3F19C_producccionModel.hd_detordenesskus_hd_skushomedelivery_FK" FromRole="hd_detordenesskus" ToRole="hd_skushomedelivery" />
+  </EntityType>
+  <Association Name="hd_detordenesskus_hd_ordenes_FK">
     <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="1" />
     <End Type="DB_A3F19C_producccionModel.hd_detordenesskus" Role="hd_detordenesskus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="hd_ordenes">
-        <PropertyRef Name="id" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="hd_detordenesskus">
-        <PropertyRef Name="hd_ordenes_id" />
+        <PropertyRef Name="hd_ordenes_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -742,54 +790,6 @@
       </Principal>
       <Dependent Role="hd_detordenesskus">
         <PropertyRef Name="hd_skushomedelivery_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="hd_ordenes_hd_statusorden_FK">
-    <End Type="DB_A3F19C_producccionModel.hd_statusorden" Role="hd_statusorden" Multiplicity="1" />
-    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="hd_statusorden">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="hd_ordenes">
-        <PropertyRef Name="hd_statusorden_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="hd_ordenes_hd_statusquickship_FK">
-    <End Type="DB_A3F19C_producccionModel.hd_statusquickship" Role="hd_statusquickship" Multiplicity="1" />
-    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="hd_statusquickship">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="hd_ordenes">
-        <PropertyRef Name="hd_statusquickship_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="hd_ordenes_Pickers_FK">
-    <End Type="DB_A3F19C_producccionModel.pickers" Role="pickers" Multiplicity="1" />
-    <End Type="DB_A3F19C_producccionModel.hd_ordenes" Role="hd_ordenes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="pickers">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="hd_ordenes">
-        <PropertyRef Name="Pickers_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="hd_skushomedelivery_skus_FK">
-    <End Type="DB_A3F19C_producccionModel.skus" Role="skus" Multiplicity="1" />
-    <End Type="DB_A3F19C_producccionModel.hd_skushomedelivery" Role="hd_skushomedelivery" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="skus">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="hd_skushomedelivery">
-        <PropertyRef Name="skus_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

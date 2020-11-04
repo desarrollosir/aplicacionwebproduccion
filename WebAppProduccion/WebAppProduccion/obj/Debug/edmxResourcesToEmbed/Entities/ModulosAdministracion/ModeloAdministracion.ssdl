@@ -35,7 +35,7 @@
     <Property Name="estado" Type="varchar" MaxLength="50" />
     <Property Name="municipio" Type="varchar" MaxLength="50" />
     <Property Name="colonia" Type="varchar" MaxLength="50" />
-    <Property Name="calle" Type="varchar" MaxLength="50" />
+    <Property Name="calle" Type="varchar" MaxLength="100" />
     <Property Name="cp" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="informacionbancaria">

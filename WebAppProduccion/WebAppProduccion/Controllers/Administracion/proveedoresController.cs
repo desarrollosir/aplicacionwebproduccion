@@ -93,6 +93,12 @@ namespace WebAppProduccion.Controllers.Administracion
             return View();
         }
 
+        public ActionResult Detalles(int id)
+        {
+            proveedores proveedores = db.proveedores.Where(x => x.id == id).FirstOrDefault();
+            return View(proveedores);
+        }
+
         [HttpPost]
         public ActionResult CreateProveedor(ProveedorViewModel data)
         {
@@ -133,6 +139,28 @@ namespace WebAppProduccion.Controllers.Administracion
             CrearContactosProveedor(data.contactos, idproveedoragregado);
 
             return Json(new { respuesta = true }, JsonRequestBehavior.AllowGet );
+        }
+                
+        public ActionResult EditarContactoProveedor(int? id) 
+        {
+            contactosproveedores contacto = db.contactosproveedores.Where(x => x.id == id).FirstOrDefault();
+            ViewBag.Puesto = new SelectList(ListaPuestosUsar(), "Value", "Text", contacto.Puesto);
+
+            return View(contacto);    
+        }
+
+        [HttpPost]
+        public ActionResult EditarContactoProveedor(contactosproveedores model)
+        {
+            contactosproveedores contacto = db.contactosproveedores.Where(x => x.id == model.id).FirstOrDefault();
+            contacto.Nombres = model.Nombres;
+            contacto.Puesto = model.Puesto;
+            contacto.Email = model.Email;
+            contacto.Telefono = model.Telefono;
+
+            db.SaveChanges();
+
+            return Json(new { respuesta = true }, JsonRequestBehavior.AllowGet);
         }
 
         public void CrearContactosProveedor(contactosproveedores [] _contactos, int _idproveedor) 
@@ -216,11 +244,109 @@ namespace WebAppProduccion.Controllers.Administracion
 
         public ActionResult Edit(int? id)
         {
-            return View();
+            proveedores proveedores = db.proveedores.Where(x => x.id == id).FirstOrDefault();     
+
+            ViewBag.MonedaFacturacion_Id = new SelectList(db.monedafacturacion, "id", "descripcion", proveedores.MonedaFacturacion_Id);
+            ViewBag.CategoriaProveedor_Id = new SelectList(db.categoriaproveedor, "id", "descripcion", proveedores.CategoriaProveedor_Id);
+            ViewBag.StatusProveedor_Id = new SelectList(db.statusproveedor, "id", "descripcion", proveedores.StatusProveedor_Id);
+            ViewBag.Credito_Id = new SelectList(db.credito, "id", "descripcion", proveedores.Credito_Id);            
+
+            return View(proveedores);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(proveedores model) 
+        {
+            try
+            {
+                proveedores proveedor = db.proveedores.Where(x => x.id == model.id).FirstOrDefault();
+
+                proveedor.NombreComercial = model.NombreComercial;
+                proveedor.RFC = model.RFC;
+                proveedor.RazonSocial = model.RazonSocial;
+                proveedor.ActividadEmpresarial = model.ActividadEmpresarial;
+                proveedor.RepresentanteLegal = model.RepresentanteLegal;
+                proveedor.MonedaFacturacion_Id = model.MonedaFacturacion_Id;
+                proveedor.CategoriaProveedor_Id = model.CategoriaProveedor_Id;
+                proveedor.Credito_Id = model.Credito_Id;
+                proveedor.StatusProveedor_Id = model.StatusProveedor_Id;
+                proveedor.direccionproveedor = model.direccionproveedor;
+                proveedor.informacionbancaria = model.informacionbancaria;
+
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception _ex)
+            {
+                ViewBag.MonedaFacturacion_Id = new SelectList(db.monedafacturacion, "id", "descripcion", model.MonedaFacturacion_Id);
+                ViewBag.CategoriaProveedor_Id = new SelectList(db.categoriaproveedor, "id", "descripcion", model.CategoriaProveedor_Id);
+                ViewBag.StatusProveedor_Id = new SelectList(db.statusproveedor, "id", "descripcion", model.StatusProveedor_Id);
+                ViewBag.Credito_Id = new SelectList(db.credito, "id", "descripcion", model.Credito_Id);
+                ViewBag.Error = "Error";
+                return View(model);
+            }          
+        }
+
+        [HttpPost]
+        public ActionResult ObtenerContactosProveedor(int idproveedor)
+        {
+            try
+            {
+                var Draw = Request.Form.GetValues("draw").FirstOrDefault();
+                var Start = Request.Form.GetValues("start").FirstOrDefault();
+                var Length = Request.Form.GetValues("length").FirstOrDefault();
+                var SortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][data]").FirstOrDefault();
+                var SortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
+
+                var nombre = Request.Form.GetValues("columns[0][search][value]").FirstOrDefault();
+
+                int PageSize = Length != null ? Convert.ToInt32(Length) : 0;
+                int Skip = Start != null ? Convert.ToInt32(Start) : 0;
+                int TotalRecords = 0;
+
+                List<contactosproveedores> listaRetorno = new List<contactosproveedores>();
+
+                var query = db.contactosproveedores.Where(x => x.Proveedores_Id == idproveedor).ToList();
+
+                foreach (var item in query)
+                {
+                    var contacto = new contactosproveedores();
+
+                    contacto.id = item.id;
+                    contacto.Nombres = item.Nombres;
+                    contacto.Puesto = item.Puesto;
+                    contacto.Email = item.Email;
+                    contacto.Telefono = item.Telefono;
+
+                    listaRetorno.Add(contacto);
+                }             
+
+                if (!(string.IsNullOrEmpty(SortColumn) && string.IsNullOrEmpty(SortColumnDir)))
+                {
+                    listaRetorno = listaRetorno.OrderBy(SortColumn + " " + SortColumnDir).ToList();
+                }
+
+                TotalRecords = listaRetorno.ToList().Count();
+                var NewItems = listaRetorno.Skip(Skip).Take(PageSize == -1 ? TotalRecords : PageSize).ToList();
+
+                return Json(new { draw = Draw, recordsFiltered = TotalRecords, recordsTotal = TotalRecords, data = NewItems }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception _ex)
+            {
+                Console.WriteLine(_ex.Message.ToString());
+                return null;
+            }
         }
 
         [HttpPost]
         public JsonResult ListaPuestos()
+        {
+            var listaretorno = ListaPuestosUsar().OrderBy(x => x.Text);
+            return Json(listaretorno);
+        }
+
+        public List<SelectListItem> ListaPuestosUsar() 
         {
             List<SelectListItem> lista = new List<SelectListItem>();
 
@@ -270,9 +396,31 @@ namespace WebAppProduccion.Controllers.Administracion
             lista.Add(listItem8);
             lista.Add(listItem9);
 
-            var listaretorno = lista.OrderBy(x => x.Text);
+            return lista;
+        }
 
-            return Json(listaretorno);
+        public ActionResult CreateContacto(int? id)
+        {
+            ViewBag.Puesto = new SelectList(ListaPuestosUsar(), "Value", "Text");
+            ViewBag.ProveedorId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateContacto(contactosproveedores model) 
+        {
+            contactosproveedores contacto = new contactosproveedores();
+            
+            contacto.Puesto = model.Puesto;
+            contacto.Email = model.Email;
+            contacto.Nombres = model.Nombres;
+            contacto.Telefono = model.Telefono;
+            contacto.Proveedores_Id = model.Proveedores_Id;
+
+            db.contactosproveedores.Add(contacto);
+            db.SaveChanges();
+
+            return Json(new { respuesta = true }, JsonRequestBehavior.AllowGet);
         }
     }
 }

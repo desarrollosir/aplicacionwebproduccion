@@ -20,8 +20,8 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
             this.hd_ordenes = new HashSet<hd_ordenes>();
         }
     
-        public int id { get; set; }
-        public string descripcion { get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hd_ordenes> hd_ordenes { get; set; }

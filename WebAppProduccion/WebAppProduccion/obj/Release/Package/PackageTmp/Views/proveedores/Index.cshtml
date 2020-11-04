@@ -37,7 +37,13 @@
     </div>
 </div>
 
-@*<input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00">*@
+<div id="MyModal" class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg" id="mdialTamanio">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
 
 @section Styles
 {
@@ -119,7 +125,7 @@
                 ],
                 "aoColumns": [
                     //0
-                    { "data": "id", "autoWidth": true,  },
+                    { "data": "id", "autoWidth": true, "visible": false },
                     //1
                     { "data": "RazonSocial", "autoWidth": true },  
                     //
@@ -130,7 +136,7 @@
                         "targets": -1,
                         "render": function (data, type, full) {
                             return "<button onclick='Detalle(" + full['id'] + ")' class='btn btn-success '><i class='fa fa-list'></i></button>" +
-                                "<button onclick='Editar(" + full['id'] + ")' class='btn btn-primary '><i class='fa fa-edit'></i></button>";
+                                "<a href='/proveedores/Edit?id=" + full['id'] + "' class='btn btn-primary '><i class='fa fa-edit'></i></a>";
                         },
                         "bSearchable": false,
                         "sortable": false,
@@ -142,6 +148,18 @@
             $('#txtRazonSocial').on('keyup', function () {
                 table.columns(0).search(this.value).draw();
             });          
-        });        
-    </script>
+        });  
+
+        var Detalle = function (ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/proveedores/Detalles/" + ID;
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+            });
+            return false;
+        }
+    </script>   
 }

@@ -1,0 +1,44 @@
+﻿@model WebAppProduccion.Entities.ModulosOperaciones.wh_masterskus
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">Editar SKU Master @Model.sku</h4>
+    </div>
+    <div class="modal-body">
+        <div id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+            <div class="form-group">
+                @Html.LabelFor(model => model.PiezasPorCaja, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.EditorFor(model => model.PiezasPorCaja, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.ValidationMessageFor(model => model.PiezasPorCaja, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CajasPorCama, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.EditorFor(model => model.CajasPorCama, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.ValidationMessageFor(model => model.CajasPorCama, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PiezasPorTarima, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.EditorFor(model => model.PiezasPorTarima, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.ValidationMessageFor(model => model.PiezasPorTarima, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <input type="submit" value="Guardar" class="btn btn-default" />
+    </div>
+}

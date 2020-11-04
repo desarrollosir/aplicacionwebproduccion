@@ -48,10 +48,10 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
         public virtual DbSet<kitskus> kitskus { get; set; }
         public virtual DbSet<wl_cajas> wl_cajas { get; set; }
         public virtual DbSet<hd_codigosqr> hd_codigosqr { get; set; }
-        public virtual DbSet<hd_detordenesskus> hd_detordenesskus { get; set; }
         public virtual DbSet<hd_ordenes> hd_ordenes { get; set; }
         public virtual DbSet<hd_skushomedelivery> hd_skushomedelivery { get; set; }
         public virtual DbSet<hd_statusorden> hd_statusorden { get; set; }
         public virtual DbSet<hd_statusquickship> hd_statusquickship { get; set; }
+        public virtual DbSet<hd_detordenesskus> hd_detordenesskus { get; set; }
     }
 }

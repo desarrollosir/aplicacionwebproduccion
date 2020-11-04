@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "Move Orders - Index";
+    Layout = "~/Views/Shared/_LayoutOperaciones.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2> Master SKUS <small>Index</small></h2> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="@Url.Action("Create")"> <i class="glyphicon glyphicon-plus-sign"></i> Agregar Registros</a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="well" style="overflow: auto">
+            <div class="col-sm-3">
+                SKU
+                <div class="form-group">
+                    <div class="input-group date">                        
+                        <input id="txtSKUS" name="txtSKUS" type="text" class="form-control" autocomplete="off" />
+                        <span class="input-group-addon">
+                            <span class="fa fa-list-alt"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        
+        <table id="tblMaster" class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>SKU</th>
+                    <th>Descripcion</th>
+                    <th>Codigo Barras</th>
+                    <th>Piezas Por Caja</th>
+                    <th>Cajas Por Cama</th>
+                    <th>Piezas Por Tarima</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div id="MyModal" class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg" id="mdialTamanio">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+
+    <!-- iCheck -->
+    <link href="~/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+}
+
+@section Scripts {
+
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Moment.js: -->
+    <script src="~/vendors/moment/moment.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            table = $("#tblMaster").DataTable({
+                "order": [[0, "asc"]],
+                "ordering": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "pagingType": "simple_numbers",
+                "dom": 'Blrtip', // Hides Default Search
+                "processing": true,
+                "serverSide": true,
+                "orderMulti": false,
+                "deferRender": true,
+                "responsive": true,
+                rowId: 'Id',
+                select: true,
+                buttons: [
+                    {
+                        extend: 'copyHtml5',
+                        text: '<i class="fa fa-files-o"></i>',
+                        titleAttr: 'COPIAR',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        text: '<i class="fa fa-print"></i>',
+                        titleAttr: 'IMPRIMIR',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        text: '<i class="fa fa-file-excel-o"></i>',
+                        titleAttr: 'EXCEL',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        titleAttr: 'PDF',
+                        orientation: 'landscape',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": "/masterskus/ObtenerMaster",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "aoColumns": [
+                    { "data": "Id", "autoWidth": true, "visible": false },       
+                    { "data": "sku", "autoWidth": true, },   
+                    { "data": "descripcion", "autoWidth": true, },   
+                    { "data": "codigobarras", "autoWidth": true, }, 
+                    { "data": "PiezasPorCaja", "autoWidth": true, }, 
+                    { "data": "CajasPorCama", "autoWidth": true, }, 
+                    { "data": "PiezasPorTarima", "autoWidth": true, }, 
+                    {
+                        "data": null,
+                        "targets": -1,
+                        "render": function (data, type, full) {
+                            return "<a  onclick='Edit(" + full['Id'] + ")' id='btnDetalles" + full['Id'] + "' class='btn btn-primary'><i class='fa fa-edit'></i></a>";
+                        },
+                        "bSearchable": false,
+                        "sortable": false,
+                        "autoWidth": true,                        
+                    }
+                ]
+            });
+
+            $('#txtSKUS').on('keyup', function () {
+                table.columns(0).search(this.value).draw();                
+            });
+        });     
+
+        var Edit = function (ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/masterskus/Edit/" + ID;
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+
+                bindForm(this);
+            });
+            return false;
+        }
+
+        function bindForm(dialog) {
+            $('form', dialog).submit(function () {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        if (result.respuesta) {
+                            $("#MyModal").modal('hide');                            
+                            table.draw();
+                        }
+                        else {
+                            $("#MyModal").modal('show');
+                            alert('Error');
+                            bindForm(dialog);
+                        }
+                    },
+                    error: function (xml, message, text) {
+                        toastr.error("Msg: " + message + ", Text: " + text);
+                    }
+                });
+                return false;
+            });
+        }
+
+
+        
+
+    </script>
+}

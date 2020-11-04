@@ -206,5 +206,69 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="hd_codigosqr">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_codigosqr">
+        <MappingFragment StoreEntitySet="hd_codigosqr">
+          <ScalarProperty Name="hd_ordenes_Id" ColumnName="hd_ordenes_Id" />
+          <ScalarProperty Name="CodigoQr" ColumnName="CodigoQr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hd_detordenesskus">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_detordenesskus">
+        <MappingFragment StoreEntitySet="hd_detordenesskus">
+          <ScalarProperty Name="hd_ordenes_Id" ColumnName="hd_ordenes_Id" />
+          <ScalarProperty Name="hd_skushomedelivery_Id" ColumnName="hd_skushomedelivery_Id" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hd_ordenes">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_ordenes">
+        <MappingFragment StoreEntitySet="hd_ordenes">
+          <ScalarProperty Name="hd_statusquickship_Id" ColumnName="hd_statusquickship_Id" />
+          <ScalarProperty Name="hd_statusorden_Id" ColumnName="hd_statusorden_Id" />
+          <ScalarProperty Name="Empleados_Id" ColumnName="Empleados_Id" />
+          <ScalarProperty Name="Auditores_Id" ColumnName="Auditores_Id" />
+          <ScalarProperty Name="Pickers_Id" ColumnName="Pickers_Id" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Paquetes" ColumnName="Paquetes" />
+          <ScalarProperty Name="Guia" ColumnName="Guia" />
+          <ScalarProperty Name="OracleID" ColumnName="OracleID" />
+          <ScalarProperty Name="NumeroOrden" ColumnName="NumeroOrden" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hd_skushomedelivery">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_skushomedelivery">
+        <MappingFragment StoreEntitySet="hd_skushomedelivery">
+          <ScalarProperty Name="skus_Id" ColumnName="skus_Id" />
+          <ScalarProperty Name="QRCode" ColumnName="QRCode" />
+          <ScalarProperty Name="QtyManual" ColumnName="QtyManual" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hd_statusorden">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_statusorden">
+        <MappingFragment StoreEntitySet="hd_statusorden">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hd_statusquickship">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel.hd_statusquickship">
+        <MappingFragment StoreEntitySet="hd_statusquickship">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

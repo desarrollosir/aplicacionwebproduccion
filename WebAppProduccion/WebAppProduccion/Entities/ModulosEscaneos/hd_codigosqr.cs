@@ -14,9 +14,9 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
     
     public partial class hd_codigosqr
     {
-        public int id { get; set; }
-        public string codigo { get; set; }
-        public int hd_ordenes_id { get; set; }
+        public long Id { get; set; }
+        public string CodigoQr { get; set; }
+        public long hd_ordenes_Id { get; set; }
     
         public virtual hd_ordenes hd_ordenes { get; set; }
     }

@@ -21,27 +21,27 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
             this.hd_detordenesskus = new HashSet<hd_detordenesskus>();
         }
     
-        public int id { get; set; }
-        public string orden { get; set; }
-        public string oracleid { get; set; }
-        public string guia { get; set; }
-        public Nullable<System.DateTime> fechacreacion { get; set; }
-        public Nullable<System.DateTime> fechacierre { get; set; }
-        public Nullable<int> paquetes { get; set; }
-        public string observaciones { get; set; }
+        public long Id { get; set; }
+        public Nullable<System.DateTime> FechaAlta { get; set; }
+        public Nullable<System.DateTime> FechaCierre { get; set; }
+        public string NumeroOrden { get; set; }
+        public string OracleID { get; set; }
+        public string Guia { get; set; }
+        public Nullable<int> Paquetes { get; set; }
+        public string Observaciones { get; set; }
         public int Pickers_Id { get; set; }
         public int Auditores_Id { get; set; }
-        public int hd_statusquickship_id { get; set; }
-        public int hd_statusorden_id { get; set; }
         public int Empleados_Id { get; set; }
+        public int hd_statusorden_Id { get; set; }
+        public int hd_statusquickship_Id { get; set; }
     
         public virtual auditores auditores { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hd_codigosqr> hd_codigosqr { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<hd_detordenesskus> hd_detordenesskus { get; set; }
         public virtual hd_statusorden hd_statusorden { get; set; }
         public virtual hd_statusquickship hd_statusquickship { get; set; }
         public virtual pickers pickers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<hd_detordenesskus> hd_detordenesskus { get; set; }
     }
 }

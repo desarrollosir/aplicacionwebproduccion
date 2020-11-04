@@ -35,12 +35,12 @@ namespace WebAppProduccion.Entities.ModulosAdministracion
         public int DireccionProveedor_Id { get; set; }
     
         public virtual categoriaproveedor categoriaproveedor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<contactosproveedores> contactosproveedores { get; set; }
         public virtual credito credito { get; set; }
         public virtual direccionproveedor direccionproveedor { get; set; }
         public virtual informacionbancaria informacionbancaria { get; set; }
         public virtual monedafacturacion monedafacturacion { get; set; }
         public virtual statusproveedor statusproveedor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<contactosproveedores> contactosproveedores { get; set; }
     }
 }

@@ -14,10 +14,10 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
     
     public partial class hd_detordenesskus
     {
-        public int id { get; set; }
-        public Nullable<int> cantidad { get; set; }
-        public int hd_ordenes_id { get; set; }
-        public int hd_skushomedelivery_Id { get; set; }
+        public long Id { get; set; }
+        public Nullable<int> Cantidad { get; set; }
+        public long hd_skushomedelivery_Id { get; set; }
+        public long hd_ordenes_Id { get; set; }
     
         public virtual hd_ordenes hd_ordenes { get; set; }
         public virtual hd_skushomedelivery hd_skushomedelivery { get; set; }

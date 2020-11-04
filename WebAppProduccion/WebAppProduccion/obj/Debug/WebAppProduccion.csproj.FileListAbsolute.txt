@@ -125,6 +125,7 @@ C:\Users\RubenHernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccio
 C:\Users\RubenHernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.dll
 C:\Users\RubenHernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.pdb
 C:\Users\RubenHernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csprojAssemblyReference.cache
+C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\WebAppProduccion.dll.config
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\WebAppProduccion.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\WebAppProduccion.pdb
@@ -165,7 +166,6 @@ C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProducci
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Security.Cryptography.Encoding.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Security.Cryptography.Primitives.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Threading.Tasks.Extensions.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.ValueTuple.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\bin\roslyn\System.Xml.ReaderWriter.dll
@@ -252,4 +252,3 @@ C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProducci
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csproj.CopyComplete
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.dll
 C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.pdb
-C:\Users\Ruben Hernandez\Documents\GitHub\aplicacionwebproduccion\WebAppProduccion\WebAppProduccion\obj\Debug\WebAppProduccion.csprojAssemblyReference.cache

@@ -11,7 +11,8 @@ namespace WebAppProduccion.Entities.ModulosAdministracion
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class informacionbancaria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,9 @@ namespace WebAppProduccion.Entities.ModulosAdministracion
         public int id { get; set; }
         public string nombrebanco { get; set; }
         public string cuentabancaria { get; set; }
+        [Required]
+        [Range(100000000000000000, 999999999999999999, ErrorMessage = "La clave interbancaria debe ser de 18 Digitos.")]
+        [Display(Name = "Clave Interbancaria (18 digitos)")]
         public string claveinterbancaria { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

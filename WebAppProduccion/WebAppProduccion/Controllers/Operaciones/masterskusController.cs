@@ -167,7 +167,7 @@ namespace WebAppProduccion.Controllers.Operaciones
                     {
                         hd_skushomedelivery wh = new hd_skushomedelivery();
                         wh.QtyManual = false;
-                        wh.QrCode = false;
+                        wh.QRCode = false;
                         wh.skus_Id = item.id;
 
                         lista.Add(wh);

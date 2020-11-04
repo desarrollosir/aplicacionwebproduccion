@@ -20,13 +20,13 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
             this.hd_detordenesskus = new HashSet<hd_detordenesskus>();
         }
     
-        public int Id { get; set; }
+        public long Id { get; set; }
         public Nullable<bool> QtyManual { get; set; }
-        public Nullable<bool> QrCode { get; set; }
+        public Nullable<bool> QRCode { get; set; }
         public int skus_Id { get; set; }
     
+        public virtual skus skus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hd_detordenesskus> hd_detordenesskus { get; set; }
-        public virtual skus skus { get; set; }
     }
 }

@@ -17,12 +17,25 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         // GET: hd_skushomedelivery
         public ActionResult Index()
         {
-            var hd_skushomedelivery = db.hd_skushomedelivery.Include(h => h.skus);
-            return View(hd_skushomedelivery.ToList());
+            var hd_skushomedelivery = db.hd_skushomedelivery.Include(h => h.skus).ToList();
+            List<hd_skushomedelivery> lista = new List<hd_skushomedelivery>();
+
+            foreach (var item in hd_skushomedelivery)
+            {
+                hd_skushomedelivery hd_s = new hd_skushomedelivery();
+                hd_s.Id = item.Id;
+                hd_s.QrCodeValor = (bool)item.QRCode;
+                hd_s.QtyManualValor = (bool)item.QtyManual;
+                hd_s.skus = item.skus;
+
+                lista.Add(hd_s);
+            }
+
+            return View(lista);
         }
 
         // GET: hd_skushomedelivery/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(long? id)
         {
             if (id == null)
             {
@@ -48,8 +61,11 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,QtyManual,QrCode,skus_Id")] hd_skushomedelivery hd_skushomedelivery)
+        public ActionResult Create(hd_skushomedelivery hd_skushomedelivery)
         {
+            hd_skushomedelivery.QRCode = hd_skushomedelivery.QrCodeValor;
+            hd_skushomedelivery.QtyManual = hd_skushomedelivery.QtyManualValor;
+
             if (ModelState.IsValid)
             {
                 db.hd_skushomedelivery.Add(hd_skushomedelivery);
@@ -62,21 +78,20 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         }
 
         // GET: hd_skushomedelivery/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             hd_skushomedelivery hd_skushomedelivery = db.hd_skushomedelivery.Find(id);
+            hd_skushomedelivery.QrCodeValor = (bool)hd_skushomedelivery.QRCode;
+            hd_skushomedelivery.QtyManualValor = (bool)hd_skushomedelivery.QtyManual;
+
             if (hd_skushomedelivery == null)
             {
                 return HttpNotFound();
             }
-
-            hd_skushomedelivery.QtyManualValor = (bool)hd_skushomedelivery.QtyManual;
-            hd_skushomedelivery.QrCodeValor = (bool)hd_skushomedelivery.QrCode;
-
             ViewBag.skus_Id = new SelectList(db.skus, "id", "SKU", hd_skushomedelivery.skus_Id);
             return View(hd_skushomedelivery);
         }
@@ -87,13 +102,13 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(hd_skushomedelivery hd_skushomedelivery)
-        {            
+        {
+            hd_skushomedelivery.QRCode = hd_skushomedelivery.QrCodeValor;
+            hd_skushomedelivery.QtyManual = hd_skushomedelivery.QtyManualValor;
+
             if (ModelState.IsValid)
             {
-                hd_skushomedelivery sku = db.hd_skushomedelivery.Find(hd_skushomedelivery.Id);
-                sku.QrCode = hd_skushomedelivery.QrCodeValor;
-                sku.QtyManual = hd_skushomedelivery.QtyManualValor;
-                
+                db.Entry(hd_skushomedelivery).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -102,7 +117,7 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         }
 
         // GET: hd_skushomedelivery/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(long? id)
         {
             if (id == null)
             {
@@ -119,7 +134,7 @@ namespace WebAppProduccion.Controllers.HomeDelivery
         // POST: hd_skushomedelivery/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(long id)
         {
             hd_skushomedelivery hd_skushomedelivery = db.hd_skushomedelivery.Find(id);
             db.hd_skushomedelivery.Remove(hd_skushomedelivery);

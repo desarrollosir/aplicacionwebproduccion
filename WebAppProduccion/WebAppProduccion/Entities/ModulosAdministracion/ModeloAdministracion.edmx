@@ -40,7 +40,7 @@
           <Property Name="estado" Type="varchar" MaxLength="50" />
           <Property Name="municipio" Type="varchar" MaxLength="50" />
           <Property Name="colonia" Type="varchar" MaxLength="50" />
-          <Property Name="calle" Type="varchar" MaxLength="50" />
+          <Property Name="calle" Type="varchar" MaxLength="100" />
           <Property Name="cp" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="informacionbancaria">
@@ -217,10 +217,15 @@
           <EntitySet Name="statusproveedor" EntityType="DB_A3F19C_producccionModel2.statusproveedor" />
           <EntitySet Name="direccionproveedor" EntityType="DB_A3F19C_producccionModel2.direccionproveedor" />
           <EntitySet Name="informacionbancaria" EntityType="DB_A3F19C_producccionModel2.informacionbancaria" />
+          <EntitySet Name="contactosproveedores" EntityType="DB_A3F19C_producccionModel2.contactosproveedores" />
           <EntitySet Name="proveedores" EntityType="DB_A3F19C_producccionModel2.proveedores" />
           <AssociationSet Name="proveedores_categoriaproveedor_fk" Association="DB_A3F19C_producccionModel2.proveedores_categoriaproveedor_fk">
             <End Role="categoriaproveedor" EntitySet="categoriaproveedor" />
             <End Role="proveedores" EntitySet="proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="contactosproveedores_proveedores_fk" Association="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk">
+            <End Role="proveedores" EntitySet="proveedores" />
+            <End Role="contactosproveedores" EntitySet="contactosproveedores" />
           </AssociationSet>
           <AssociationSet Name="proveedores_credito_fk" Association="DB_A3F19C_producccionModel2.proveedores_credito_fk">
             <End Role="credito" EntitySet="credito" />
@@ -241,11 +246,6 @@
           <AssociationSet Name="proveedores_statusproveedor_fk" Association="DB_A3F19C_producccionModel2.proveedores_statusproveedor_fk">
             <End Role="statusproveedor" EntitySet="statusproveedor" />
             <End Role="proveedores" EntitySet="proveedores" />
-          </AssociationSet>
-          <EntitySet Name="contactosproveedores" EntityType="DB_A3F19C_producccionModel2.contactosproveedores" />
-          <AssociationSet Name="contactosproveedores_proveedores_fk" Association="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk">
-            <End Role="proveedores" EntitySet="proveedores" />
-            <End Role="contactosproveedores" EntitySet="contactosproveedores" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="credito">
@@ -290,7 +290,7 @@
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="calle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="cp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="proveedores" Relationship="DB_A3F19C_producccionModel2.proveedores_direccionproveedor_fk" FromRole="direccionproveedor" ToRole="proveedores" />
         </EntityType>
@@ -303,6 +303,18 @@
           <Property Name="cuentabancaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="claveinterbancaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="proveedores" Relationship="DB_A3F19C_producccionModel2.proveedores_informacionbancaria_fk" FromRole="informacionbancaria" ToRole="proveedores" />
+        </EntityType>
+        <EntityType Name="contactosproveedores">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Proveedores_Id" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="proveedores" Relationship="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk" FromRole="contactosproveedores" ToRole="proveedores" />
         </EntityType>
         <EntityType Name="proveedores">
           <Key>
@@ -322,12 +334,12 @@
           <Property Name="InformacionBancaria_Id" Type="Int32" Nullable="false" />
           <Property Name="DireccionProveedor_Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="categoriaproveedor" Relationship="DB_A3F19C_producccionModel2.proveedores_categoriaproveedor_fk" FromRole="proveedores" ToRole="categoriaproveedor" />
+          <NavigationProperty Name="contactosproveedores" Relationship="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk" FromRole="proveedores" ToRole="contactosproveedores" />
           <NavigationProperty Name="credito" Relationship="DB_A3F19C_producccionModel2.proveedores_credito_fk" FromRole="proveedores" ToRole="credito" />
           <NavigationProperty Name="direccionproveedor" Relationship="DB_A3F19C_producccionModel2.proveedores_direccionproveedor_fk" FromRole="proveedores" ToRole="direccionproveedor" />
           <NavigationProperty Name="informacionbancaria" Relationship="DB_A3F19C_producccionModel2.proveedores_informacionbancaria_fk" FromRole="proveedores" ToRole="informacionbancaria" />
           <NavigationProperty Name="monedafacturacion" Relationship="DB_A3F19C_producccionModel2.proveedores_monedafacturacion_fk" FromRole="proveedores" ToRole="monedafacturacion" />
           <NavigationProperty Name="statusproveedor" Relationship="DB_A3F19C_producccionModel2.proveedores_statusproveedor_fk" FromRole="proveedores" ToRole="statusproveedor" />
-          <NavigationProperty Name="contactosproveedores" Relationship="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk" FromRole="proveedores" ToRole="contactosproveedores" />
         </EntityType>
         <Association Name="proveedores_categoriaproveedor_fk">
           <End Type="DB_A3F19C_producccionModel2.categoriaproveedor" Role="categoriaproveedor" Multiplicity="1" />
@@ -338,6 +350,18 @@
             </Principal>
             <Dependent Role="proveedores">
               <PropertyRef Name="CategoriaProveedor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="contactosproveedores_proveedores_fk">
+          <End Type="DB_A3F19C_producccionModel2.proveedores" Role="proveedores" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel2.contactosproveedores" Role="contactosproveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="proveedores">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="contactosproveedores">
+              <PropertyRef Name="Proveedores_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -398,30 +422,6 @@
             </Principal>
             <Dependent Role="proveedores">
               <PropertyRef Name="StatusProveedor_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="contactosproveedores">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Proveedores_Id" Type="Int32" Nullable="false" />
-          <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="proveedores" Relationship="DB_A3F19C_producccionModel2.contactosproveedores_proveedores_fk" FromRole="contactosproveedores" ToRole="proveedores" />
-        </EntityType>
-        <Association Name="contactosproveedores_proveedores_fk">
-          <End Type="DB_A3F19C_producccionModel2.proveedores" Role="proveedores" Multiplicity="1" />
-          <End Type="DB_A3F19C_producccionModel2.contactosproveedores" Role="contactosproveedores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="proveedores">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="contactosproveedores">
-              <PropertyRef Name="Proveedores_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -487,6 +487,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="contactosproveedores">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.contactosproveedores">
+              <MappingFragment StoreEntitySet="contactosproveedores">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Proveedores_Id" ColumnName="Proveedores_Id" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="proveedores">
             <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.proveedores">
               <MappingFragment StoreEntitySet="proveedores">
@@ -502,18 +514,6 @@
                 <ScalarProperty Name="RFC" ColumnName="RFC" />
                 <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
                 <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="contactosproveedores">
-            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel2.contactosproveedores">
-              <MappingFragment StoreEntitySet="contactosproveedores">
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Proveedores_Id" ColumnName="Proveedores_Id" />
-                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
