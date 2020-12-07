@@ -157,7 +157,7 @@
             <div class="x_content">
                 <br />
                 <a href='@Url.Action("Index", "logisticas")'>
-                    <img src='@Url.Content("~/images/inventory.png")' height="170" />
+                    <img src='@Url.Content("~/images/inventory.png")' height="160" />
                 </a>
             </div>
         </div>
@@ -177,6 +177,30 @@
                 <br />
                 <a href='@Url.Action("Index", "ordenescompra")'>
                     <img src='@Url.Content("~/Images/purchase-order.png")' height="170" />
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+@if (User.IsInRole("admin") ||
+    User.IsInRole("supervisorarzyz") ||
+    User.IsInRole("analistaarzyz") ||
+    User.IsInRole("sololecturaarzyz") ||
+    User.IsInRole("coordinadoroperaciones") ||
+    User.IsInRole("gerentegeneral"))
+{
+    //ARZYZ
+    <div class="col-md-3 col-sm-3 col-xs-12" style="text-align:center">
+        <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+                <h2>Gestion ARZYZ</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <a href='@Url.Action("Index", "controlarzys")'>
+                    <img src='@Url.Content("~/Images/analysis.png")' height="130" />
                 </a>
             </div>
         </div>

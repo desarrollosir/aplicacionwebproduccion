@@ -1,0 +1,250 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2> Unidades <small>Index</small></h2> &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-success" href="@Url.Action("Create")"> <i class="glyphicon glyphicon-plus-sign"></i> Agregar Registros</a>
+        <btn class="btn btn-warning" onclick="CerrarTodas(1)"> <i class="glyphicon glyphicon-plus-sign"></i> Cerrar Unidades Terminadas</btn>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="well" style="overflow: auto">
+            <div class="col-sm-3">
+                Economico Unidad
+                <div class="form-group">
+                    <div class="input-group date">
+                        <input id="txtEconomico" name="txtEconomico" class="form-control" autocomplete="off" />
+                        <span class="input-group-addon">
+                            <span class="fa fa-truck"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                Estado Unidad
+                <div class="form-group">
+                    <div class="input-group date">
+                        <select id="idstatus" name="idstatus" class="form-control col-md-7 col-xs-12"></select>
+                        <span class="input-group-addon">
+                            <span class="fa fa-truck"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="tblUnidades" class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Economico</th>
+                    <th>Cita Arribo</th>
+                    <th>Cita Destino</th>
+                    <th>Linea</th>
+                    <th>Destino</th>
+                    <th>Status</th>
+                    <th>Retrabajo</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div id="MyModal" class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg" id="mdialTamanio">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <!-- Datatables -->
+    <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <link href="~/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+}
+
+@section Scripts {
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <!-- Toastr.js: -->
+    <script src="~/Scripts/toastr.min.js"></script>
+    <!-- Moment.js: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.21/dataRender/datetime.js"></script>
+
+    <script type="text/javascript">
+        var table;
+
+        $(document).ready(function () {
+            table = $("#tblUnidades").DataTable({
+                "order": [[0, "desc"]],
+                "ordering": true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "pagingType": "simple_numbers",
+                "dom": 'Blrtip', // Hides Default Search
+                "processing": true,
+                "serverSide": true,
+                "orderMulti": false,
+                "deferRender": true,
+                "responsive": true,
+                rowId: 'Id',
+                select: true,
+                "ajax": {
+                    "url": "/arz_unidades/ObtenerUnidades",
+                    "type": "POST",
+                    "datatype": "json"
+                },                                    
+                "aoColumns": [
+                    { "data": "Id", "autoWidth": true, "visible": false },
+                    { "data": "Economico", "autoWidth": true, },
+                    { "data": "citaarribostring", "autoWidth": true, },
+                    { "data": "citadestinostring", "autoWidth": true, },
+                    { "data": "lineatransporte", "autoWidth": true, },
+                    { "data": "destino", "autoWidth": true, },
+                    { "data": "statusunidad", "autoWidth": true, },
+                    { "data": "retrabajo", "autoWidth": true, },
+                    {
+                        "data": null,
+                        "targets": -1,
+                        "render": function (data, type, full) {
+                            return  "<button onclick='CancelarUnidad(" + full['Id'] + ")' class='btn btn-danger btn-sm'><i class='fa fa-ban'></i></button>" +
+                                    "<button onclick='VerDetalle(" + full['Id'] + ")' class='btn btn-success btn-sm'><i class='fa fa-list'></i></button>" +
+                                    "<button onclick='CerrarUnidad(" + full['Id'] + ")' class='btn btn-warning btn-sm'><i class='fa fa-check-square-o'></i></button>" +
+                                    "<a href='/arz_unidades/Edit/" + full['Id'] + "' class='btn btn-primary btn-sm'><i class='fa fa-edit'></i></a>";
+                            
+                                
+                        },
+                        
+                    }
+                ]
+            });
+
+            $('#txtEconomico').on('keyup', function () {
+                table.columns(0).search(this.value).draw();
+            });
+
+            $('#idstatus').on('change', function () {
+                table.columns(1).search(this.value).draw();
+            });
+        });
+
+        function VerDetalle(ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/arz_unidades/VerDetalle?idunidad=" + ID;
+
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+                bindForm(this);
+            });
+
+            return false;
+        }
+
+        function CerrarUnidad(ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/arz_unidades/CerrarUnidad?idunidad=" + ID;
+
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+                bindForm(this);
+            });
+
+            return false;
+        }
+
+        function CerrarTodas(ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/arz_unidades/CerrarTodasLasUnidades?id=" + ID;
+
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+                bindForm(this);
+            });
+
+            return false;
+        }
+
+        function CancelarUnidad(ID) {
+            $.ajaxSetup({ cache: false });
+            var EditUrl = "/arz_unidades/CancelarUnidad?idunidad=" + ID;
+
+            $("#MyModalContent").load(EditUrl, function () {
+                $("#MyModal").modal({
+                    //backdrop: 'static',
+                    keyboard: false
+                }, 'show');
+                bindForm(this);
+            });
+
+            return false;
+        }
+
+        function bindForm(dialog) {
+            $('form', dialog).submit(function () {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        if (result.respuesta) {
+                            $("#MyModal").modal('hide');
+                            toastr.success('Proceso Concretado Correctamente.');
+                            table.draw();
+                        }
+                        else {
+                            $("#MyModal").modal('show');
+                            toastr.error(result.msg);
+                            bindForm(dialog);
+                        }
+                    },
+                    error: function (xml, message, text) {
+                        toastr.error("Msg: " + message + ", Text: " + text);
+                    }
+                });
+                return false;
+            });
+        }
+
+        $(function () {
+            var ddlStatus = $("#idstatus");
+            ddlStatus.empty().append('<option selected="selected" value="0" disabled = "disabled">Loading ...</option>');
+            $.ajax({
+                type: "POST",
+                url: "/arz_unidades/ListaStatus",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    ddlStatus.empty().append('<option selected="selected" value="0">Seleccione una opcion...</option>');
+                    $.each(response, function () {
+                        ddlStatus.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+    </script>
+}

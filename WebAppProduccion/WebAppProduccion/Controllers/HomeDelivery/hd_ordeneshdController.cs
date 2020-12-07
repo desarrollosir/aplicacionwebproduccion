@@ -66,7 +66,8 @@ namespace WebAppProduccion.Controllers.HomeDelivery
                             ordenesTemp.NumeroOrden = dr["NumeroOrden"].ToString();
                             ordenesTemp.Guia = dr["Guia"].ToString();
                             ordenesTemp.OracleID = dr["OracleID"].ToString();
-
+                            ordenesTemp.Paquetes = Convert.ToInt32(dr["Paquetes"]);
+                            ordenesTemp.status = dr["Descripcion"].ToString();
 
                             lista.Add(ordenesTemp);
                         }
@@ -208,15 +209,16 @@ namespace WebAppProduccion.Controllers.HomeDelivery
             List<skus> listabusquedasku = db.skus.ToList();
             foreach (DataRow row in dt.Rows)
             {
-                string sku = row[0].ToString().Trim().ToUpper();
+                string sku = row[0].ToString().Trim().ToUpper();              
 
                 var busquedaskuhd = listabusauqeda.Where(x => x.skus.codigobarras == sku).FirstOrDefault();
 
                 if (busquedaskuhd == null)
                 {
                     int idskuhd = listabusquedasku.Where(x => x.codigobarras == sku).FirstOrDefault().id;
+                    var skusinagregar = listaSKUSHD.Where(x => x.skus_Id == idskuhd).FirstOrDefault();
 
-                    if (listaSKUSHD.Where(x => x.skus_Id == idskuhd) == null)
+                    if (skusinagregar == null)
                     {
                         hd_skushomedelivery hd_sku = new hd_skushomedelivery();
                         hd_sku.QRCode = false;

@@ -1,0 +1,147 @@
+﻿@model WebAppProduccion.Entities.ModulosArzys.arz_unidades
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2> Unidades <small>Create</small></h2> &nbsp;&nbsp;&nbsp;
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Economico, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        @Html.EditorFor(model => model.Economico, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                        @Html.ValidationMessageFor(model => model.Economico, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CitaArribo, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-6 col-sm-6 col-xs-12">                        
+                        <input type="text" id="citaarribostring" name="citaarribostring" class="form-control col-md-7 col-xs-12"/>
+                        @Html.ValidationMessageFor(model => model.citaarribostring, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CitaDestino, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-6 col-sm-6 col-xs-12">                        
+                        <input type="text" id="citadestinostring" name="citadestinostring" class="form-control col-md-7 col-xs-12"/>
+                        @Html.ValidationMessageFor(model => model.citadestinostring, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.arz_lineatransporte_Id, "arz_lineatransporte_Id", htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-6 col-sm-6 col-xs-12">                        
+                        <select id="arz_lineatransporte_Id" name="arz_lineatransporte_Id" class="form-control col-md-7 col-xs-12"></select>
+                        @Html.ValidationMessageFor(model => model.arz_lineatransporte_Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.arz_destinos_Id, "arz_destinos_Id", htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-6 col-sm-6 col-xs-12">                        
+                        <select id="arz_destinos_Id" name="arz_destinos_Id" class="form-control col-md-7 col-xs-12"></select>
+                        @Html.ValidationMessageFor(model => model.arz_destinos_Id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <a class="btn btn-danger" href="@Url.Action("Index")"> <i class="fa fa-close"></i> Regresar</a>
+                        <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i> Guardar Informacion</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="../vendors/normalize-css/normalize.css" rel="stylesheet">
+}
+
+@section Scripts {
+
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/vendors/moment/min/moment.min.js"></script>
+    <script src="~/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-datetimepicker -->
+    <script src="~/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Initialize datetimepicker -->
+    <script>
+        $('#citaarribostring').datetimepicker({
+            format: 'DD/MM/YYYY HH:mm'
+        });
+
+        $('#citadestinostring').datetimepicker({
+            format: 'DD/MM/YYYY HH:mm'
+        });
+
+        $(function () {
+            var ddlDestinos = $("#arz_destinos_Id");
+            ddlDestinos.empty().append('<option selected="selected" value="0" disabled = "disabled">Loading ...</option>');
+            $.ajax({
+                type: "POST",
+                url: "/arz_unidades/ListaDestinos",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    ddlDestinos.empty().append('<option selected="selected" value="0">Seleccione una opcion...</option>');
+                    $.each(response, function () {
+                        ddlDestinos.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+
+        $(function () {
+            var ddlLineas = $("#arz_lineatransporte_Id");
+            ddlLineas.empty().append('<option selected="selected" value="0" disabled = "disabled">Loading ...</option>');
+            $.ajax({
+                type: "POST",
+                url: "/arz_unidades/ListaLineas",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    ddlLineas.empty().append('<option selected="selected" value="0">Seleccione una opcion...</option>');
+                    $.each(response, function () {
+                        ddlLineas.append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        });
+    </script>
+}

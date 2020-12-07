@@ -181,6 +181,15 @@
     <Compile Include="Controllers\Administracion\ordenescompraController.cs" />
     <Compile Include="Controllers\Administracion\proveedoresController.cs" />
     <Compile Include="Controllers\Administracion\statusproveedorsController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_destinosController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_lineatransporteController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_procesoController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_retrabajosController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_retrabajo_semaforoController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_semaforosController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_statusunidadController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\arz_unidadesController.cs" />
+    <Compile Include="Controllers\ControlUnidadesARZYS\controlarzysController.cs" />
     <Compile Include="Controllers\HomeDelivery\hd_codigosqrController.cs" />
     <Compile Include="Controllers\HomeDelivery\hd_ordeneshdController.cs" />
     <Compile Include="Controllers\HomeDelivery\hd_skushomedeliveryController.cs" />
@@ -253,6 +262,49 @@
     <Compile Include="Entities\ModulosAdministracion\statusproveedor.cs">
       <DependentUpon>ModeloAdministracion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_destinos.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_detunidadproceso.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_detunidadretrabajo.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_lineatransporte.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_proceso.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_retrabajos.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_retrabajo_semaforo.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_statusunidad.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\arz_unidades.cs">
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\ModeloArzys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloArzys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\ModeloArzys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloArzys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\ModeloArzys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloArzys.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ModulosArzys\UnidadesViewModel.cs" />
     <Compile Include="Entities\ModulosEscaneos\auditores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -321,6 +373,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Modelo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ModulosEscaneos\OrdenesViewModel.cs" />
     <Compile Include="Entities\ModulosEscaneos\pickers.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -484,6 +537,16 @@
       <DependentUpon>ModeloAdministracion.edmx</DependentUpon>
       <LastGenOutput>ModeloAdministracion.cs</LastGenOutput>
     </Content>
+    <Content Include="Entities\ModulosArzys\ModeloArzys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloArzys.edmx</DependentUpon>
+      <LastGenOutput>ModeloArzys.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\ModulosArzys\ModeloArzys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloArzys.edmx</DependentUpon>
+      <LastGenOutput>ModeloArzys.cs</LastGenOutput>
+    </Content>
     <Content Include="Entities\ModulosEscaneos\Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>
@@ -518,6 +581,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\analysis.png" />
     <Content Include="Images\compras.png" />
     <Content Include="Images\home-opengate.jpg" />
     <Content Include="Images\homedelivery.jpg" />
@@ -614,6 +678,13 @@
     </EntityDeploy>
     <Content Include="Entities\ModulosOperaciones\ModeloOperaciones.edmx.diagram">
       <DependentUpon>ModeloOperaciones.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Entities\ModulosArzys\ModeloArzys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloArzys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entities\ModulosArzys\ModeloArzys.edmx.diagram">
+      <DependentUpon>ModeloArzys.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -5198,6 +5269,51 @@
     <Content Include="Views\hd_skushomedelivery\Details.cshtml" />
     <Content Include="Views\hd_skushomedelivery\Edit.cshtml" />
     <Content Include="Views\hd_skushomedelivery\Index.cshtml" />
+    <Content Include="Views\controlarzys\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutARZYS.cshtml" />
+    <Content Include="Views\controlarzys\IndexPhone.cshtml" />
+    <Content Include="Views\controlarzys\ActividadesUnidad.cshtml" />
+    <Content Include="Views\arz_lineatransporte\Create.cshtml" />
+    <Content Include="Views\arz_lineatransporte\Delete.cshtml" />
+    <Content Include="Views\arz_lineatransporte\Details.cshtml" />
+    <Content Include="Views\arz_lineatransporte\Edit.cshtml" />
+    <Content Include="Views\arz_lineatransporte\Index.cshtml" />
+    <Content Include="Views\arz_statusunidad\Create.cshtml" />
+    <Content Include="Views\arz_statusunidad\Delete.cshtml" />
+    <Content Include="Views\arz_statusunidad\Details.cshtml" />
+    <Content Include="Views\arz_statusunidad\Edit.cshtml" />
+    <Content Include="Views\arz_statusunidad\Index.cshtml" />
+    <Content Include="Views\arz_unidades\Create.cshtml" />
+    <Content Include="Views\arz_unidades\Delete.cshtml" />
+    <Content Include="Views\arz_unidades\Details.cshtml" />
+    <Content Include="Views\arz_unidades\Edit.cshtml" />
+    <Content Include="Views\arz_unidades\Index.cshtml" />
+    <Content Include="Views\arz_proceso\Create.cshtml" />
+    <Content Include="Views\arz_proceso\Delete.cshtml" />
+    <Content Include="Views\arz_proceso\Details.cshtml" />
+    <Content Include="Views\arz_proceso\Edit.cshtml" />
+    <Content Include="Views\arz_proceso\Index.cshtml" />
+    <Content Include="Views\arz_destinos\Create.cshtml" />
+    <Content Include="Views\arz_destinos\Delete.cshtml" />
+    <Content Include="Views\arz_destinos\Details.cshtml" />
+    <Content Include="Views\arz_destinos\Edit.cshtml" />
+    <Content Include="Views\arz_destinos\Index.cshtml" />
+    <Content Include="Views\arz_retrabajos\Create.cshtml" />
+    <Content Include="Views\arz_retrabajos\Delete.cshtml" />
+    <Content Include="Views\arz_retrabajos\Details.cshtml" />
+    <Content Include="Views\arz_retrabajos\Edit.cshtml" />
+    <Content Include="Views\arz_retrabajos\Index.cshtml" />
+    <Content Include="Views\arz_unidades\CerrarUnidad.cshtml" />
+    <Content Include="Views\arz_unidades\VerDetalle.cshtml" />
+    <Content Include="Views\arz_unidades\CerrarTodasLasUnidades.cshtml" />
+    <Content Include="Views\arz_unidades\CancelarUnidad.cshtml" />
+    <Content Include="Views\arz_semaforos\Index.cshtml" />
+    <Content Include="Views\arz_retrabajo_semaforo\Create.cshtml" />
+    <Content Include="Views\arz_retrabajo_semaforo\Delete.cshtml" />
+    <Content Include="Views\arz_retrabajo_semaforo\Details.cshtml" />
+    <Content Include="Views\arz_retrabajo_semaforo\Edit.cshtml" />
+    <Content Include="Views\arz_retrabajo_semaforo\Index.cshtml" />
+    <Content Include="Views\arz_unidades\CargarUnidades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

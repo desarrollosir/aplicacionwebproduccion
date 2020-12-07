@@ -1,0 +1,77 @@
+﻿@model List<WebAppProduccion.Entities.ModulosArzys.arz_unidades>
+@{
+    ViewBag.Title = "IndexPhone";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<div class="x_panel">   
+    <div class="x_content">
+        <div class="well" style="overflow: auto">
+            <div class="col-sm-3">
+                Economico Unidad
+                <div class="form-group">
+                    <div class="input-group date">
+                        <input id="txtOrden" name="txtOrden" class="form-control" autocomplete="off" />
+                        <span class="input-group-addon">
+                            <span class="fa fa-truck"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="tblCajas" class="table table-bordered" width="100%">
+            <thead>
+                <tr>
+                    <th>Placas</th>
+                    <th>Linea</th>
+                    <th>Destino</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Economico</td>
+                        <td>@item.arz_lineatransporte.Descripcion</td>
+                        <td>@item.arz_destinos.Descripcion</td>
+                        <td><a class="btn btn-sm btn-primary" href="@Url.Action("ActividadesUnidad", new { idunidad = item.Id })"><i class="fa fa-edit"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    <!-- Datatables -->
+    <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">    
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <!-- Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>    
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>    
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Moment.js: -->
+    <script src="~/vendors/moment/moment.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            table = $("#tblCajas").DataTable({
+                "dom": 'Blrtip', // Hides Default Search
+                "responsive": true,
+            });
+
+            $('#txtOrden').on('keyup', function () {
+                table.columns(0).search(this.value).draw();
+            }); 
+        });
+
+        $('#txtOrden').on('keyup', function () {
+            table.columns(0).search(this.value).draw();
+        }); 
+    </script>
+}

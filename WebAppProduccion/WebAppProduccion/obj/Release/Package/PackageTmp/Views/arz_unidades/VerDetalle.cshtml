@@ -1,0 +1,52 @@
+﻿@model List<WebAppProduccion.Entities.ModulosArzys.arz_detunidadproceso>
+
+@{
+    ViewBag.Title = "VerDetalle";
+    Layout = null;
+}
+
+<div class="modal-header text-center">
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title">
+        Detalle del Proceso de la Unidad <br />
+        Economico: @ViewBag.Economico
+    </h4>
+</div>
+<div class="modal-body">    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Fecha Hora</th>
+                <th>Check</th>
+                <th>Proceso</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FechaHoraInicio</td>
+
+                        @if (item.CheckIn == true)
+                        {
+                            <td> <input type="checkbox" checked class="icheckbox_flat-green checked flat"/> </td>
+                        }
+                        else
+                        {
+                            <td> <input type="checkbox" class="icheckbox_flat-green checked flat"/> </td>
+                        }
+
+                        <td>@item.arz_proceso.Descripcion </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>    
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>    
+</div>
+

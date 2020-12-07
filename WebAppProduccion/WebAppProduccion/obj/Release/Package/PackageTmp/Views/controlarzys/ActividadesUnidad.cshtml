@@ -1,0 +1,177 @@
+﻿@model List<WebAppProduccion.Entities.ModulosArzys.arz_detunidadproceso>
+@{
+    ViewBag.Title = "ActividadesUnidad";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2> Gestionar Cajas <small>Gestionar</small></h2> &nbsp;&nbsp;&nbsp;
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <input id="idunidad" type="hidden" value="@ViewBag.IdUnidad" />
+        <center>
+
+            @{
+                if (ViewBag.IdEstado == 5)
+                {
+                    <label>Unidad Cancelada</label>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        if (item.arz_proceso_Id == 1 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-primary" id="btnPendiente"><i class="fa fa-bank"></i> Pendiente Por Abrir</button>                            
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 2 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-dark" id="btnInspeccion"><i class="fa fa-eye"></i> Inspeccion</button>
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 3 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-default" id="btnRetrabajo" visible="false"><i class="fa fa-check-square"></i> Retrabajo</button>
+                            <button class="btn btn-lg btn-default" id="btnSinRetrabajo"><i class="fa fa-minus-circle"></i> Sin Retrabajo</button>
+                            <br />
+                            <button class="btn btn-lg btn-primary" id="btnFlejado"><i class="fa fa-asterisk"></i> Flejado</button>
+                            <br />
+                            <button class="btn btn-lg btn-primary" id="btnManiobras"><i class="fa fa-cubes"></i> Maniobras de Reacomodo</button>
+                            <br />
+                            <button class="btn btn-lg btn-primary" id="btnLavado"><i class="fa fa-tint"></i> Lavado</button>
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 4 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-default" id="btnFinRetrabajo"><i class="fa fa-check-square"></i>Fin Retrabajo</button>
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 5 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-warning" id="btnListoDespacho"><i class="fa fa-check"></i> Listo Para Despacho</button>
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 6 && item.CheckIn == false)
+                        {
+                            <button class="btn btn-lg btn-success" id="btnDespachado"><i class="fa fa-flag-checkered"></i> Despachado</button>
+                            break;
+                        }
+
+                        if (item.arz_proceso_Id == 6 && item.CheckIn == true)
+                        {
+                            <label>Ya se ha terminado esta unidad</label>
+                            break;
+                        }
+                    }
+                }
+            }
+        </center>
+    </div>
+</div>
+
+@section Scripts {   
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#btnFlejado').hide();
+            $('#btnManiobras').hide();
+            $('#btnLavado').hide();
+        });
+
+        function CambiarEnBD(subproceso, unidad, retrabajo) {
+            $.ajax({
+                type: 'POST',
+                url: "/controlarzys/ActualizarDetalle",
+                data: { idProceso: subproceso, idUnidad: unidad, retrabajo: retrabajo },
+                success: function (result) {
+                    if (result.respuesta) {
+                        window.location.href = '/controlarzys/IndexPhone/'
+                    }
+                    else {
+                        alert('Error');
+                    }
+                },
+                error: function () {
+                    alert('Ha ocurrido un problema');
+                }
+            });      
+        }
+
+        $('#btnPendiente').on('click', function () {
+            var subproceso = 1;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 0;
+            CambiarEnBD(subproceso, unidad, retrabajo);                  
+        });
+
+        $('#btnInspeccion').on('click', function () {
+            var subproceso = 2;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 0;
+            CambiarEnBD(subproceso, unidad, retrabajo);   
+        });
+
+        $('#btnFlejado').on('click', function () {
+            var subproceso = 3;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 1;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnManiobras').on('click', function () {
+            var subproceso = 3;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 2;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnLavado').on('click', function () {
+            var subproceso = 3;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 3;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnFinRetrabajo').on('click', function () {
+            var subproceso = 4;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 0;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnListoDespacho').on('click', function () {
+            var subproceso = 5;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 0;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnDespachado').on('click', function () {
+            var subproceso = 6;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 0;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnSinRetrabajo').on('click', function () {            
+            var subproceso = 7;
+            var unidad = $('#idunidad').val();
+            var retrabajo = 4;
+            CambiarEnBD(subproceso, unidad, retrabajo);
+        });
+
+        $('#btnRetrabajo').on('click', function () {
+            $('#btnFlejado').show();
+            $('#btnManiobras').show();
+            $('#btnLavado').show();                
+        });
+    </script>
+}

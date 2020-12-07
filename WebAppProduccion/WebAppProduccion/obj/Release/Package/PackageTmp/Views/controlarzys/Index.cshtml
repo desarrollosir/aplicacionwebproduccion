@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>Dashboard</h2>        
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <center>
+            <img src='@Url.Content("~/Images/LOGO TRANSPARENTE.png")' height="170" />
+        </center>
+        <br />
+        <br />        
+        <div class="">
+            <div class="row top_tiles">
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-road"></i></div>
+                        <div class="count">@ViewBag.CantidadEnTransito</div>
+                        <h3>Unidades En Transito</h3>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-cogs"></i></div>
+                        <div class="count">@ViewBag.CantidadEnProceso</div>
+                        <h3>Unidades en Proceso</h3>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-flag-checkered"></i></div>
+                        <div class="count">@ViewBag.CantidadListas</div>
+                        <h3>Unidades Listas</h3>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-calendar"></i></div>
+                        <div class="count">@ViewBag.CantidadTerminadasConCita</div>
+                        <h3>Unidades Despachadas Con Cita</h3>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-calendar-o"></i></div>
+                        <div class="count">@ViewBag.CantidadTerminadasSinCita</div>
+                        <h3>Unidades Despachadas Sin Cita</h3>
+                    </div>
+                </div>
+                <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="tile-stats">
+                        <div class="icon"><i class="fa fa-truck"></i></div>
+                        <div class="count">@ViewBag.Total</div>
+                        <h3>Total Unidades</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

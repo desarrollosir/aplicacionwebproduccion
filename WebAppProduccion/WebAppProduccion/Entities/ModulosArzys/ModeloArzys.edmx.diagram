@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a96443e9b7da4f7bbb9fb9f517340e90" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_destinos" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_lineatransporte" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_statusunidad" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_unidades" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_unidades_arz_destinos_FK" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_unidades_arz_lineatransporte_FK" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_unidades_arz_statusunidad_FK" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_detunidadproceso" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_proceso" Width="1.5" PointX="7.5" PointY="1.5" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_proceso_FK" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_unidades_FK" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_detunidadretrabajo" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_retrabajos" Width="1.5" PointX="7.625" PointY="4.5" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_retrabajos_FK" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_unidades_FK" />
+        <EntityTypeShape EntityType="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo" Width="1.5" PointX="9.875" PointY="4.5" />
+        <AssociationConnector Association="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo_arz_retrabajos_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

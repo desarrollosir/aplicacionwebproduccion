@@ -1,0 +1,75 @@
+﻿@model WebAppProduccion.Entities.ModulosArzys.arz_unidades
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>arz_unidades</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaHoraAlta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaHoraAlta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Economico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Economico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CitaArribo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CitaArribo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CitaDestino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CitaDestino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arz_destinos.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arz_destinos.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arz_lineatransporte.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arz_lineatransporte.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arz_statusunidad.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arz_statusunidad.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

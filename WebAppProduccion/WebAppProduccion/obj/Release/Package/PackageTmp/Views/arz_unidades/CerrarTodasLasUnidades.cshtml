@@ -1,0 +1,28 @@
+﻿@model  WebAppProduccion.Entities.ModulosArzys.arz_unidades
+
+@{
+    ViewBag.Title = "CerrarTodasLasUnidades";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">Cerrar Todas Las Unidades</h4>
+    </div>
+    <div class="modal-body">
+        <div class="well" style="overflow: auto">
+            <center>
+                <h3>¿Desea cerrar todas las unidades?</h3>
+                <input type="hidden" id="id" name="id" />
+            </center>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <input type="submit" value="Guardar" class="btn btn-default" />
+    </div>
+}

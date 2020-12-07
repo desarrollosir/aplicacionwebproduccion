@@ -1,0 +1,30 @@
+﻿@model WebAppProduccion.Entities.ModulosArzys.arz_unidades
+
+@{
+    ViewBag.Title = "CerrarUnidad";
+    Layout = null;
+}
+
+@using (Html.BeginForm())
+{
+    <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">Cerrar Unidad</h4>
+    </div>
+    <div class="modal-body">
+        <p>.</p>
+        <input type="hidden" id="Id" name="Id" value="@Model.Id"/>
+        <div class="well" style="overflow: auto">
+            <center>
+                <h3>¿Desea cerrar la unidad?</h3>
+                <h3>@Model.Economico</h3>
+            </center>            
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <input type="submit" value="Guardar" class="btn btn-default" />
+    </div>
+}

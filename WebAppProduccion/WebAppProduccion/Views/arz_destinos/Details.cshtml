@@ -1,0 +1,35 @@
+﻿@model WebAppProduccion.Entities.ModulosArzys.arz_destinos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutARZYS.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>arz_destinos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TiempoArribo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiempoArribo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

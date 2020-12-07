@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3F19C_producccionModel4StoreContainer" CdmEntityContainer="DB_A3F19C_producccionEntities4">
+    <EntitySetMapping Name="arz_destinos">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_destinos">
+        <MappingFragment StoreEntitySet="arz_destinos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TiempoArribo" ColumnName="TiempoArribo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_lineatransporte">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_lineatransporte">
+        <MappingFragment StoreEntitySet="arz_lineatransporte">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_statusunidad">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_statusunidad">
+        <MappingFragment StoreEntitySet="arz_statusunidad">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_unidades">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_unidades">
+        <MappingFragment StoreEntitySet="arz_unidades">
+          <ScalarProperty Name="arz_statusunidad_Id" ColumnName="arz_statusunidad_Id" />
+          <ScalarProperty Name="arz_destinos_Id" ColumnName="arz_destinos_Id" />
+          <ScalarProperty Name="arz_lineatransporte_Id" ColumnName="arz_lineatransporte_Id" />
+          <ScalarProperty Name="CitaDestino" ColumnName="CitaDestino" />
+          <ScalarProperty Name="CitaArribo" ColumnName="CitaArribo" />
+          <ScalarProperty Name="Economico" ColumnName="Economico" />
+          <ScalarProperty Name="FechaHoraAlta" ColumnName="FechaHoraAlta" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_detunidadproceso">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_detunidadproceso">
+        <MappingFragment StoreEntitySet="arz_detunidadproceso">
+          <ScalarProperty Name="arz_proceso_Id" ColumnName="arz_proceso_Id" />
+          <ScalarProperty Name="arz_unidades_Id" ColumnName="arz_unidades_Id" />
+          <ScalarProperty Name="FechaHoraFin" ColumnName="FechaHoraFin" />
+          <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_proceso">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_proceso">
+        <MappingFragment StoreEntitySet="arz_proceso">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_detunidadretrabajo">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_detunidadretrabajo">
+        <MappingFragment StoreEntitySet="arz_detunidadretrabajo">
+          <ScalarProperty Name="arz_retrabajos_Id" ColumnName="arz_retrabajos_Id" />
+          <ScalarProperty Name="arz_unidades_Id" ColumnName="arz_unidades_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_retrabajos">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_retrabajos">
+        <MappingFragment StoreEntitySet="arz_retrabajos">
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="arz_retrabajo_semaforo">
+      <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo">
+        <MappingFragment StoreEntitySet="arz_retrabajo_semaforo">
+          <ScalarProperty Name="arz_retrabajos_Id" ColumnName="arz_retrabajos_Id" />
+          <ScalarProperty Name="Semaforo" ColumnName="Semaforo" />
+          <ScalarProperty Name="MinutosParaAgregar" ColumnName="MinutosParaAgregar" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

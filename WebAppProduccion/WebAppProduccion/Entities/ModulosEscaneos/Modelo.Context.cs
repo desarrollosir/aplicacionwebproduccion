@@ -53,5 +53,7 @@ namespace WebAppProduccion.Entities.ModulosEscaneos
         public virtual DbSet<hd_statusorden> hd_statusorden { get; set; }
         public virtual DbSet<hd_statusquickship> hd_statusquickship { get; set; }
         public virtual DbSet<hd_detordenesskus> hd_detordenesskus { get; set; }
+
+        public System.Data.Entity.DbSet<WebAppProduccion.Entities.ModulosArzys.arz_destinos> arz_destinos { get; set; }
     }
 }

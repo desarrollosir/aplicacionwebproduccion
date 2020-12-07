@@ -31,17 +31,23 @@
                     <th>Orden</th>
                     <th>Guia</th>
                     <th>Oracle ID</th>
+                    <th>Paquetes</th>
+                    <th>Status</th>
+                    <th width="8%"></th>
                 </tr>
             </thead>
         </table>
     </div>
 </div>
 
+<div id="example-console">N/A</div>
+
 @section Styles {
     <!-- Datatables -->
     <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+
 }
 
 @section Scripts {
@@ -56,12 +62,16 @@
     <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.4.0/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
 
     <!-- Moment.js: -->
     <script src="~/vendors/moment/moment.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            var events = $('#example-console');
+
             table = $("#tblOrdenes").DataTable({
                 "order": [[0, "desc"]],
                 "ordering": true,
@@ -69,6 +79,7 @@
                 "pagingType": "simple_numbers",
                 "dom": 'Blrtip', // Hides Default Search
                 "processing": true,
+                "responsive": true,
                 "serverSide": true,
                 "orderMulti": false,
                 "deferRender": true,
@@ -109,22 +120,55 @@
                         }
                     }
                 ],
+                keys: true,
                 "ajax": {
                     "url": "/hd_ordeneshd/ObtenerOrdenes",
                     "type": "POST",
                     "datatype": "json"
                 },
                 "aoColumns": [
-                    { "data": "Id", "autoWidth": true },
-                    { "data": "NumeroOrden", "autoWidth": true },    
-                    { "data": "Guia", "autoWidth": true },    
-                    { "data": "OracleID", "autoWidth": true },    
+                    { "data": "Id", "autoWidth": true, "visible": false },
+                    { "data": "NumeroOrden", "autoWidth": true },
+                    { "data": "Guia", "autoWidth": true },
+                    { "data": "OracleID", "autoWidth": true },
+                    { "data": "Paquetes", "autoWidth": true },
+                    { "data": "status", "autoWidth": true },
+                    {
+                        "data": null,
+                        "targets": -1,
+                        "render": function (data, type, full) {
+                            return "<button onclick='Detalle(" + full['id'] + ")' class='btn btn-success btn-sm'><i class='fa fa-list'></i></button>" +
+                                "<a href='/proveedores/Edit?id=" + full['id'] + "' class='btn btn-primary btn-sm'><i class='fa fa-edit'></i></a>";
+                        },
+                        "bSearchable": false,
+                        "sortable": false,
+                        "autoWidth": true,
+                    }
                 ]
+            });                     
+
+            table.on('key', function (e, datatable, key, cell, originalEvent)
+            {
+                if (key === 13)
+                {              
+                    clip(cell.data());
+                    events.html('<div>Key press: ' + key + ' for cell <i>' + cell.data() + '</i></div>');
+                }                                 
             });
+
+            function clip(text) {
+                var copyElement = document.createElement('input');
+                copyElement.setAttribute('type', 'text');
+                copyElement.setAttribute('value', text);
+                copyElement = document.body.appendChild(copyElement);
+                copyElement.select();
+                document.execCommand('copy');
+                copyElement.remove();
+            }
 
             $('#txtOrder').on('keyup', function () {
                 table.columns(0).search(this.value).draw();                
-            });
+            });            
         });
     </script>
 }

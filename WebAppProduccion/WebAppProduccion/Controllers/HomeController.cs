@@ -12,6 +12,7 @@ namespace WebAppProduccion.Controllers
         DB_A3F19C_producccionEntities1 db = new DB_A3F19C_producccionEntities1();
         public ActionResult Index()
         {
+            Session["ua"] = User.Identity.Name;
             return View();
         }
 

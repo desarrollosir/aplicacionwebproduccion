@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_A3F19C_producccionModel4.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="arz_destinos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="TiempoArribo" Type="int" />
+        </EntityType>
+        <EntityType Name="arz_detunidadproceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CheckIn" Type="bit" />
+          <Property Name="FechaHoraInicio" Type="datetime" />
+          <Property Name="FechaHoraFin" Type="datetime" />
+          <Property Name="arz_unidades_Id" Type="int" Nullable="false" />
+          <Property Name="arz_proceso_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="arz_detunidadretrabajo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="arz_unidades_Id" Type="int" Nullable="false" />
+          <Property Name="arz_retrabajos_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="arz_lineatransporte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="arz_proceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="arz_retrabajo_semaforo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MinutosParaAgregar" Type="int" />
+          <Property Name="Semaforo" Type="varchar" MaxLength="50" />
+          <Property Name="arz_retrabajos_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="arz_retrabajos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Duracion" Type="int" />
+        </EntityType>
+        <EntityType Name="arz_statusunidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="arz_unidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaHoraAlta" Type="datetime" />
+          <Property Name="Economico" Type="varchar" MaxLength="10" />
+          <Property Name="CitaArribo" Type="datetime" />
+          <Property Name="CitaDestino" Type="datetime" />
+          <Property Name="arz_lineatransporte_Id" Type="int" Nullable="false" />
+          <Property Name="arz_destinos_Id" Type="int" Nullable="false" />
+          <Property Name="arz_statusunidad_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="arz_detunidadproceso_arz_proceso_FK">
+          <End Role="arz_proceso" Type="Self.arz_proceso" Multiplicity="1" />
+          <End Role="arz_detunidadproceso" Type="Self.arz_detunidadproceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_proceso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadproceso">
+              <PropertyRef Name="arz_proceso_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_detunidadproceso_arz_unidades_FK">
+          <End Role="arz_unidades" Type="Self.arz_unidades" Multiplicity="1" />
+          <End Role="arz_detunidadproceso" Type="Self.arz_detunidadproceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_unidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadproceso">
+              <PropertyRef Name="arz_unidades_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_detunidadretrabajo_arz_retrabajos_FK">
+          <End Role="arz_retrabajos" Type="Self.arz_retrabajos" Multiplicity="1" />
+          <End Role="arz_detunidadretrabajo" Type="Self.arz_detunidadretrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_retrabajos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadretrabajo">
+              <PropertyRef Name="arz_retrabajos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_detunidadretrabajo_arz_unidades_FK">
+          <End Role="arz_unidades" Type="Self.arz_unidades" Multiplicity="1" />
+          <End Role="arz_detunidadretrabajo" Type="Self.arz_detunidadretrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_unidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadretrabajo">
+              <PropertyRef Name="arz_unidades_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_retrabajo_semaforo_arz_retrabajos_FK">
+          <End Role="arz_retrabajos" Type="Self.arz_retrabajos" Multiplicity="1" />
+          <End Role="arz_retrabajo_semaforo" Type="Self.arz_retrabajo_semaforo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_retrabajos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_retrabajo_semaforo">
+              <PropertyRef Name="arz_retrabajos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_unidades_arz_destinos_FK">
+          <End Role="arz_destinos" Type="Self.arz_destinos" Multiplicity="1" />
+          <End Role="arz_unidades" Type="Self.arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_destinos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_destinos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_unidades_arz_lineatransporte_FK">
+          <End Role="arz_lineatransporte" Type="Self.arz_lineatransporte" Multiplicity="1" />
+          <End Role="arz_unidades" Type="Self.arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_lineatransporte">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_lineatransporte_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_unidades_arz_statusunidad_FK">
+          <End Role="arz_statusunidad" Type="Self.arz_statusunidad" Multiplicity="1" />
+          <End Role="arz_unidades" Type="Self.arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_statusunidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_statusunidad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A3F19C_producccionModel4StoreContainer">
+          <EntitySet Name="arz_destinos" EntityType="Self.arz_destinos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_detunidadproceso" EntityType="Self.arz_detunidadproceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_detunidadretrabajo" EntityType="Self.arz_detunidadretrabajo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_lineatransporte" EntityType="Self.arz_lineatransporte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_proceso" EntityType="Self.arz_proceso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_retrabajo_semaforo" EntityType="Self.arz_retrabajo_semaforo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_retrabajos" EntityType="Self.arz_retrabajos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_statusunidad" EntityType="Self.arz_statusunidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arz_unidades" EntityType="Self.arz_unidades" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="arz_detunidadproceso_arz_proceso_FK" Association="Self.arz_detunidadproceso_arz_proceso_FK">
+            <End Role="arz_proceso" EntitySet="arz_proceso" />
+            <End Role="arz_detunidadproceso" EntitySet="arz_detunidadproceso" />
+          </AssociationSet>
+          <AssociationSet Name="arz_detunidadproceso_arz_unidades_FK" Association="Self.arz_detunidadproceso_arz_unidades_FK">
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+            <End Role="arz_detunidadproceso" EntitySet="arz_detunidadproceso" />
+          </AssociationSet>
+          <AssociationSet Name="arz_detunidadretrabajo_arz_retrabajos_FK" Association="Self.arz_detunidadretrabajo_arz_retrabajos_FK">
+            <End Role="arz_retrabajos" EntitySet="arz_retrabajos" />
+            <End Role="arz_detunidadretrabajo" EntitySet="arz_detunidadretrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="arz_detunidadretrabajo_arz_unidades_FK" Association="Self.arz_detunidadretrabajo_arz_unidades_FK">
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+            <End Role="arz_detunidadretrabajo" EntitySet="arz_detunidadretrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="arz_retrabajo_semaforo_arz_retrabajos_FK" Association="Self.arz_retrabajo_semaforo_arz_retrabajos_FK">
+            <End Role="arz_retrabajos" EntitySet="arz_retrabajos" />
+            <End Role="arz_retrabajo_semaforo" EntitySet="arz_retrabajo_semaforo" />
+          </AssociationSet>
+          <AssociationSet Name="arz_unidades_arz_destinos_FK" Association="Self.arz_unidades_arz_destinos_FK">
+            <End Role="arz_destinos" EntitySet="arz_destinos" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+          <AssociationSet Name="arz_unidades_arz_lineatransporte_FK" Association="Self.arz_unidades_arz_lineatransporte_FK">
+            <End Role="arz_lineatransporte" EntitySet="arz_lineatransporte" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+          <AssociationSet Name="arz_unidades_arz_statusunidad_FK" Association="Self.arz_unidades_arz_statusunidad_FK">
+            <End Role="arz_statusunidad" EntitySet="arz_statusunidad" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A3F19C_producccionModel4" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="arz_destinos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TiempoArribo" Type="Int32" />
+          <NavigationProperty Name="arz_unidades" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_destinos_FK" FromRole="arz_destinos" ToRole="arz_unidades" />
+        </EntityType>
+        <EntityType Name="arz_lineatransporte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="arz_unidades" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_lineatransporte_FK" FromRole="arz_lineatransporte" ToRole="arz_unidades" />
+        </EntityType>
+        <EntityContainer Name="DB_A3F19C_producccionEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="arz_destinos" EntityType="Self.arz_destinos" />
+          <EntitySet Name="arz_lineatransporte" EntityType="Self.arz_lineatransporte" />
+          <EntitySet Name="arz_statusunidad" EntityType="DB_A3F19C_producccionModel4.arz_statusunidad" />
+          <EntitySet Name="arz_unidades" EntityType="DB_A3F19C_producccionModel4.arz_unidades" />
+          <AssociationSet Name="arz_unidades_arz_destinos_FK" Association="DB_A3F19C_producccionModel4.arz_unidades_arz_destinos_FK">
+            <End Role="arz_destinos" EntitySet="arz_destinos" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+          <AssociationSet Name="arz_unidades_arz_lineatransporte_FK" Association="DB_A3F19C_producccionModel4.arz_unidades_arz_lineatransporte_FK">
+            <End Role="arz_lineatransporte" EntitySet="arz_lineatransporte" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+          <AssociationSet Name="arz_unidades_arz_statusunidad_FK" Association="DB_A3F19C_producccionModel4.arz_unidades_arz_statusunidad_FK">
+            <End Role="arz_statusunidad" EntitySet="arz_statusunidad" />
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+          </AssociationSet>
+          <EntitySet Name="arz_detunidadproceso" EntityType="DB_A3F19C_producccionModel4.arz_detunidadproceso" />
+          <EntitySet Name="arz_proceso" EntityType="DB_A3F19C_producccionModel4.arz_proceso" />
+          <AssociationSet Name="arz_detunidadproceso_arz_proceso_FK" Association="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_proceso_FK">
+            <End Role="arz_proceso" EntitySet="arz_proceso" />
+            <End Role="arz_detunidadproceso" EntitySet="arz_detunidadproceso" />
+          </AssociationSet>
+          <AssociationSet Name="arz_detunidadproceso_arz_unidades_FK" Association="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_unidades_FK">
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+            <End Role="arz_detunidadproceso" EntitySet="arz_detunidadproceso" />
+          </AssociationSet>
+          <EntitySet Name="arz_detunidadretrabajo" EntityType="DB_A3F19C_producccionModel4.arz_detunidadretrabajo" />
+          <EntitySet Name="arz_retrabajos" EntityType="DB_A3F19C_producccionModel4.arz_retrabajos" />
+          <AssociationSet Name="arz_detunidadretrabajo_arz_retrabajos_FK" Association="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_retrabajos_FK">
+            <End Role="arz_retrabajos" EntitySet="arz_retrabajos" />
+            <End Role="arz_detunidadretrabajo" EntitySet="arz_detunidadretrabajo" />
+          </AssociationSet>
+          <AssociationSet Name="arz_detunidadretrabajo_arz_unidades_FK" Association="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_unidades_FK">
+            <End Role="arz_unidades" EntitySet="arz_unidades" />
+            <End Role="arz_detunidadretrabajo" EntitySet="arz_detunidadretrabajo" />
+          </AssociationSet>
+          <EntitySet Name="arz_retrabajo_semaforo" EntityType="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo" />
+          <AssociationSet Name="arz_retrabajo_semaforo_arz_retrabajos_FK" Association="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo_arz_retrabajos_FK">
+            <End Role="arz_retrabajos" EntitySet="arz_retrabajos" />
+            <End Role="arz_retrabajo_semaforo" EntitySet="arz_retrabajo_semaforo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="arz_statusunidad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="arz_unidades" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_statusunidad_FK" FromRole="arz_statusunidad" ToRole="arz_unidades" />
+        </EntityType>
+        <EntityType Name="arz_unidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaHoraAlta" Type="DateTime" Precision="3" />
+          <Property Name="Economico" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CitaArribo" Type="DateTime" Precision="3" />
+          <Property Name="CitaDestino" Type="DateTime" Precision="3" />
+          <Property Name="arz_lineatransporte_Id" Type="Int32" Nullable="false" />
+          <Property Name="arz_destinos_Id" Type="Int32" Nullable="false" />
+          <Property Name="arz_statusunidad_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arz_destinos" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_destinos_FK" FromRole="arz_unidades" ToRole="arz_destinos" />
+          <NavigationProperty Name="arz_lineatransporte" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_lineatransporte_FK" FromRole="arz_unidades" ToRole="arz_lineatransporte" />
+          <NavigationProperty Name="arz_statusunidad" Relationship="DB_A3F19C_producccionModel4.arz_unidades_arz_statusunidad_FK" FromRole="arz_unidades" ToRole="arz_statusunidad" />
+          <NavigationProperty Name="arz_detunidadproceso" Relationship="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_unidades_FK" FromRole="arz_unidades" ToRole="arz_detunidadproceso" />
+          <NavigationProperty Name="arz_detunidadretrabajo" Relationship="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_unidades_FK" FromRole="arz_unidades" ToRole="arz_detunidadretrabajo" />
+        </EntityType>
+        <Association Name="arz_unidades_arz_destinos_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_destinos" Role="arz_destinos" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_unidades" Role="arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_destinos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_destinos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_unidades_arz_lineatransporte_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_lineatransporte" Role="arz_lineatransporte" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_unidades" Role="arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_lineatransporte">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_lineatransporte_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_unidades_arz_statusunidad_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_statusunidad" Role="arz_statusunidad" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_unidades" Role="arz_unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_statusunidad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_unidades">
+              <PropertyRef Name="arz_statusunidad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="arz_detunidadproceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CheckIn" Type="Boolean" />
+          <Property Name="FechaHoraInicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaHoraFin" Type="DateTime" Precision="3" />
+          <Property Name="arz_unidades_Id" Type="Int32" Nullable="false" />
+          <Property Name="arz_proceso_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arz_proceso" Relationship="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_proceso_FK" FromRole="arz_detunidadproceso" ToRole="arz_proceso" />
+          <NavigationProperty Name="arz_unidades" Relationship="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_unidades_FK" FromRole="arz_detunidadproceso" ToRole="arz_unidades" />
+        </EntityType>
+        <EntityType Name="arz_proceso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="arz_detunidadproceso" Relationship="DB_A3F19C_producccionModel4.arz_detunidadproceso_arz_proceso_FK" FromRole="arz_proceso" ToRole="arz_detunidadproceso" />
+        </EntityType>
+        <Association Name="arz_detunidadproceso_arz_proceso_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_proceso" Role="arz_proceso" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_detunidadproceso" Role="arz_detunidadproceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_proceso">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadproceso">
+              <PropertyRef Name="arz_proceso_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_detunidadproceso_arz_unidades_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_unidades" Role="arz_unidades" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_detunidadproceso" Role="arz_detunidadproceso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_unidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadproceso">
+              <PropertyRef Name="arz_unidades_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="arz_detunidadretrabajo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="arz_unidades_Id" Type="Int32" Nullable="false" />
+          <Property Name="arz_retrabajos_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arz_retrabajos" Relationship="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_retrabajos_FK" FromRole="arz_detunidadretrabajo" ToRole="arz_retrabajos" />
+          <NavigationProperty Name="arz_unidades" Relationship="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_unidades_FK" FromRole="arz_detunidadretrabajo" ToRole="arz_unidades" />
+        </EntityType>
+        <EntityType Name="arz_retrabajos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Duracion" Type="Int32" />
+          <NavigationProperty Name="arz_detunidadretrabajo" Relationship="DB_A3F19C_producccionModel4.arz_detunidadretrabajo_arz_retrabajos_FK" FromRole="arz_retrabajos" ToRole="arz_detunidadretrabajo" />
+          <NavigationProperty Name="arz_retrabajo_semaforo" Relationship="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo_arz_retrabajos_FK" FromRole="arz_retrabajos" ToRole="arz_retrabajo_semaforo" />
+        </EntityType>
+        <Association Name="arz_detunidadretrabajo_arz_retrabajos_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_retrabajos" Role="arz_retrabajos" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_detunidadretrabajo" Role="arz_detunidadretrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_retrabajos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadretrabajo">
+              <PropertyRef Name="arz_retrabajos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="arz_detunidadretrabajo_arz_unidades_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_unidades" Role="arz_unidades" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_detunidadretrabajo" Role="arz_detunidadretrabajo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_unidades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_detunidadretrabajo">
+              <PropertyRef Name="arz_unidades_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="arz_retrabajo_semaforo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MinutosParaAgregar" Type="Int32" />
+          <Property Name="Semaforo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="arz_retrabajos_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="arz_retrabajos" Relationship="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo_arz_retrabajos_FK" FromRole="arz_retrabajo_semaforo" ToRole="arz_retrabajos" />
+        </EntityType>
+        <Association Name="arz_retrabajo_semaforo_arz_retrabajos_FK">
+          <End Type="DB_A3F19C_producccionModel4.arz_retrabajos" Role="arz_retrabajos" Multiplicity="1" />
+          <End Type="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo" Role="arz_retrabajo_semaforo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="arz_retrabajos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="arz_retrabajo_semaforo">
+              <PropertyRef Name="arz_retrabajos_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A3F19C_producccionModel4StoreContainer" CdmEntityContainer="DB_A3F19C_producccionEntities4">
+          <EntitySetMapping Name="arz_destinos">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_destinos">
+              <MappingFragment StoreEntitySet="arz_destinos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TiempoArribo" ColumnName="TiempoArribo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_lineatransporte">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_lineatransporte">
+              <MappingFragment StoreEntitySet="arz_lineatransporte">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_statusunidad">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_statusunidad">
+              <MappingFragment StoreEntitySet="arz_statusunidad">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_unidades">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_unidades">
+              <MappingFragment StoreEntitySet="arz_unidades">
+                <ScalarProperty Name="arz_statusunidad_Id" ColumnName="arz_statusunidad_Id" />
+                <ScalarProperty Name="arz_destinos_Id" ColumnName="arz_destinos_Id" />
+                <ScalarProperty Name="arz_lineatransporte_Id" ColumnName="arz_lineatransporte_Id" />
+                <ScalarProperty Name="CitaDestino" ColumnName="CitaDestino" />
+                <ScalarProperty Name="CitaArribo" ColumnName="CitaArribo" />
+                <ScalarProperty Name="Economico" ColumnName="Economico" />
+                <ScalarProperty Name="FechaHoraAlta" ColumnName="FechaHoraAlta" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_detunidadproceso">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_detunidadproceso">
+              <MappingFragment StoreEntitySet="arz_detunidadproceso">
+                <ScalarProperty Name="arz_proceso_Id" ColumnName="arz_proceso_Id" />
+                <ScalarProperty Name="arz_unidades_Id" ColumnName="arz_unidades_Id" />
+                <ScalarProperty Name="FechaHoraFin" ColumnName="FechaHoraFin" />
+                <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
+                <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_proceso">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_proceso">
+              <MappingFragment StoreEntitySet="arz_proceso">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_detunidadretrabajo">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_detunidadretrabajo">
+              <MappingFragment StoreEntitySet="arz_detunidadretrabajo">
+                <ScalarProperty Name="arz_retrabajos_Id" ColumnName="arz_retrabajos_Id" />
+                <ScalarProperty Name="arz_unidades_Id" ColumnName="arz_unidades_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_retrabajos">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_retrabajos">
+              <MappingFragment StoreEntitySet="arz_retrabajos">
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arz_retrabajo_semaforo">
+            <EntityTypeMapping TypeName="DB_A3F19C_producccionModel4.arz_retrabajo_semaforo">
+              <MappingFragment StoreEntitySet="arz_retrabajo_semaforo">
+                <ScalarProperty Name="arz_retrabajos_Id" ColumnName="arz_retrabajos_Id" />
+                <ScalarProperty Name="Semaforo" ColumnName="Semaforo" />
+                <ScalarProperty Name="MinutosParaAgregar" ColumnName="MinutosParaAgregar" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
